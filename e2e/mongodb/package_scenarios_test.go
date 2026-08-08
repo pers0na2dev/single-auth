@@ -1,0 +1,14 @@
+package mongodb_e2e_test
+
+var mongoPackageScenarios = []mongoPackageOracleTest{
+	{Suite: "mongodb-adapter", Title: "consumeOne returns the deleted document from Mongo metadata", Observation: mongoPackageOracleObservation{IncludeResultMetadata: true, Result: &mongoPackageOracleResult{ID: "verification-id", Identifier: "magic-link-token"}, Filter: mongoPackageOracleFilter{Identifier: "magic-link-token"}}},
+	{Suite: "mongodb-adapter", Title: "incrementOne applies $inc and $set atomically against the guard filter", Observation: mongoPackageOracleObservation{ReturnDocument: "after", IncludeResultMetadata: true, Result: &mongoPackageOracleResult{ID: "counter-id", Count: 4, LastRequest: 1700000000000}, Filter: mongoPackageOracleFilter{Count: &mongoPackageOracleComparison{LT: 5}}, Update: mongoPackageOracleUpdate{Increment: map[string]int64{"count": 1}, Set: map[string]int64{"lastRequest": 1700000000000}}}},
+	{Suite: "mongodb-adapter", Title: "incrementOne omits $inc for a set-only guarded transition", Observation: mongoPackageOracleObservation{HasInc: false, HasSet: true, Result: &mongoPackageOracleResult{ID: "counter-id", LastRequest: 1700000000000}, Filter: mongoPackageOracleFilter{Key: "a"}, Update: mongoPackageOracleUpdate{Set: map[string]int64{"lastRequest": 1700000000000}}}},
+	{Suite: "mongodb-adapter", Title: "incrementOne omits $set when no absolute assignments are provided", Observation: mongoPackageOracleObservation{HasInc: true, HasSet: false, Result: &mongoPackageOracleResult{ID: "counter-id", Count: 11}, Filter: mongoPackageOracleFilter{Key: "a"}, Update: mongoPackageOracleUpdate{Increment: map[string]int64{"count": 1}}}},
+	{Suite: "mongodb-adapter", Title: "incrementOne returns null when the guard matches no document", Observation: mongoPackageOracleObservation{ResultIsNull: true, Filter: mongoPackageOracleFilter{Count: &mongoPackageOracleComparison{LT: 5}}}},
+	{Suite: "mongodb-adapter", Title: "should create mongodb adapter", Observation: mongoPackageOracleObservation{AdapterFactoryDefined: true}},
+	{Suite: "uuid support", Title: "should convert BSON UUID to string in output", Observation: mongoPackageOracleObservation{Found: true, ID: "550e8400-e29b-41d4-a716-446655440000"}},
+	{Suite: "uuid support", Title: "should store FK fields as BSON UUID when generateId is 'uuid'", Observation: mongoPackageOracleObservation{InsertedCount: 1, IDIsBSONUUID: true, ForeignKeyIsBSONUUID: true, ForeignKey: "550e8400-e29b-41d4-a716-446655440000"}},
+	{Suite: "uuid support", Title: "should store _id as BSON UUID when generateId is 'uuid'", Observation: mongoPackageOracleObservation{InsertedCount: 1, IDIsBSONUUID: true, IDMatchesUUID: true}},
+	{Suite: "uuid support", Title: "should store _id as ObjectId when generateId is not set", Observation: mongoPackageOracleObservation{InsertedCount: 1, IDIsObjectID: true}},
+}

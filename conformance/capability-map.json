@@ -1,0 +1,1167 @@
+{
+  "schemaVersion": 2,
+  "module": "github.com/pers0na2dev/single-auth",
+  "capabilities": [
+    {
+      "id": "core-http.auth-bootstrap-and-dispatch",
+      "category": "core-http",
+      "title": "Authentication bootstrap, route registry, and request dispatch",
+      "observableContracts": [{
+        "id": "bootstrap-dispatch",
+        "assertions": [
+          "Configured core and plugin endpoints are registered exactly once.",
+          "Direct invocation and HTTP dispatch resolve the same endpoint behavior."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/auth/full.test.ts",
+        "cases": ["plugin endpoints", "default auth type should be okay"]
+      }],
+      "status": "passing",
+      "productionRefs": ["core/auth.go", "core/engine/dispatcher.go", "core/engine/registry.go"],
+      "testRefs": ["core/auth_test.go", "core/engine/dispatcher_test.go", "core/engine/registry_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "core-http.email-password",
+      "category": "core-http",
+      "title": "Email and password sign-up and sign-in",
+      "observableContracts": [{
+        "id": "email-password-flow",
+        "assertions": [
+          "A valid email and password can create an account and authenticated session.",
+          "Invalid credentials and invalid request bodies return stable client errors without creating a session."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/better-auth/src/api/routes/sign-up.test.ts",
+          "cases": ["should return additionalFields in signUpEmail response", "should rollback when session creation fails"]
+        },
+        {
+          "path": "packages/better-auth/src/api/routes/sign-in.test.ts",
+          "cases": ["should return a response with a set-cookie header", "should sign in with different email casing than sign-up"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["core/core_routes.go", "core/password_hash.go", "core/password_routes.go"],
+      "testRefs": ["core/auth_test.go", "core/password_hash_test.go", "core/password_routes_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite", "postgres"],
+        "testKinds": ["unit", "integration", "e2e"]
+      }
+    },
+    {
+      "id": "core-http.sessions",
+      "category": "core-http",
+      "title": "Session creation, lookup, refresh, revocation, and middleware",
+      "observableContracts": [{
+        "id": "session-lifecycle",
+        "assertions": [
+          "An authenticated request resolves the current session and user while an unauthenticated request resolves no session.",
+          "Session refresh and revocation update both persisted state and cookie-visible behavior."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/api/routes/session-api.test.ts",
+        "cases": ["should return null when not authenticated", "should update session when update age is reached", "should revoke session"]
+      }],
+      "status": "passing",
+      "productionRefs": ["core/session_cache.go", "core/session_middleware.go", "core/session_routes.go"],
+      "testRefs": ["core/session_routes_test.go", "integrationtest/session_token_refresh_smoke_compatibility_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite", "redis"],
+        "testKinds": ["unit", "integration", "e2e"]
+      }
+    },
+    {
+      "id": "core-http.email-verification",
+      "category": "core-http",
+      "title": "Email verification token and callback lifecycle",
+      "observableContracts": [{
+        "id": "verification-lifecycle",
+        "assertions": [
+          "A verification request issues a bounded token without consuming the request body twice.",
+          "A valid token verifies the email and follows only an accepted callback target."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/api/routes/email-verification.test.ts",
+        "cases": ["should verify email", "should redirect to callback", "should not throw 'body already consumed' error"]
+      }],
+      "status": "passing",
+      "productionRefs": ["core/email_verification_routes.go"],
+      "testRefs": ["core/email_verification_routes_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "core-http.password-reset",
+      "category": "core-http",
+      "title": "Password reset request, token consumption, and session revocation",
+      "observableContracts": [{
+        "id": "password-reset-lifecycle",
+        "assertions": [
+          "A reset request does not disclose whether the target account exists.",
+          "A reset token is expiring and single-use, including under concurrent redemption."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/api/routes/password.test.ts",
+        "cases": ["should not reveal user existence on success", "shouldn't allow the token to be used twice", "should reject a concurrent reset using the same token"]
+      }],
+      "status": "passing",
+      "productionRefs": ["core/password_routes.go"],
+      "testRefs": ["core/password_routes_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "core-http.accounts-and-social-linking",
+      "category": "core-http",
+      "title": "Account listing, linking, unlinking, and provider token access",
+      "observableContracts": [{
+        "id": "account-link-lifecycle",
+        "assertions": [
+          "Account listing and provider-scoped lookup never cross user or provider boundaries.",
+          "Link, unlink, and provider-token operations preserve the last usable authentication method and enforce ownership."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/better-auth/src/api/routes/account.test.ts",
+          "cases": ["should list all accounts", "should get access token using accountId from listAccounts", "should resolve account info from the current user's accounts when provider account IDs collide", "should reject account info over HTTP without a session even when userId is passed", "should encrypt access token and refresh token", "should link third account with idToken", "should fail to unlink the last account of a provider", "should unlink account with specific accountId", "should not refresh with a stale account cookie belonging to another user", "should persist refreshed idToken in database during getAccessToken auto-refresh", "should preserve the Cognito refresh token when getAccessToken auto-refresh receives no replacement", "get-access-token fails closed after the session is revoked in a stateful deployment"]
+        },
+        {
+          "path": "packages/better-auth/src/oauth2/link-account.test.ts",
+          "cases": ["should reject implicit link when local user is unverified, even if provider email is verified", "should link account when email casing differs using callback", "should link account when email casing differs using idToken", "should deny account linking when provider is not trusted and email is not verified", "should block implicit linking on sign-in even for trusted providers", "should allow explicit linkSocial when disableImplicitLinking is true", "syncs mapProfileToUser fields on link, not only name and image", "does not copy fields marked input: false from the provider on link", "should not match a different provider's account when the accountId is the same", "forwards the failed-link error to the custom logger"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["core/account_routes.go", "core/account_token_routes.go", "core/account_cookie_sync.go", "core/social_routes.go", "core/api_accounts_social.go"],
+      "testRefs": ["core/account_routes_test.go", "core/account_social_closure_test.go", "core/api_extended_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "core-http.origin-and-csrf-security",
+      "category": "core-http",
+      "title": "Trusted-origin, CSRF, host, and redirect validation",
+      "observableContracts": [{
+        "id": "request-origin-policy",
+        "assertions": [
+          "State-changing requests reject untrusted Origin and cross-site navigation metadata.",
+          "Redirect and proxy-host inputs are accepted only when they resolve through configured trust policy."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/api/middlewares/origin-check.test.ts",
+        "cases": ["should allow trusted origins", "should not allow untrusted origins", "Fetch Metadata CSRF Protection"]
+      }],
+      "status": "passing",
+      "productionRefs": ["core/security.go", "core/base_url.go"],
+      "testRefs": ["integrationtest/origin_check_compatibility_test.go", "core/trusted_origins_compatibility_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "core-http.rate-limiting",
+      "category": "core-http",
+      "title": "Memory, database, and secondary-storage request rate limiting",
+      "observableContracts": [{
+        "id": "rate-limit-enforcement",
+        "assertions": [
+          "Requests above the configured path-specific window receive 429 and a retry boundary.",
+          "Concurrent requests consume one atomic counter across memory, database, and secondary storage implementations."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts",
+        "cases": ["should return 429 after 3 request for sign-in", "lets exactly one of two simultaneous requests through", "should respond the correct retry-after header"]
+      }],
+      "status": "passing",
+      "productionRefs": ["core/rate_limit.go", "security/ratelimit/limiter.go", "security/ratelimit/database.go", "security/ratelimit/secondary.go", "transport/nethttp/ratelimit.go", "transport/fasthttp/ratelimit.go", "transport/fiber/ratelimit.go"],
+      "testRefs": ["core/rate_limiter_http_compatibility_test.go", "security/ratelimit/limiter_test.go", "security/ratelimit/database_test.go", "security/ratelimit/secondary_test.go", "transport/nethttp/ratelimit_test.go", "transport/fasthttp/ratelimit_test.go", "transport/fiber/ratelimit_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite", "redis"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "transports.net-http",
+      "category": "transports",
+      "title": "Standard library net/http handler",
+      "observableContracts": [{
+        "id": "net-http-adapter",
+        "assertions": [
+          "net/http requests preserve method, path, query, headers, cookies, body, and cancellation in the transport-neutral dispatcher.",
+          "Dispatcher status, headers, cookies, and response body are emitted through net/http without semantic loss."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/api/index.test.ts",
+        "cases": ["should work with POST requests with trailing slash", "rejects a path where basePath is not a leading prefix"]
+      }],
+      "status": "passing",
+      "productionRefs": ["transport/nethttp/nethttp.go"],
+      "testRefs": ["transport/nethttp/nethttp_test.go"],
+      "dimensions": {
+        "transports": ["net/http"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "transports.fasthttp",
+      "category": "transports",
+      "title": "Direct fasthttp handler",
+      "observableContracts": [{
+        "id": "fasthttp-adapter",
+        "assertions": [
+          "fasthttp requests preserve method, path, query, headers, cookies, body, and cancellation in the transport-neutral dispatcher.",
+          "Dispatcher status, headers, cookies, and response body are emitted through fasthttp without semantic loss."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/api/index.test.ts",
+        "cases": ["should work with POST requests with trailing slash", "rejects a path where basePath is not a leading prefix"]
+      }],
+      "status": "passing",
+      "productionRefs": ["transport/fasthttp/fasthttp.go"],
+      "testRefs": ["transport/fasthttp/fasthttp_test.go"],
+      "dimensions": {
+        "transports": ["fasthttp"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "transports.fiber",
+      "category": "transports",
+      "title": "Fiber adapter",
+      "observableContracts": [{
+        "id": "fiber-adapter",
+        "assertions": [
+          "Fiber requests preserve method, path, query, headers, cookies, body, and cancellation in the transport-neutral dispatcher.",
+          "Dispatcher status, headers, cookies, and response body are emitted through Fiber without semantic loss."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/api/index.test.ts",
+        "cases": ["should work with POST requests with trailing slash", "rejects a path where basePath is not a leading prefix"]
+      }],
+      "status": "passing",
+      "productionRefs": ["transport/fiber/fiber.go"],
+      "testRefs": ["transport/fiber/fiber_test.go"],
+      "dimensions": {
+        "transports": ["fiber"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "native-storage.adapter-contract",
+      "category": "native-storage",
+      "title": "Native Go storage adapter contract and factory",
+      "observableContracts": [{
+        "id": "adapter-contract",
+        "assertions": [
+          "Create, find, update, delete, count, transaction, join, increment, and consume-one operations use one backend-neutral Go contract.",
+          "Schema field mappings and capability conversions preserve canonical values at the adapter boundary."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "e2e/adapter/test/adapter-factory/adapter-factory.test.ts",
+        "cases": ["Should fill in the missing fields in the result", "Should modify boolean type to 1 or 0 if the DB doesn't support it", "Fallback JoinOption System"]
+      }],
+      "status": "passing",
+      "productionRefs": ["storage/adapter.go", "storage/factory.go"],
+      "testRefs": ["storage/factory_compatibility_test.go", "storage/adapter_factory_e2e_sqlite_test.go"],
+      "dimensions": {
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "native-storage.memory",
+      "category": "native-storage",
+      "title": "In-memory adapter with transactions, joins, and uniqueness",
+      "observableContracts": [{
+        "id": "memory-adapter",
+        "assertions": [
+          "Memory operations preserve uniqueness, singular-mutation, join, and copy isolation semantics.",
+          "Concurrent writes and failed transactions cannot erase independently committed data."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/memory-adapter/src/memory-adapter.test.ts",
+        "cases": ["singular update with an empty where is a no-op and leaves every row untouched", "a failing transaction must not erase a write made by a concurrent in-flight operation", "applies absolute set assignments alongside increments"]
+      }],
+      "status": "passing",
+      "productionRefs": ["storage/memory/memory.go", "storage/memory/transaction.go", "storage/memory/join.go"],
+      "testRefs": ["storage/memory/contract_test.go", "storage/memory/upstream_compatibility_test.go", "storage/memory/unique_test.go"],
+      "dimensions": {
+        "storageBackends": ["memory"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "native-storage.sqlite",
+      "category": "native-storage",
+      "title": "SQLite adapter and schema lifecycle",
+      "observableContracts": [{
+        "id": "sqlite-adapter",
+        "assertions": [
+          "SQLite executes the complete native adapter contract with atomic singular mutations and transactions.",
+          "SQLite schema creation and repeated migration inspection converge without duplicate changes."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "e2e/adapter/test/kysely-adapter/adapter.kysely.sqlite.test.ts",
+          "cases": ["normalTestSuite()", "transactionsTestSuite()", "caseInsensitiveTestSuite()"]
+        },
+        {
+          "path": "packages/better-auth/src/db/get-migration-schema.test.ts",
+          "cases": ["should use CREATE INDEX when adding indexed columns to existing SQLite tables", "should not detect migration changes for SQLite bigint fields on subsequent runs"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["storage/sqlite/adapter.go", "storage/sqlite/schema.go", "storage/sqlite/transaction.go"],
+      "testRefs": ["storage/sqlite/contract_test.go", "storage/sqlite/schema_test.go", "storage/sqlite/mutation_test.go"],
+      "dimensions": {
+        "storageBackends": ["sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "native-storage.postgres",
+      "category": "native-storage",
+      "title": "PostgreSQL adapter against a real service",
+      "observableContracts": [{
+        "id": "postgres-adapter",
+        "assertions": [
+          "PostgreSQL executes the native adapter contract against a real service with backend-native transactions and joins.",
+          "PostgreSQL values, identifiers, case-insensitive predicates, and returned mutations decode to canonical Go records."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "e2e/adapter/test/kysely-adapter/adapter.kysely.pg.test.ts",
+        "cases": ["normalTestSuite()", "authFlowTestSuite()", "caseInsensitiveTestSuite()"]
+      }],
+      "status": "passing",
+      "productionRefs": ["storage/postgres/adapter.go", "storage/postgres/schema.go"],
+      "testRefs": ["storage/postgres/adapter_test.go", "e2e/postgres/postgres_test.go", "e2e/postgres/db_compatibility_test.go"],
+      "dimensions": {
+        "storageBackends": ["postgres"],
+        "testKinds": ["unit", "integration", "e2e"]
+      }
+    },
+    {
+      "id": "native-storage.mysql",
+      "category": "native-storage",
+      "title": "MySQL adapter against a real service",
+      "observableContracts": [{
+        "id": "mysql-adapter",
+        "assertions": [
+          "MySQL executes the native adapter contract against a real service with atomic guarded mutations.",
+          "MySQL values, identifiers, case-insensitive predicates, and update-returning emulation decode to canonical Go records."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "e2e/adapter/test/kysely-adapter/adapter.kysely.mysql.test.ts",
+        "cases": ["normalTestSuite()", "authFlowTestSuite()", "caseInsensitiveTestSuite({"]
+      }],
+      "status": "passing",
+      "productionRefs": ["storage/mysql/adapter.go", "storage/mysql/schema.go"],
+      "testRefs": ["storage/mysql/adapter_test.go", "e2e/mysql/mysql_test.go"],
+      "dimensions": {
+        "storageBackends": ["mysql"],
+        "testKinds": ["unit", "integration", "e2e"]
+      }
+    },
+    {
+      "id": "native-storage.mssql",
+      "category": "native-storage",
+      "title": "Microsoft SQL Server adapter against a real service",
+      "observableContracts": [{
+        "id": "mssql-adapter",
+        "assertions": [
+          "Microsoft SQL Server executes the native adapter contract against a real service with backend-native transactions.",
+          "SQL Server values, identifiers, predicates, and returned mutations decode to canonical Go records."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "e2e/adapter/test/kysely-adapter/adapter.kysely.mssql.test.ts",
+        "cases": ["normalTestSuite({", "authFlowTestSuite({ showDB })", "joinsTestSuite()"]
+      }],
+      "status": "passing",
+      "productionRefs": ["storage/mssql/adapter.go", "storage/mssql/schema.go"],
+      "testRefs": ["storage/mssql/adapter_test.go", "e2e/mssql/mssql_test.go"],
+      "dimensions": {
+        "storageBackends": ["mssql"],
+        "testKinds": ["unit", "integration", "e2e"]
+      }
+    },
+    {
+      "id": "native-storage.mongodb",
+      "category": "native-storage",
+      "title": "MongoDB adapter against a real service",
+      "observableContracts": [{
+        "id": "mongodb-adapter",
+        "assertions": [
+          "MongoDB executes the native adapter contract against a real service using canonical string IDs at the public boundary.",
+          "ObjectID references, joins, guarded mutations, and case-insensitive filters preserve record ownership and value types."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "e2e/adapter/test/mongo-adapter/adapter.mongo-db.test.ts",
+        "cases": ["update - after update, id or FK id fields should be ObjectID", "normalTestSuite()", "caseInsensitiveTestSuite()"]
+      }],
+      "status": "passing",
+      "productionRefs": ["storage/mongodb/adapter.go", "storage/mongodb/schema.go"],
+      "testRefs": ["storage/mongodb/adapter_test.go", "storage/mongodb/schema_test.go", "e2e/mongodb/mongodb_test.go"],
+      "dimensions": {
+        "storageBackends": ["mongodb"],
+        "testKinds": ["unit", "integration", "e2e"]
+      }
+    },
+    {
+      "id": "native-storage.redis",
+      "category": "native-storage",
+      "title": "Redis secondary storage against a real service",
+      "observableContracts": [{
+        "id": "redis-secondary-storage",
+        "assertions": [
+          "Redis get, set, delete, consume, increment, expiry, key listing, and clear operations preserve the secondary-storage contract.",
+          "Consume and increment operations remain atomic under concurrent access and Redis capability fallbacks."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/redis-storage/test/redis-storage.test.ts",
+        "cases": ["uses GETDEL when it is supported", "falls back to Lua when GETDEL is unavailable", "increments atomically and sets the ttl only on creation"]
+      }],
+      "status": "passing",
+      "productionRefs": ["storage/secondary/redis/redis.go", "storage/secondary/redis/scan.go"],
+      "testRefs": ["storage/secondary/redis/contract_test.go", "storage/secondary/redis/redis_storage_compatibility_test.go", "e2e/redis/redis_test.go"],
+      "dimensions": {
+        "storageBackends": ["redis"],
+        "testKinds": ["unit", "integration", "e2e"]
+      }
+    },
+    {
+      "id": "native-storage.schema-migrations",
+      "category": "native-storage",
+      "title": "Cross-backend relational schema inspection and migration planning",
+      "observableContracts": [{
+        "id": "schema-migration-lifecycle",
+        "assertions": [
+          "Schema inspection produces deterministic create, alter, index, and reference changes for each supported relational backend.",
+          "Applying an accepted migration plan and inspecting again yields no pending change for the covered lifecycle."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/db/get-migration-schema.test.ts",
+        "cases": ["should update default tables with plugin schema fields", "should execute runMigrations when adding a new table with indexed columns to an existing database", "should detect custom schema from search_path"]
+      }],
+      "status": "passing",
+      "notes": "SQLite adds references inline when adding a new column; metadata-only foreign-key addition to an existing SQLite column would require an intentionally out-of-scope table rebuild. PostgreSQL, MySQL, and MSSQL repair metadata-only indexes and foreign keys.",
+      "productionRefs": ["storage/migration/inspect.go", "storage/migration/planner.go", "storage/sqlite/reconcile.go", "storage/postgres/reconcile.go", "storage/mysql/reconcile.go", "storage/mssql/reconcile.go"],
+      "testRefs": ["storage/migration/upstream_compatibility_test.go", "storage/migration/native_dialects_test.go", "storage/migration/inspect_native_test.go", "e2e/sqlite/migration_test.go", "e2e/postgres/migration_compatibility_test.go", "e2e/mysql/migration_test.go", "e2e/mssql/migration_test.go"],
+      "dimensions": {
+        "storageBackends": ["sqlite", "postgres", "mysql", "mssql"],
+        "testKinds": ["unit", "integration", "e2e"]
+      }
+    },
+    {
+      "id": "protocols-plugins.plugin-host",
+      "category": "protocols-plugins",
+      "title": "Plugin registration, hooks, schemas, and trusted origins",
+      "observableContracts": [{
+        "id": "plugin-host-lifecycle",
+        "assertions": [
+          "Plugin endpoints, middleware, hooks, schema fragments, and error codes merge deterministically into one auth instance.",
+          "Ordered request hooks pass mutations forward and stop the chain when a hook returns a response."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/api/index.test.ts",
+        "cases": ["should execute all plugins onRequest handlers in chain", "should pass modified request from previous plugin to next plugin", "should stop chain when response is returned"]
+      }],
+      "status": "passing",
+      "productionRefs": ["core/plugin_factory.go", "core/engine/registry.go"],
+      "testRefs": ["core/plugin_factory_test.go", "core/engine/endpoint_middleware_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.oauth2-primitives",
+      "category": "protocols-plugins",
+      "title": "OAuth 2.0 requests, token refresh, redirect rejection, and token validation",
+      "observableContracts": [{
+        "id": "oauth2-client-primitives",
+        "assertions": [
+          "Authorization, token, userinfo, and refresh requests preserve OAuth parameters and reject unsafe redirects.",
+          "Token validation and state handling distinguish provider failures, invalid state, and internal failures without trusting malformed tokens."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/better-auth/src/social.test.ts",
+          "cases": ["should refresh the access token", "should be protected from callback URL attacks"]
+        },
+        {
+          "path": "packages/better-auth/src/oauth2/state.test.ts",
+          "cases": ["maps an unexpected (non-StateError) failure to internal_server_error", "prefers the recovered per-flow errorURL"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["protocol/oauth2/requests.go", "protocol/oauth2/validate_token.go", "protocol/oauth2/reject_redirects.go"],
+      "testRefs": ["protocol/oauth2/oauth2_test.go", "protocol/oauth2/refresh_access_token_compatibility_test.go", "protocol/oauth2/validate_token_compatibility_test.go"],
+      "dimensions": {
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.social-provider-registry",
+      "category": "protocols-plugins",
+      "title": "OAuth and OIDC social provider registry",
+      "observableContracts": [{
+        "id": "social-provider-contract",
+        "assertions": [
+          "Each supported provider exposes stable authorization, token, scope, and profile mapping behavior.",
+          "Provider callbacks enforce state, redirect, account-linking, and email-verification policy before creating a session."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/better-auth/src/social.test.ts",
+          "cases": ["should be able to add social providers", "should be able to sign in with social providers", "should be able to map profile to user"]
+        },
+        {
+          "path": "packages/core/src/social-providers/apple.test.ts",
+          "cases": ["sends a PKCE code challenge when a code verifier is provided", "accepts a hashed token nonce when the request provides the raw native iOS nonce", "rejects a mismatched nonce"]
+        },
+        {
+          "path": "packages/core/src/social-providers/facebook.test.ts",
+          "cases": ["accepts an opaque token bound to the configured app", "rejects an opaque token issued to a different app", "rejects when the profile id does not match the validated token"]
+        },
+        {
+          "path": "packages/core/src/social-providers/google.test.ts",
+          "cases": ["accepts a token whose hd claim matches the configured hd", "rejects a token missing the hd claim when hd is configured", "returns the user for any Workspace hd when hd is configured as a wildcard"]
+        },
+        {
+          "path": "packages/core/src/social-providers/microsoft-entra-id.test.ts",
+          "cases": ["rejects a consumer-tenant token when restricted to organizations", "accepts any tenant under common", "rejects a token whose issuer does not name its own tenant"]
+        },
+        {
+          "path": "packages/core/src/social-providers/paypal.test.ts",
+          "cases": ["returns user info when the id token subject matches the profile", "returns null when the id token subject does not match the profile"]
+        },
+        {
+          "path": "packages/core/src/social-providers/reddit.test.ts",
+          "cases": ["synthesizes a non-routable placeholder email and never trusts oauth_client_id", "lets mapProfileToUser supply a real email"]
+        },
+        {
+          "path": "packages/core/src/social-providers/wechat.test.ts",
+          "cases": ["synthesizes a non-routable placeholder email keyed to unionid", "returns null when the token carries no openid"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["protocol/providers/registry.go", "protocol/providers/oauth_providers.go", "protocol/providers/oidc_providers.go"],
+      "testRefs": ["protocol/providers/authorization_compatibility_test.go", "protocol/providers/token_exchange_compatibility_test.go", "protocol/providers/refresh_compatibility_test.go", "protocol/providers/profile_compatibility_test.go", "protocol/providers/provider_security_test.go", "protocol/providers/verify_compatibility_test.go"],
+      "dimensions": {
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.oauth-authorization-server",
+      "category": "protocols-plugins",
+      "title": "OAuth authorization-server metadata, consent, userinfo, and revocation",
+      "observableContracts": [{
+        "id": "oauth-server-surface",
+        "assertions": [
+          "Authorization-server metadata advertises only configured endpoints, scopes, claims, and client-registration support.",
+          "Authorization codes are single-use and token, userinfo, consent, refresh, and revocation operations enforce client and scope policy."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/oauth-provider/src/metadata.test.ts",
+          "cases": ["should serve authorization server metadata at the RFC 8414 path-insertion URL", "should advertise dynamic client registration from direct OAuth metadata when enabled"]
+        },
+        {
+          "path": "packages/oauth-provider/src/token.test.ts",
+          "cases": ["scope openid should provide access_token and id_token", "should exchange a PKCE authorization code when state is omitted", "rejects concurrent redemption of the same authorization code", "should refresh token with lesser scopes, opaque access token", "should not refresh token with more scopes", "should prevent replay attacks", "rejects concurrent rotation of the same refresh token", "allows client_credentials for a client registered for it"]
+        },
+        {
+          "path": "packages/oauth-provider/src/userinfo.test.ts",
+          "cases": ["should fail without the openid scope", "should pass provide all user information - opaque", "should pass provide all user information - jwt", "should pass provide scoped user information - email only"]
+        },
+        {
+          "path": "packages/oauth-provider/src/authorize.test.ts",
+          "cases": ["should return login_required when prompt=none and user is not logged in", "should authorize and include iss parameter", "should include iss parameter in error responses", "should return consent_required when prompt=none and consent is needed"]
+        },
+        {
+          "path": "packages/oauth-provider/src/register.test.ts",
+          "cases": ["should register private client with minimum requirements", "should create public clients without authentication", "should reject client_credentials grant for unauthenticated DCR", "should complete authorize + PKCE token exchange after override from client_secret_post"]
+        },
+        {
+          "path": "packages/oauth-provider/src/introspect.test.ts",
+          "cases": ["should fail unauthenticated request - no client_id or client_secret", "should pass with token_type_hint access_token and sent jwt access_token", "should pass with token_type_hint access_token and sent opaque access_token", "should pass with token_type_hint refresh_token and sent refresh_token"]
+        },
+        {
+          "path": "packages/oauth-provider/src/revoke.test.ts",
+          "cases": ["should fail unauthenticated request", "should pass verification with token_type_hint access_token and sent jwt access_token", "should pass verification with token_type_hint access_token and sent opaque access_token", "should pass verification with token_type_hint refresh_token and sent refresh_token"]
+        },
+        {
+          "path": "packages/oauth-provider/src/oauthClient/endpoints.test.ts",
+          "cases": ["should create clients with minimum requirements", "should get user's clients", "should rotate the client secret", "should delete the client"]
+        }
+      ],
+      "status": "passing",
+      "notes": "The full OAuth provider and the MCP authorization factory advertise only routes they own. Authorization-code exchange authenticates confidential and public clients before atomic code consumption, and refresh tokens enforce ownership, expiry, scope narrowing, atomic rotation, and replay rejection.",
+      "productionRefs": ["plugins/oauthprovider/server.go", "plugins/oauthprovider/authorize_server.go", "plugins/oauthprovider/client_lifecycle.go", "plugins/oauthprovider/introspect.go", "plugins/oauthprovider/revoke_issuer.go", "plugins/oauthprovider/metadata.go", "plugins/oauthprovider/consent.go", "plugins/oauthprovider/revoke.go", "plugins/oauthprovider/userinfo.go", "plugins/oauthprovider/mcp_authorization_server.go"],
+      "testRefs": ["plugins/oauthprovider/server_integration_test.go", "plugins/oauthprovider/server_transport_test.go", "plugins/oauthprovider/server_sqlite_test.go", "plugins/oauthprovider/metadata_compatibility_test.go", "plugins/oauthprovider/consent_compatibility_test.go", "plugins/oauthprovider/revoke_compatibility_test.go", "plugins/oauthprovider/mcp_compatibility_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.oidc-provider",
+      "category": "protocols-plugins",
+      "title": "OpenID Connect provider endpoints and security policy",
+      "observableContracts": [{
+        "id": "oidc-provider-surface",
+        "assertions": [
+          "OIDC discovery, authorization, consent, token, registration, userinfo, and logout endpoints share one issuer and client policy.",
+          "Redirect URI, prompt, PKCE, nonce, scope, and token redemption checks fail closed before credentials or sessions are issued."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/better-auth/src/plugins/oidc-provider/oidc.test.ts",
+          "cases": ["should create oidc client", "should sign in after a consent flow", "should sign in after a login flow", "should return login_required error when prompt=none and user not authenticated", "should return consent_required error when prompt=none and consent needed", "should force re-authentication when session age exceeds max_age", "should logout with post_logout_redirect_uri and state", "should return Bearer token_type in authorization_code token response", "rejects concurrent redemption of the same authorization code", "should reject refresh_token grant on confidential client with wrong client_secret", "/.well-known/openid-configuration must not advertise alg=none", "authorize must reject code_challenge_method=plain when allowPlainCodeChallengeMethod is false (default)"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/oidc-provider/redirect-uri.test.ts",
+          "cases": ["rejects javascript:, data:, and vbscript: redirect URIs at registration", "still accepts https and loopback http redirect URIs"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/oidc-provider/utils/prompt.test.ts",
+          "cases": ["should parse multiple prompt values", "should throw error when none is combined with other prompts", "should ignore invalid prompt values"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["plugins/oidcprovider/plugin.go", "plugins/oidcprovider/authorize.go", "plugins/oidcprovider/token.go", "plugins/oidcprovider/userinfo.go"],
+      "testRefs": ["plugins/oidcprovider/unit_suite_test.go", "plugins/oidcprovider/integration_test.go", "plugins/oidcprovider/authorization_security_test.go", "plugins/oidcprovider/token_security_test.go", "plugins/oidcprovider/registration_test.go", "plugins/oidcprovider/endsession_test.go", "plugins/oidcprovider/transport_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.saml",
+      "category": "protocols-plugins",
+      "title": "SAML requests, assertions, signatures, metadata, and response validation",
+      "observableContracts": [{
+        "id": "saml-protocol-validation",
+        "assertions": [
+          "SAML requests and metadata encode protocol identifiers, bindings, issuer, destination, and assertion-consumer URLs deterministically.",
+          "Response validation rejects invalid signatures, audiences, timestamps, replay, and assertion wrapping before exposing an identity."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/sso/src/saml.test.ts",
+        "cases": ["should produce a signature the IdP can verify", "rejects a SAML assertion whose audience does not match this SP", "should reject replayed SAML assertion on ACS endpoint", "should reject SAML response with XSW-style assertion injection in Extensions"]
+      }],
+      "status": "passing",
+      "productionRefs": ["protocol/saml/assertions.go", "protocol/saml/signature.go", "protocol/saml/response.go", "protocol/saml/validate.go"],
+      "testRefs": ["protocol/saml/assertions_test.go", "protocol/saml/signature_test.go", "protocol/saml/response_test.go", "protocol/saml/validate_test.go"],
+      "dimensions": {
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.sso",
+      "category": "protocols-plugins",
+      "title": "Enterprise SSO registration, OIDC/SAML lifecycle, and organization assignment",
+      "observableContracts": [{
+        "id": "enterprise-sso-lifecycle",
+        "assertions": [
+          "Registered and default SSO providers resolve by provider ID or normalized domain with explicit default-provider precedence.",
+          "Provider registration, domain verification, OIDC callbacks, SAML metadata, signed or encrypted assertion callbacks, single logout, and organization assignment enforce trust boundaries, replay protection, session ownership, and verified-domain policy."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/sso/src/saml.test.ts",
+          "cases": ["should use default SAML SSO provider from array when no provider found in database", "should initiate SAML login and handle response", "should generate LogoutRequest and redirect to IdP", "should process valid LogoutRequest and return LogoutResponse", "should process LogoutResponse and redirect to relayState"]
+        },
+        {
+          "path": "packages/sso/src/linking/org-assignment.test.ts",
+          "cases": ["should NOT assign user to org when provider domain is unverified", "should assign user when a verified provider's normalized domain set includes the email domain"]
+        },
+        {
+          "path": "packages/sso/src/providers.test.ts",
+          "cases": ["allows a non-colliding providerId", "rejects a providerId that collides with a default SSO provider"]
+        }
+      ],
+      "status": "passing",
+      "notes": "Native provider registration and default resolution, verified-domain organization assignment for SSO and ordinary social callbacks, OIDC discovery and callbacks, SAML metadata, signed and encrypted assertion callbacks, session records, configured callback error redirects, and SP-/IdP-initiated Single Logout are covered across all transports. Provider/domain verification and a concurrent encrypted SAML callback, organization, replay, session-index, and Single Logout lifecycle are also exercised on migrated SQLite.",
+      "productionRefs": ["plugins/sso/plugin.go", "plugins/sso/providers.go", "plugins/sso/register.go", "plugins/sso/domain_verification.go", "plugins/sso/org_assignment.go", "plugins/sso/oidc_discovery.go", "plugins/sso/oidc_callback.go", "plugins/sso/saml_metadata.go", "plugins/sso/saml_callback.go", "plugins/sso/saml_session.go", "plugins/sso/saml_slo.go", "protocol/saml/encryption.go", "protocol/saml/logout.go"],
+      "testRefs": ["plugins/sso/org_assignment_compatibility_test.go", "plugins/sso/org_assignment_cases_test.go", "plugins/sso/oidc_org_assignment_test.go", "plugins/sso/oidc_discovery_test.go", "plugins/sso/saml_metadata_internal_test.go", "integrationtest/sso_management_test.go", "integrationtest/sso_oidc_test.go", "integrationtest/sso_social_callback_assignment_test.go", "integrationtest/sso_sqlite_saml_lifecycle_test.go", "integrationtest/saml_registered_provider_test.go", "integrationtest/saml_metadata_test.go", "integrationtest/saml_callback_test.go", "integrationtest/saml_encrypted_callback_test.go", "integrationtest/saml_slo_test.go", "protocol/saml/encryption_test.go", "protocol/saml/logout_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.webauthn",
+      "category": "protocols-plugins",
+      "title": "WebAuthn registration and authentication verification",
+      "observableContracts": [{
+        "id": "webauthn-verification",
+        "assertions": [
+          "Registration verification binds challenge, origin, relying party, credential key, sign count, and user identity.",
+          "Authentication verification rejects replayed or cross-ceremony challenges and invalid assertions before returning a user."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/passkey/src/passkey.test.ts",
+        "cases": ["should verify passkey authentication and return user", "rejects a registration that reuses an authentication challenge in pre-auth mode", "rejects an authentication that reuses a registration challenge"]
+      }],
+      "status": "passing",
+      "productionRefs": ["protocol/webauthn/verify_registration.go", "protocol/webauthn/verify_authentication.go", "protocol/webauthn/attestation.go"],
+      "testRefs": ["protocol/webauthn/compatibility_test.go", "protocol/webauthn/cose_test.go"],
+      "dimensions": {
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.passkey",
+      "category": "protocols-plugins",
+      "title": "Passkey registration, authentication, credential CRUD, and transport adapters",
+      "observableContracts": [{
+        "id": "passkey-lifecycle",
+        "assertions": [
+          "Passkey option and verification endpoints consume one scoped challenge and create at most one credential or session.",
+          "Credential list, rename, and delete operations are limited to the authenticated owner across supported HTTP transports."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/passkey/src/passkey.test.ts",
+        "cases": ["should list user passkeys", "should update a passkey", "should not allow deleting another user's passkey", "should register at most one passkey under concurrent verification of the same challenge"]
+      }],
+      "status": "passing",
+      "productionRefs": ["plugins/passkey/plugin.go", "plugins/passkey/handlers.go", "plugins/passkey/challenge.go"],
+      "testRefs": ["plugins/passkey/integration_test.go", "plugins/passkey/registration_test.go", "plugins/passkey/authentication_test.go", "plugins/passkey/transport_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.scim",
+      "category": "protocols-plugins",
+      "title": "SCIM user management, filtering, pagination, and PATCH",
+      "observableContracts": [{
+        "id": "scim-user-management",
+        "assertions": [
+          "SCIM bearer authentication scopes user CRUD, filtering, pagination, and PATCH to the owning provider and organization.",
+          "SCIM responses preserve resource schemas, list totals, error status, and patch-operation semantics."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/scim/src/scim-users.test.ts",
+          "cases": ["should return the list of users", "should filter the list of users", "should only allow access to users that belong to the same provider and organization"]
+        },
+        {
+          "path": "packages/scim/src/scim-patch.test.ts",
+          "cases": ["should partially update a user resource with mixed operations"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["plugins/scim/plugin.go", "plugins/scim/users.go", "plugins/scim/management.go", "plugins/scim/patch.go"],
+      "testRefs": ["plugins/scim/scim_users_http_compatibility_test.go", "plugins/scim/management_http_compatibility_test.go", "plugins/scim/scim_patch_compatibility_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.api-key",
+      "category": "protocols-plugins",
+      "title": "API key creation, verification, update, listing, rate limits, and organization ownership",
+      "observableContracts": [{
+        "id": "api-key-lifecycle",
+        "assertions": [
+          "API keys are returned in plaintext only at creation and later verified through the configured hash and prefix policy.",
+          "Update, list, revoke, expiration, rate-limit, and organization operations enforce key and actor ownership atomically."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/api-key/src/api-key.test.ts",
+          "cases": ["should successfully create API keys from client with headers", "should respect rateLimit configuration from plugin options"]
+        },
+        {
+          "path": "packages/api-key/src/org-api-key.test.ts",
+          "cases": ["organization owner should have full CRUD access to API keys"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["plugins/apikey/plugin.go", "plugins/apikey/service.go", "plugins/apikey/authorization.go"],
+      "testRefs": ["plugins/apikey/create_api_key_compatibility_test.go", "plugins/apikey/verify_update_get_list_compatibility_test.go", "plugins/apikey/org_api_key_compatibility_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.organization",
+      "category": "protocols-plugins",
+      "title": "Organizations, members, roles, permissions, and lifecycle hooks",
+      "observableContracts": [{
+        "id": "organization-lifecycle",
+        "assertions": [
+          "Organization CRUD, membership, role, permission, invitation, and active-organization operations enforce tenant boundaries.",
+          "Hooks and invitation acceptance preserve atomic membership state under rejection, expiry, replay, and concurrent acceptance."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/better-auth/src/plugins/organization/organization.test.ts",
+          "cases": ["create organization", "should check if organization slug is available"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/organization/routes/crud-invites.test.ts",
+          "cases": ["accepts an invitation by ID from an unverified matching session by default", "marks an invitation rejected by ID from an unverified matching session by default"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/organization/team.test.ts",
+          "cases": ["should create an organization and a team", "should be able to list team members in the current active team", "should not be able to remove the last team when allowRemovingAllTeams is not enabled", "should reject teams outside the active organization and preserve the active team", "rejects add-team-member once the team is at capacity"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/organization/routes/crud-access-control.test.ts",
+          "cases": ["should successfully create a new role", "should not be allowed to create a role without the right ac resource permissions", "should not be allowed to create a role with higher permissions than the current role", "should not be allowed to create a role which is either predefined or already exists in DB", "should delete a role by id", "should not be allowed to delete a role that is assigned to members", "should list roles", "should get a role by name", "should update a role's permission by id", "should not allow member to update roles without proper permissions (privilege escalation test)", "should properly identify the correct member when checking permissions", "should not allow cross-organization privilege escalation"]
+        }
+      ],
+      "status": "passing",
+      "notes": "Schema-defined organization fields are validated on create/update, persisted without overriding canonical fields, filtered by input/return policy, and flattened into typed and wire responses including nested members.",
+      "productionRefs": ["plugins/organization/plugin.go", "plugins/organization/crud_org.go", "plugins/organization/core_org_members.go", "plugins/organization/invitations.go", "plugins/organization/teams.go", "plugins/organization/members.go", "plugins/organization/authorization.go", "plugins/organization/access_control.go", "plugins/organization/permissions.go", "plugins/organization/additional_fields.go", "plugins/organization/json.go"],
+      "testRefs": ["plugins/organization/crud_org_compatibility_test.go", "plugins/organization/authorization_compatibility_test.go", "plugins/organization/organization_hook_compatibility_test.go", "plugins/organization/core_org_member_transport_test.go", "plugins/organization/invitation_transport_test.go", "plugins/organization/teams_transport_test.go", "plugins/organization/teams_internal_test.go", "plugins/organization/access_control_transport_test.go", "plugins/organization/access_control_internal_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.admin",
+      "category": "protocols-plugins",
+      "title": "Administrative users, sessions, permissions, and impersonation",
+      "observableContracts": [{
+        "id": "admin-control-plane",
+        "assertions": [
+          "Administrative user, role, ban, session, and impersonation operations require the matching permission and reject self-harm cases.",
+          "Impersonation and ban transitions issue or revoke only the intended sessions and remain auditable through stable responses."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/plugins/admin/admin.test.ts",
+        "cases": ["should allow to ban user", "should allow admins to impersonate user", "should not allow non-admin to revoke user sessions", "should allow to combine search and filter", "should not allow admins to ban themselves via update-user", "should reject privileged calls from a demoted admin holding a cached admin snapshot", "should require user:set-role to assign roles via create-user", "should return BANNED_USER 403 JSON for id-token sign-in by banned user"]
+      }, {
+        "path": "packages/better-auth/src/plugins/admin/admin-username.test.ts",
+        "cases": ["should normalize username when creating user via admin endpoint", "should reject duplicate username when creating user via admin endpoint"]
+      }, {
+        "path": "packages/better-auth/src/plugins/haveibeenpwned/haveibeenpwned.test.ts",
+        "cases": ["should reject a compromised password on /admin/create-user", "should reject a compromised password on /admin/set-user-password"]
+      }],
+      "status": "passing",
+      "productionRefs": ["plugins/admin/plugin.go", "plugins/admin/users.go", "plugins/admin/sessions.go", "plugins/admin/permission.go"],
+      "testRefs": ["plugins/admin/plugin_test.go", "plugins/admin/integration_test.go", "plugins/admin/compatibility_test.go", "plugins/admin/access_integration_test.go", "plugins/admin/security_concurrency_test.go", "plugins/admin/secondary_storage_test.go", "plugins/admin/social_integration_test.go", "plugins/admin/username_integration_test.go", "plugins/admin/hibp_integration_test.go", "plugins/admin/transport_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite", "redis"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.two-factor",
+      "category": "protocols-plugins",
+      "title": "TOTP, OTP, backup codes, trust cookies, and two-factor enrollment",
+      "observableContracts": [{
+        "id": "two-factor-lifecycle",
+        "assertions": [
+          "Two-factor enrollment does not become active until a valid factor is confirmed and recovery material is issued safely.",
+          "TOTP, OTP, backup-code, trust-cookie, attempt-limit, and recovery flows consume secrets atomically and preserve session policy."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/better-auth/src/plugins/two-factor/two-factor.test.ts",
+          "cases": ["should return uri and backup codes and shouldn't enable twoFactor yet", "should enable twoFactor", "should allow sign in with backup code"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/two-factor/two-factor.account-lockout.test.ts",
+          "cases": ["locks the account after failures accumulate across separate challenges", "resets the counter on a successful verification"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/two-factor/two-factor.security.test.ts",
+          "cases": ["two concurrent verifications of the same challenge yield exactly one session", "concurrent correct codes mint at most one session"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["plugins/twofactor/plugin.go", "plugins/twofactor/enrollment.go", "plugins/twofactor/verification.go", "plugins/twofactor/factors.go"],
+      "testRefs": ["plugins/twofactor/behavior_test.go", "plugins/twofactor/integration_test.go", "plugins/twofactor/security_test.go", "plugins/twofactor/trust_test.go", "plugins/twofactor/transport_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.openapi",
+      "category": "protocols-plugins",
+      "title": "OpenAPI 3.1 document generation for core and plugin routes",
+      "observableContracts": [{
+        "id": "openapi-document",
+        "assertions": [
+          "The generated OpenAPI document describes registered core and plugin paths, methods, parameters, bodies, responses, and security schemes.",
+          "Model and additional-field schemas preserve required, optional, read-only, nested, enum, and generated-default semantics."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/plugins/open-api/open-api.test.ts",
+        "cases": ["should generate OpenAPI schema", "should mark model id fields as required and read-only", "should include additionalFields on sign-up and update-user request bodies", "should emit unique operationIds across multi-method endpoints", "should infer path parameters for routes with dynamic segments", "should serialize the generated schema without circular response refs", "should include request bodies for all email OTP POST endpoints", "should preserve nullable object intersections when merging schemas", "should not evaluate request body default factories"]
+      }],
+      "status": "passing",
+      "productionRefs": ["plugins/openapi/plugin.go", "plugins/openapi/generator.go", "plugins/openapi/catalog.go"],
+      "testRefs": ["plugins/openapi/integration_test.go", "plugins/openapi/snapshot_test.go", "plugins/openapi/transport_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.device-authorization",
+      "category": "protocols-plugins",
+      "title": "OAuth device authorization and verification flow",
+      "observableContracts": [{
+        "id": "device-authorization-flow",
+        "assertions": [
+          "Device and user codes bind client, scope, interval, expiry, and claiming session before approval or denial.",
+          "Concurrent polling redeems an approved device code at most once and reports pending, slow-down, denied, expired, and invalid states distinctly."
+        ]
+      }],
+      "upstreamRefs": [{
+        "path": "packages/better-auth/src/plugins/device-authorization/device-authorization.test.ts",
+        "cases": ["should generate device and user codes", "should enforce rate limiting with slow_down error", "should redeem an approved device code at most once under concurrent polling", "rejects approve from a session that did not claim the pending code", "allows approve when the same session called verify first", "does not overwrite a device code claimed after verify reads it", "should use custom code generators", "should return default /device verification URIs when not configured", "should properly encode user_code in verification_uri_complete"]
+      }],
+      "status": "passing",
+      "productionRefs": ["plugins/deviceauthorization/plugin.go", "plugins/deviceauthorization/handlers.go"],
+      "testRefs": ["plugins/deviceauthorization/integration_test.go", "plugins/deviceauthorization/concurrency_test.go", "plugins/deviceauthorization/transport_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.jwt",
+      "category": "protocols-plugins",
+      "title": "JWT issuance, verification, JWKS, and key rotation",
+      "observableContracts": [{
+        "id": "jwt-key-lifecycle",
+        "assertions": [
+          "JWT issuance and verification enforce configured issuer, audience, subject, lifetime, algorithm, and claim policy.",
+          "JWKS publication and rotation keep active verification keys available while rejecting unknown or invalid signatures."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/better-auth/src/plugins/jwt/jwt.test.ts",
+          "cases": ["Get JWKS", "Signed tokens can be validated with the JWKS", "should set subject to user id by default"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/jwt/rotation.test.ts",
+          "cases": ["should rotate keys when expired"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["plugins/jwt/plugin.go", "plugins/jwt/sign.go", "plugins/jwt/verify.go", "plugins/jwt/keys.go"],
+      "testRefs": ["plugins/jwt/integration_test.go", "plugins/jwt/rotation_test.go", "plugins/jwt/crypto_test.go"],
+      "dimensions": {
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    },
+    {
+      "id": "protocols-plugins.remaining-server-plugins",
+      "category": "protocols-plugins",
+      "title": "Remaining Go-native Better Auth server plugins",
+      "observableContracts": [{
+        "id": "remaining-plugin-surface",
+        "assertions": [
+          "Each included server plugin exposes its endpoint, schema, middleware, callback, and error behavior through the native plugin host.",
+          "Bearer, captcha, email OTP, magic link, MCP, phone, SIWE, username, and related flows preserve authentication and single-use-token security boundaries."
+        ]
+      }],
+      "upstreamRefs": [
+        {
+          "path": "packages/better-auth/src/plugins/bearer/bearer.test.ts",
+          "cases": ["should get session"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/captcha/captcha.test.ts",
+          "cases": ["Should return 400 if no captcha token is found in the request headers"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/email-otp/email-otp.test.ts",
+          "cases": ["should sign-in with otp"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/magic-link/magic-link.test.ts",
+          "cases": ["shouldn't verify magic link with the same token"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/mcp/mcp.test.ts",
+          "cases": ["should expose OAuth discovery metadata"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/username/username.test.ts",
+          "cases": ["should sign-in with username"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/custom-session/custom-session.test.ts",
+          "cases": ["should return the session", "should not comma-join Set-Cookie headers"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/one-time-token/one-time-token.test.ts",
+          "cases": ["should only redeem a token once under concurrent verification"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/phone-number/phone-number.test.ts",
+          "cases": ["should verify phone number", "shouldn't verify again with the same code"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/siwe/siwe.test.ts",
+          "cases": ["should generate a valid nonce for a valid public key", "should reject verification with invalid signature"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/anonymous/anon.test.ts",
+          "cases": ["should sign in anonymously", "link anonymous user account"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/multi-session/multi-session.test.ts",
+          "cases": ["should list all device sessions", "should revoke a session and set the next active"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/last-login-method/last-login-method.test.ts",
+          "cases": ["should set the last login method cookie", "should NOT set the last login method cookie on failed authentication"]
+        },
+        {
+          "path": "packages/better-auth/src/plugins/haveibeenpwned/haveibeenpwned.test.ts",
+          "cases": ["should prevent account creation with compromised password", "should reject a compromised password on /phone-number/reset-password"]
+        }
+      ],
+      "status": "passing",
+      "productionRefs": ["plugins/bearer/plugin.go", "plugins/captcha/plugin.go", "plugins/customsession/plugin.go", "plugins/emailotp/plugin.go", "plugins/magiclink/plugin.go", "plugins/mcp/plugin.go", "plugins/onetimetoken/plugin.go", "plugins/phonenumber/plugin.go", "plugins/siwe/plugin.go", "plugins/anonymous/plugin.go", "plugins/multisession/plugin.go", "plugins/lastloginmethod/plugin.go", "plugins/haveibeenpwned/plugin.go", "plugins/username/plugin.go"],
+      "testRefs": ["plugins/bearer/integration_test.go", "plugins/captcha/integration_test.go", "plugins/customsession/integration_test.go", "plugins/emailotp/integration_test.go", "plugins/magiclink/integration_test.go", "plugins/mcp/integration_test.go", "plugins/onetimetoken/plugin_test.go", "plugins/phonenumber/integration_test.go", "plugins/siwe/integration_test.go", "plugins/anonymous/integration_test.go", "plugins/multisession/integration_test.go", "plugins/lastloginmethod/integration_test.go", "plugins/haveibeenpwned/integration_test.go", "plugins/username/integration_test.go"],
+      "dimensions": {
+        "transports": ["net/http", "fasthttp", "fiber"],
+        "storageBackends": ["memory", "sqlite"],
+        "testKinds": ["unit", "integration"]
+      }
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "native-go-client",
+      "title": "Native Go client",
+      "reason": "The native typed and raw Go HTTP clients were deliberately removed; applications use the JavaScript clients, direct Go API, or ordinary HTTP routes.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    },
+    {
+      "id": "javascript-client",
+      "title": "JavaScript client",
+      "reason": "The separately tested clients/ package is an ecosystem artifact and is intentionally not counted as a native Go capability.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    },
+    {
+      "id": "javascript-framework-integrations",
+      "title": "JavaScript framework integrations",
+      "reason": "React, Next.js, Vue, and Solid ship from the separately tested clients/ package; other framework integrations remain deferred and none are counted in the native Go graph.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    },
+    {
+      "id": "typescript-compile-contracts",
+      "title": "TypeScript compiler and declaration contracts",
+      "reason": "TypeScript inference and diagnostic behavior has no direct Go runtime equivalent.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    },
+    {
+      "id": "javascript-runtime-matrix",
+      "title": "JavaScript runtime matrix",
+      "reason": "The clients/ package has its own Bun gates; Node.js, Deno, Cloudflare Workers, Vite, esbuild, and Playwright matrices are not native Go capabilities.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    },
+    {
+      "id": "typescript-orm-adapters",
+      "title": "TypeScript ORM adapters",
+      "reason": "Drizzle, Prisma, and Kysely are replaced by native Go storage adapters and shared storage contracts.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    },
+    {
+      "id": "billing-and-payment-integrations",
+      "title": "Billing and payment integrations",
+      "reason": "Stripe, Polar billing, Creem, Dodo Payments, Autumn, and related billing plugins were explicitly removed from scope.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    },
+    {
+      "id": "polar-oauth-provider",
+      "title": "Polar OAuth provider",
+      "reason": "The provider was explicitly removed from the supported provider registry.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    },
+    {
+      "id": "product-cli",
+      "title": "Product command-line interface",
+      "reason": "The application CLI was explicitly removed; developer-only Go conformance commands are not shipped as product API.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    },
+    {
+      "id": "anonymous-product-telemetry",
+      "title": "Anonymous product telemetry",
+      "reason": "The standalone telemetry publisher and its configuration surface were explicitly removed; tracing instrumentation and application logging remain supported.",
+      "decisionRef": "docs/project/implementation-plan.md"
+    }
+  ]
+}

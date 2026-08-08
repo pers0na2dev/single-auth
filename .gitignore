@@ -1,0 +1,10 @@
+# Read-only local reference snapshot and compatibility scratch space.
+better-auth-main/*
+compat/*
+
+# The Go module does not vendor JavaScript runtimes or macOS metadata.
+node_modules/
+clients/dist/
+clients/coverage/
+clients/*.tsbuildinfo
+.DS_Store

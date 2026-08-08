@@ -1,0 +1,1269 @@
+{
+  "accepted": true,
+  "expectedCount": 36,
+  "upstreamFiles": [
+    "packages/api-key/src/api-key.test.ts"
+  ],
+  "updates": [
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::verify API key without key and userId",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::verify API key without key and userId"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::verify API key with invalid key (should fail)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::verify API key with invalid key (should fail)"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to verify API key 20 times in a row due to rate-limit",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to verify API key 20 times in a row due to rate-limit"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should allow us to verify API key after rate-limit window has passed",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should allow us to verify API key after rate-limit window has passed"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should return 429 when API key rate limit is exceeded via before hook",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should return 429 when API key rate limit is exceeded via before hook"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should check if verifying an API key's remaining count does go down",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should check if verifying an API key's remaining count does go down"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail if the API key has no remaining",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail if the API key has no remaining"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail if the API key is expired",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail if the API key is expired"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to update API key name without headers or userId",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to update API key name without headers or userId"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should update API key name with headers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should update API key name with headers"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to update API key name with a length larger than the allowed maximum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to update API key name with a length larger than the allowed maximum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to update API key name with a length smaller than the allowed minimum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to update API key name with a length smaller than the allowed minimum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to update API key with no values to update",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to update API key with no values to update"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should update API key expiresIn value",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should update API key expiresIn value"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to update expiresIn value if `disableCustomExpiresTime` is enabled",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to update expiresIn value if `disableCustomExpiresTime` is enabled"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to update expiresIn value if it's smaller than the allowed minimum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to update expiresIn value if it's smaller than the allowed minimum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to update expiresIn value if it's larger than the allowed maximum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to update expiresIn value if it's larger than the allowed maximum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should update API key remaining count",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should update API key remaining count"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail update the refillInterval value since it requires refillAmount as well",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail update the refillInterval value since it requires refillAmount as well"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail update the refillAmount value since it requires refillInterval as well",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail update the refillAmount value since it requires refillInterval as well"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should update the refillInterval and refillAmount value",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should update the refillInterval and refillAmount value"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should update API key enable value",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should update API key enable value"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to update metadata with invalid metadata type",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to update metadata with invalid metadata type"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should update metadata with valid metadata type",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should update metadata with valid metadata type"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::update API key's returned metadata should be an object",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::update API key's returned metadata should be an object"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should not modify lastRequest when updating API key configuration",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should not modify lastRequest when updating API key configuration"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should not auto-decrement remaining when updating API key",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should not auto-decrement remaining when updating API key"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should allow explicit remaining updates via body parameter",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should allow explicit remaining updates via body parameter"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::verifyApiKey should still update lastRequest",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::verifyApiKey should still update lastRequest"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::verifyApiKey should still decrement remaining",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::verifyApiKey should still decrement remaining"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should get an API key by id",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should get an API key by id"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to get an API key by ID that doesn't exist",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to get an API key by ID that doesn't exist"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should successfully receive an object metadata from an API key",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should successfully receive an object metadata from an API key"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to list API keys without headers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should fail to list API keys without headers"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should list API keys with headers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should list API keys with headers"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should list API keys with metadata as an object",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/verify_update_get_list_compatibility_test.go::TestBetterAuthAPIKeyVerifyUpdateGetListExactCompatibility/api-key::should list API keys with metadata as an object"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-verify-update-get-list-oracle.json",
+        "plugins/apikey/testdata/generate-verify-update-get-list-oracle.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/.gitignore",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/package.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/tsconfig.json",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.ts",
+        "plugins/apikey/testdata/verify-update-get-list-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "real-time-waits-to-a-shared-monotonic-test-clock"
+      ],
+      "divergenceRef": null
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Getting started",
+  "icon": "Rocket",
+  "pagesIndex": "index",
+  "pages": [
+    "installation",
+    "quickstart",
+    "verified-examples",
+    "architecture",
+    "configuration",
+    "production-checklist",
+    "project-status"
+  ]
+}

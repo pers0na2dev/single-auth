@@ -1,0 +1,13 @@
+{
+  "title": "Protocols",
+  "icon": "Waypoints",
+  "pagesIndex": "index",
+  "pages": [
+    "oauth2-client-primitives",
+    "oauth-and-oidc-server",
+    "saml",
+    "webauthn",
+    "scim",
+    "security-boundaries"
+  ]
+}

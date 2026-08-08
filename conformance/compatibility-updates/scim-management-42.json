@@ -1,0 +1,1267 @@
+{
+	"accepted": true,
+	"expectedCount": 42,
+	"upstreamFiles": ["packages/scim/src/scim.management.test.ts"],
+	"updates": [
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > GET /scim/get-provider-connection::should deny access to non-org provider when user is not the owner",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > GET /scim/get-provider-connection::should deny access to non-org provider when user is not the owner"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > GET /scim/get-provider-connection::should return 403 when provider belongs to another org",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > GET /scim/get-provider-connection::should return 403 when provider belongs to another org"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > GET /scim/get-provider-connection::should return 403 when token creator was removed from org (org membership required)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > GET /scim/get-provider-connection::should return 403 when token creator was removed from org (org membership required)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > GET /scim/get-provider-connection::should return 404 for unknown providerId",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > GET /scim/get-provider-connection::should return 404 for unknown providerId"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > GET /scim/get-provider-connection::should return own non-org provider",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > GET /scim/get-provider-connection::should return own non-org provider"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > GET /scim/get-provider-connection::should return provider details when user is org member",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > GET /scim/get-provider-connection::should return provider details when user is org member"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > GET /scim/list-provider-connections::should return empty list when user is not in any org",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > GET /scim/list-provider-connections::should return empty list when user is not in any org"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > GET /scim/list-provider-connections::should return org-scoped providers for orgs the user is a member of",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > GET /scim/list-provider-connections::should return org-scoped providers for orgs the user is a member of"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > GET /scim/list-provider-connections::should return owned non-org providers in list for the owner",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > GET /scim/list-provider-connections::should return owned non-org providers in list for the owner"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/delete-provider-connection::should delete org-scoped provider and invalidate token when user is org member",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/delete-provider-connection::should delete org-scoped provider and invalidate token when user is org member"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/delete-provider-connection::should deny delete of non-org provider when user is not the owner",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/delete-provider-connection::should deny delete of non-org provider when user is not the owner"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/delete-provider-connection::should return 403 when provider belongs to another org",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/delete-provider-connection::should return 403 when provider belongs to another org"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/delete-provider-connection::should return 404 for unknown providerId",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/delete-provider-connection::should return 404 for unknown providerId"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::prevents SSO provider registration with an existing SCIM providerId",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::prevents SSO provider registration with an existing SCIM providerId"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::rejects a SCIM token whose secret does not match the stored value",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::rejects a SCIM token whose secret does not match the stored value"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with SSO providers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with SSO providers"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with built-in account providers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with built-in account providers"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with configured generic OAuth providers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with configured generic OAuth providers"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with configured social providers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with configured social providers"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with default SSO providers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::rejects providerId values that collide with default SSO providers"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should allow token creation when canGenerateToken returns true (member is null for personal)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should allow token creation when canGenerateToken returns true (member is null for personal)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should deny personal token creation when canGenerateToken returns false",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should deny personal token creation when canGenerateToken returns false"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should deny regenerate when provider belongs to another org",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should deny regenerate when provider belongs to another org"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should deny regenerate when user is not the owner of a personal provider",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should deny regenerate when user is not the owner of a personal provider"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should execute hooks after SCIM token generation",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should execute hooks after SCIM token generation"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should execute hooks before SCIM token generation",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should execute hooks before SCIM token generation"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should fail if the authenticated user does not belong to the given org",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should fail if the authenticated user does not belong to the given org"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should fail to generate a SCIM token on invalid provider",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should fail to generate a SCIM token on invalid provider"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should generate a new scim token (client)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should generate a new scim token (client)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should generate a new scim token (custom encryption)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should generate a new scim token (custom encryption)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should generate a new scim token (custom hash)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should generate a new scim token (custom hash)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should generate a new scim token (encrypted)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should generate a new scim token (encrypted)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should generate a new scim token (hashed)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should generate a new scim token (hashed)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should generate a new scim token (plain)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should generate a new scim token (plain)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should generate a new scim token associated to an org",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should generate a new scim token associated to an org"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > POST /scim/generate-token::should require user session",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > POST /scim/generate-token::should require user session"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > role-based authorization::should allow org provider access for members with multiple roles",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > role-based authorization::should allow org provider access for members with multiple roles"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > role-based authorization::should allow org-scoped token generation for an admin",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > role-based authorization::should allow org-scoped token generation for an admin"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > role-based authorization::should default to the organization creator role when it is customized",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > role-based authorization::should default to the organization creator role when it is customized"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > role-based authorization::should deny org-scoped token generation for a regular member",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > role-based authorization::should deny org-scoped token generation for a regular member"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > role-based authorization::should filter org providers by role in list endpoint",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > role-based authorization::should filter org providers by role in list endpoint"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim.management.test.ts::SCIM provider management > role-based authorization::should respect custom requiredRole configuration",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/management_http_compatibility_test.go::TestBetterAuthSCIMManagementExactHTTPCompatibility/SCIM provider management > role-based authorization::should respect custom requiredRole configuration"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-management-oracle.json",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/management.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-tokens-and-timestamps-to-stable-semantic-assertions",
+        "better-auth-memory-organization-helpers-to-equivalent-go-memory-fixture-records",
+        "typescript-token-storage-union-to-go-typed-token-storage-configuration"
+      ],
+      "divergenceRef": null
+    }
+  ]
+}

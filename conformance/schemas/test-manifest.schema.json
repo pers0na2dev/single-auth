@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://single-auth.local/schemas/test-manifest.schema.json",
+  "title": "Better Auth expanded runtime test manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedFromTreeHash", "collection", "coverage", "counts", "tests"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "generatedFromTreeHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "vitestVersion", "playwrightVersion", "profiles"],
+      "properties": {
+        "kind": { "enum": ["awaiting-runtime-collection", "vitest-playwright-node-test-runtime"] },
+        "vitestVersion": { "type": ["string", "null"] },
+        "playwrightVersion": { "type": ["string", "null"] },
+        "profiles": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["testFilesExpected", "testFilesCollected", "missingFiles"],
+      "properties": {
+        "testFilesExpected": { "type": "integer", "minimum": 0 },
+        "testFilesCollected": { "type": "integer", "minimum": 0 },
+        "missingFiles": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tests", "run", "skip", "todo"],
+      "properties": {
+        "tests": { "type": "integer", "minimum": 0 },
+        "run": { "type": "integer", "minimum": 0 },
+        "skip": { "type": "integer", "minimum": 0 },
+        "todo": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "file", "suite", "title", "state", "reason", "category", "ownerPhase", "runner", "profiles"],
+        "properties": {
+          "id": { "type": "string" },
+          "file": { "type": "string" },
+          "suite": { "type": "string" },
+          "title": { "type": "string" },
+          "state": { "enum": ["run", "skip", "todo"] },
+          "reason": { "type": ["string", "null"] },
+          "category": { "enum": ["unit", "direct-api", "http", "storage", "browser", "compile-time", "runtime-package-smoke"] },
+          "ownerPhase": { "type": "integer", "minimum": 1, "maximum": 10 },
+          "runner": { "enum": ["vitest", "playwright", "node-test"] },
+          "profiles": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "single-auth",
+  "pages": [
+    "index",
+    "getting-started",
+    "javascript-client",
+    "guides",
+    "transports",
+    "core",
+    "storage",
+    "social-providers",
+    "plugins",
+    "protocols",
+    "reference"
+  ]
+}

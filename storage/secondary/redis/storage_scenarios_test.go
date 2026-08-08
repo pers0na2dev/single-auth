@@ -1,0 +1,14 @@
+package redis
+
+var redisStorageScenarios = []redisStorageCase{
+	{Title: "clears every prefixed key by paging through SCAN", Observation: map[string]any{"resolved": true, "scanCalls": []any{[]any{"0", "MATCH", "ba:*", "COUNT", float64(100)}, []any{"42", "MATCH", "ba:*", "COUNT", float64(100)}}, "delCalls": []any{[]any{"ba:session:1"}, []any{"ba:rate:1"}}, "keysCalls": float64(0)}},
+	{Title: "does not call DEL when clearing an empty store", Observation: map[string]any{"resolved": true, "scanCalls": []any{[]any{"0", "MATCH", "ba:*", "COUNT", float64(100)}}, "delCalls": []any{}}},
+	{Title: "escapes glob metacharacters in the prefix so SCAN matches it literally", Observation: map[string]any{"scanCalls": []any{[]any{"0", "MATCH", "ba\\[1\\]:*", "COUNT", float64(100)}}}},
+	{Title: "falls back to Lua when GETDEL is unavailable", Observation: map[string]any{"results": []any{"stored-value", "stored-value"}, "callCalls": []any{[]any{"GETDEL", "ba:verification-key"}}, "evalCalls": []any{map[string]any{"numKeys": float64(1), "key": "ba:verification-key", "script": map[string]any{"get": true, "del": true, "incr": false, "equalsOne": false, "expire": false}}, map[string]any{"numKeys": float64(1), "key": "ba:other-verification-key", "script": map[string]any{"get": true, "del": true, "incr": false, "equalsOne": false, "expire": false}}}}},
+	{Title: "increments atomically and sets the ttl only on creation", Observation: map[string]any{"results": []any{float64(1), float64(2), float64(3)}, "ttl": float64(60), "evalCallCount": float64(3), "firstEval": map[string]any{"numKeys": float64(1), "key": "ba:rate:1", "ttl": float64(60), "script": map[string]any{"get": false, "del": false, "incr": true, "equalsOne": true, "expire": true}}}},
+	{Title: "lists keys via SCAN, stripping the prefix and deduping across pages", Observation: map[string]any{"result": []any{"rate:1", "session:1", "session:2"}, "scanCalls": []any{[]any{"0", "MATCH", "ba:*", "COUNT", float64(100)}, []any{"7", "MATCH", "ba:*", "COUNT", float64(100)}}, "keysCalls": float64(0)}},
+	{Title: "only sets the ttl on the call that creates the key", Observation: map[string]any{"results": []any{float64(1), float64(2)}, "evalCallCount": float64(2), "firstScript": map[string]any{"get": false, "del": false, "incr": true, "equalsOne": true, "expire": true}}},
+	{Title: "propagates a mid-iteration failure, leaving earlier pages deleted", Observation: map[string]any{"error": "READONLY You can't write against a read only replica.", "delCalls": []any{[]any{"ba:session:1"}, []any{"ba:session:2"}}}},
+	{Title: "rethrows GETDEL errors that are not unknown-command errors", Observation: map[string]any{"error": "Authentication required", "sameError": true, "evalCalls": float64(0)}},
+	{Title: "uses GETDEL when it is supported", Observation: map[string]any{"result": "stored-value", "callCalls": []any{[]any{"GETDEL", "ba:verification-key"}}, "evalCalls": []any{}}},
+}

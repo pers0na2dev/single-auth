@@ -1,0 +1,11 @@
+if (!db.getCollectionNames().includes("rateLimit")) { db.createCollection("rateLimit"); }
+db.getCollection("rateLimit").createIndex({ "key": 1 }, { name: "single_rateLimit_key_idx", unique: true });
+if (!db.getCollectionNames().includes("user")) { db.createCollection("user"); }
+db.getCollection("user").createIndex({ "email": 1 }, { name: "single_user_email_idx", unique: true });
+if (!db.getCollectionNames().includes("session")) { db.createCollection("session"); }
+db.getCollection("session").createIndex({ "token": 1 }, { name: "single_session_token_idx", unique: true });
+db.getCollection("session").createIndex({ "userId": 1 }, { name: "single_session_userId_idx" });
+if (!db.getCollectionNames().includes("account")) { db.createCollection("account"); }
+db.getCollection("account").createIndex({ "userId": 1 }, { name: "single_account_userId_idx" });
+if (!db.getCollectionNames().includes("verification")) { db.createCollection("verification"); }
+db.getCollection("verification").createIndex({ "identifier": 1 }, { name: "single_verification_identifier_idx" });

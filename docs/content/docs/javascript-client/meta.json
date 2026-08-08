@@ -1,0 +1,6 @@
+{
+  "title": "JavaScript clients",
+  "icon": "PanelsTopLeft",
+  "pagesIndex": "index",
+  "pages": ["react", "next-js", "vue", "solid"]
+}

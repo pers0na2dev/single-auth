@@ -1,0 +1,16 @@
+{
+  "title": "Core",
+  "icon": "ShieldCheck",
+  "pagesIndex": "index",
+  "pages": [
+    "runtime-and-transactions",
+    "email-and-password",
+    "sessions",
+    "users-and-email",
+    "accounts-and-social",
+    "hooks-and-middleware",
+    "security",
+    "errors-and-logging",
+    "typed-models"
+  ]
+}

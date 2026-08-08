@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://single-auth.local/schemas/inventory.schema.json",
+  "title": "Better Auth source inventory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedFromTreeHash", "packages", "providers", "plugins", "cliCommands", "docsFeatures", "testFiles", "testCollection", "counts"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "generatedFromTreeHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "version", "path", "private", "exports", "bins"],
+        "properties": {
+          "name": { "type": "string" },
+          "version": { "type": "string" },
+          "path": { "type": "string" },
+          "private": { "type": "boolean" },
+          "exports": { "type": "array" },
+          "bins": { "type": "array" }
+        }
+      }
+    },
+    "providers": { "type": "array", "items": { "type": "object", "required": ["id", "factory", "source"] } },
+    "plugins": { "type": "array", "items": { "type": "object", "required": ["id", "kind", "source", "public"] } },
+    "cliCommands": { "type": "array", "items": { "type": "object", "required": ["name", "source"] } },
+    "docsFeatures": { "type": "array", "items": { "type": "object", "required": ["path", "slug", "title"] } },
+    "testFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "path", "category", "ownerPhase", "runner", "sourceSha256"],
+        "properties": {
+          "id": { "type": "string" },
+          "path": { "type": "string" },
+          "category": { "enum": ["unit", "direct-api", "http", "storage", "browser", "compile-time", "runtime-package-smoke"] },
+          "ownerPhase": { "type": "integer", "minimum": 1, "maximum": 10 },
+          "runner": { "enum": ["vitest", "playwright", "node-test"] },
+          "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "testCollection": {
+      "type": "object",
+      "required": ["vitestConfigs", "playwrightConfigs"],
+      "properties": {
+        "vitestConfigs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "playwrightConfigs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "counts": { "type": "object" }
+  }
+}

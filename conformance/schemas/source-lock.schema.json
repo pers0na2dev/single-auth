@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://single-auth.local/schemas/source-lock.schema.json",
+  "title": "single-auth frozen upstream source lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "upstream", "tree", "license", "port"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "upstream": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "packageVersion", "repository", "commit", "snapshotPath", "snapshotKind"],
+      "properties": {
+        "name": { "const": "Better Auth" },
+        "packageVersion": { "type": "string" },
+        "repository": { "type": "string" },
+        "commit": { "type": ["string", "null"] },
+        "snapshotPath": { "type": "string" },
+        "snapshotKind": { "type": "string" }
+      }
+    },
+    "tree": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "hash", "fileCount", "excluded", "locale"],
+      "properties": {
+        "algorithm": { "const": "sha256-of-sorted-shasum-lines-v1" },
+        "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "fileCount": { "type": "integer", "minimum": 1 },
+        "excluded": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "locale": { "const": "C" }
+      }
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spdx", "file", "sha256", "copyright"],
+      "properties": {
+        "spdx": { "const": "MIT" },
+        "file": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "copyright": { "type": "string" }
+      }
+    },
+    "port": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["distributionName", "goModulePath", "goPackageName", "compatibilityPolicy"],
+      "properties": {
+        "distributionName": { "const": "single-auth" },
+        "goModulePath": { "type": "string" },
+        "goPackageName": { "const": "singleauth" },
+        "compatibilityPolicy": { "type": "string" }
+      }
+    }
+  }
+}

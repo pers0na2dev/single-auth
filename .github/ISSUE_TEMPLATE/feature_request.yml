@@ -1,0 +1,89 @@
+name: Feature request
+description: Propose an applicable server or supported client capability.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `single-auth` ports observable server behavior to Go and ships browser, React, Next.js, Vue, and Solid clients. A native Go HTTP client, other JavaScript frameworks, CLI, billing integrations, extra JavaScript runtimes, and JavaScript ORM compatibility are outside the current milestone.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues, plans, and the capability map for this request.
+          required: true
+        - label: The request is applicable to the native Go server or a shipped browser/React/Next.js/Vue/Solid client.
+          required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Request type
+      options:
+        - Missing Better Auth observable behavior applicable to Go
+        - Public Go API improvement
+        - Transport behavior
+        - Native storage adapter or migration behavior
+        - Server plugin or protocol capability
+        - Browser or framework client capability
+        - Architecture or maintainability improvement
+        - Documentation improvement
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the concrete use case or compatibility gap, not only the desired implementation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Proposed observable behavior
+      description: What should callers send or configure, and what result should they observe?
+    validations:
+      required: true
+
+  - type: textarea
+    id: upstream
+    attributes:
+      label: Upstream evidence
+      description: If this is a porting request, cite the Better Auth 1.6.26 package, endpoint, or test behavior. Do not paste large copyrighted source excerpts.
+
+  - type: textarea
+    id: api
+    attributes:
+      label: Suggested Go API
+      description: Optional. Explain package placement and exported types if you have a proposal.
+      render: go
+
+  - type: checkboxes
+    id: matrix
+    attributes:
+      label: Applicable verification
+      description: Select the surfaces that should prove the behavior.
+      options:
+        - label: net/http
+        - label: direct fasthttp
+        - label: Fiber
+        - label: Direct server API
+        - label: Memory or SQLite
+        - label: Testcontainers-backed storage
+        - label: Replay, concurrency, or rollback cases
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe current workarounds or a narrower API that could solve the use case.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add related capability IDs, diagrams, or links.

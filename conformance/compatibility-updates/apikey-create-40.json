@@ -1,0 +1,1447 @@
+{
+	"accepted": true,
+	"expectedCount": 40,
+	"upstreamFiles": ["packages/api-key/src/api-key.test.ts"],
+	"updates": [
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::create API key with with metadata when metadata is disabled (should fail)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::create API key with with metadata when metadata is disabled (should fail)"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::create API key's returned metadata should be an object",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::create API key's returned metadata should be an object"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create an API key with a custom expiresIn",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create an API key with a custom expiresIn"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create an API key with an expiresIn that's smaller than the allowed minimum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create an API key with an expiresIn that's smaller than the allowed minimum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create an API key with default permissions",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create an API key with default permissions"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create an API key with permissions",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create an API key with permissions"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create API Key with custom remaining",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create API Key with custom remaining"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create API key with invalid metadata",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create API key with invalid metadata"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create API Key with remaining explicitly set to 0 and refillAmount also set",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create API Key with remaining explicitly set to 0 and refillAmount also set"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create API Key with remaining explicitly set to null",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create API Key with remaining explicitly set to null"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create API Key with remaining explicitly set to null and refillAmount and refillInterval are also set",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create API Key with remaining explicitly set to null and refillAmount and refillInterval are also set"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create API Key with remaining undefined and default value of null is respected with refillAmount and refillInterval provided",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create API Key with remaining undefined and default value of null is respected with refillAmount and refillInterval provided"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create API key with valid metadata",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create API key with valid metadata"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create the API key with a name that's longer than the allowed maximum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create the API key with a name that's longer than the allowed maximum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create the API key with a name that's shorter than the allowed minimum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create the API key with a name that's shorter than the allowed minimum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create the API key with a prefix that's longer than the allowed maximum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create the API key with a prefix that's longer than the allowed maximum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create the API key with a prefix that's shorter than the allowed minimum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create the API key with a prefix that's shorter than the allowed minimum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create the API key with the given name",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create the API key with the given name"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create the API key with the given prefix",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create the API key with the given prefix"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should create the API key with the given refill interval & refill amount",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should create the API key with the given refill interval & refill amount"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to create a key with a custom expiresIn value when customExpiresTime is disabled",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should fail to create a key with a custom expiresIn value when customExpiresTime is disabled"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to create an API key with an expiresIn that's larger than the allowed maximum",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should fail to create an API key with an expiresIn that's larger than the allowed maximum"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to create API key when refill amount is provided, but no refill interval",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should fail to create API key when refill amount is provided, but no refill interval"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to create API key when refill interval is provided, but no refill amount",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should fail to create API key when refill interval is provided, but no refill amount"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to create API key with custom rate-limit options from client auth",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should fail to create API key with custom rate-limit options from client auth"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to create API key with custom refillAndAmount from client auth",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should fail to create API key with custom refillAndAmount from client auth"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to create API keys from client without headers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should fail to create API keys from client without headers"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to create API Keys from server without headers and userId",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should fail to create API Keys from server without headers and userId"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should fail to create api keys from the client if user id is provided",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should fail to create api keys from the client if user id is provided"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should have the first 6 characters of the key as the start property",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should have the first 6 characters of the key as the start property"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should have the real value from rateLimitEnabled",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should have the real value from rateLimitEnabled"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should have the start property as null if shouldStore is false",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should have the start property as null if shouldStore is false"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should have true if the rate limit is undefined",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should have true if the rate limit is undefined"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should require name in API keys if configured",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should require name in API keys if configured"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should respect rateLimit configuration from plugin options",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should respect rateLimit configuration from plugin options"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should successfully apply custom rate-limit options on the newly created API key",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should successfully apply custom rate-limit options on the newly created API key"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should successfully create API keys from client with headers",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should successfully create API keys from client with headers"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should successfully create API keys from server with userId",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should successfully create API keys from server with userId"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should support disabling key hashing",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should support disabling key hashing"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/api-key/src/api-key.test.ts::api-key::should use the defined charactersLength if provided",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/apikey/create_api_key_compatibility_test.go::TestBetterAuthCreateAPIKeyExactRuntimeCompatibility/api-key::should use the defined charactersLength if provided"
+      },
+      "fixtures": [
+        "plugins/apikey/testdata/better-auth-1.6.26-create-api-key-oracle.json",
+        "plugins/apikey/testdata/generate-create-api-key-oracle.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/.gitignore",
+        "plugins/apikey/testdata/create-api-key-runtime/package.json",
+        "plugins/apikey/testdata/create-api-key-runtime/bun.lock",
+        "plugins/apikey/testdata/create-api-key-runtime/tsconfig.json",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.vitest.config.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.ts",
+        "plugins/apikey/testdata/create-api-key-runtime/runtime.test.ts",
+        "plugins/apikey/testdata/org-api-key-runtime/create-upstream.vitest.config.ts",
+        "e2e/cmd/apikey-create-upstream/main.go"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "sqlite"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "typescript-auth-client-result-envelope-to-go-http-status-and-json-body",
+        "better-auth-test-sqlite-to-single-auth-sqlite-adapter",
+        "random-ids-credentials-and-timestamps-to-stable-semantic-observations",
+        "typescript-optional-and-null-body-fields-to-go-pointers-and-json-null"
+      ],
+      "divergenceRef": null
+    }
+  ]
+}

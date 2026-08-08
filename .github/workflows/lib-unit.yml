@@ -1,0 +1,32 @@
+name: Lib Unit
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lib-unit
+  cancel-in-progress: true
+
+jobs:
+  lib-unit:
+    name: Lib Unit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out frozen source and Go port
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: |
+            go.sum
+
+      - name: Run unit tests
+        run: go test ./... -count=1 -timeout=15m -v

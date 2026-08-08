@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://single-auth.local/schemas/compatibility-map.schema.json",
+  "title": "Better Auth to single-auth compatibility map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedFromTreeHash", "generatedFromManifestKind", "entries"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "generatedFromTreeHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "generatedFromManifestKind": { "enum": ["awaiting-runtime-collection", "vitest-playwright-node-test-runtime"] },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["upstreamTestId", "upstream", "category", "ownerPhase", "implementation", "fixtures", "profiles", "transports", "storageBackends", "status", "normalizationRules", "divergenceRef"],
+        "properties": {
+          "upstreamTestId": { "type": "string" },
+          "upstream": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["file", "suite", "title", "state"],
+            "properties": {
+              "file": { "type": "string" },
+              "suite": { "type": "string" },
+              "title": { "type": "string" },
+              "state": { "enum": ["run", "skip", "todo"] }
+            }
+          },
+          "category": { "enum": ["unit", "direct-api", "http", "storage", "browser", "compile-time", "runtime-package-smoke"] },
+          "ownerPhase": { "type": "integer", "minimum": 1, "maximum": 10 },
+          "implementation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "ref"],
+            "properties": {
+              "kind": { "enum": ["unassigned", "go-test", "differential-scenario", "compat-js", "not-applicable"] },
+              "ref": { "type": ["string", "null"] }
+            }
+          },
+          "fixtures": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+          "profiles": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+          "transports": { "type": "array", "items": { "enum": ["net/http", "fasthttp", "fiber"] }, "uniqueItems": true },
+          "storageBackends": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+          "status": { "enum": ["unimplemented", "in-progress", "passing", "blocked", "not-applicable"] },
+          "normalizationRules": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "fields", "rationale"],
+              "properties": {
+                "id": { "type": "string" },
+                "fields": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                "rationale": { "type": "string", "minLength": 1 }
+              }
+            }
+          },
+          "divergenceRef": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

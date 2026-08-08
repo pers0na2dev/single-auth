@@ -1,0 +1,4484 @@
+{
+  "$schema": "./schemas/inventory.schema.json",
+  "schemaVersion": 1,
+  "generatedFromTreeHash": "01f179b28c2de406e22388ec175234c6ae437bf437a8e8c34a8b3bfb51330521",
+  "packages": [
+    {
+      "name": "@better-auth/api-key",
+      "version": "1.6.26",
+      "path": "packages/api-key",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client.ts",
+            "types": "./dist/client.d.mts",
+            "default": "./dist/client.mjs"
+          }
+        },
+        {
+          "subpath": "./types",
+          "target": {
+            "dev-source": "./src/types.ts",
+            "types": "./dist/types.d.mts",
+            "default": "./dist/types.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "better-auth",
+      "version": "1.6.26",
+      "path": "packages/better-auth",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./adapters",
+          "target": {
+            "dev-source": "./src/adapters/index.ts",
+            "types": "./dist/adapters/index.d.mts",
+            "default": "./dist/adapters/index.mjs"
+          }
+        },
+        {
+          "subpath": "./adapters/drizzle",
+          "target": {
+            "dev-source": "./src/adapters/drizzle-adapter/index.ts",
+            "types": "./dist/adapters/drizzle-adapter/index.d.mts",
+            "default": "./dist/adapters/drizzle-adapter/index.mjs"
+          }
+        },
+        {
+          "subpath": "./adapters/memory",
+          "target": {
+            "dev-source": "./src/adapters/memory-adapter/index.ts",
+            "types": "./dist/adapters/memory-adapter/index.d.mts",
+            "default": "./dist/adapters/memory-adapter/index.mjs"
+          }
+        },
+        {
+          "subpath": "./adapters/mongodb",
+          "target": {
+            "dev-source": "./src/adapters/mongodb-adapter/index.ts",
+            "types": "./dist/adapters/mongodb-adapter/index.d.mts",
+            "default": "./dist/adapters/mongodb-adapter/index.mjs"
+          }
+        },
+        {
+          "subpath": "./adapters/prisma",
+          "target": {
+            "dev-source": "./src/adapters/prisma-adapter/index.ts",
+            "types": "./dist/adapters/prisma-adapter/index.d.mts",
+            "default": "./dist/adapters/prisma-adapter/index.mjs"
+          }
+        },
+        {
+          "subpath": "./api",
+          "target": {
+            "dev-source": "./src/api/index.ts",
+            "types": "./dist/api/index.d.mts",
+            "default": "./dist/api/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client/index.ts",
+            "types": "./dist/client/index.d.mts",
+            "default": "./dist/client/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client/plugins",
+          "target": {
+            "dev-source": "./src/client/plugins/index.ts",
+            "types": "./dist/client/plugins/index.d.mts",
+            "default": "./dist/client/plugins/index.mjs"
+          }
+        },
+        {
+          "subpath": "./cookies",
+          "target": {
+            "dev-source": "./src/cookies/index.ts",
+            "types": "./dist/cookies/index.d.mts",
+            "default": "./dist/cookies/index.mjs"
+          }
+        },
+        {
+          "subpath": "./crypto",
+          "target": {
+            "dev-source": "./src/crypto/index.ts",
+            "types": "./dist/crypto/index.d.mts",
+            "default": "./dist/crypto/index.mjs"
+          }
+        },
+        {
+          "subpath": "./db",
+          "target": {
+            "dev-source": "./src/db/index.ts",
+            "types": "./dist/db/index.d.mts",
+            "default": "./dist/db/index.mjs"
+          }
+        },
+        {
+          "subpath": "./db/adapter",
+          "target": {
+            "dev-source": "./src/db/adapter-kysely.ts",
+            "types": "./dist/db/adapter-kysely.d.mts",
+            "default": "./dist/db/adapter-kysely.mjs"
+          }
+        },
+        {
+          "subpath": "./db/adapter/minimal",
+          "target": {
+            "dev-source": "./src/db/adapter-base.ts",
+            "types": "./dist/db/adapter-base.d.mts",
+            "default": "./dist/db/adapter-base.mjs"
+          }
+        },
+        {
+          "subpath": "./db/migration",
+          "target": {
+            "dev-source": "./src/db/get-migration.ts",
+            "types": "./dist/db/get-migration.d.mts",
+            "default": "./dist/db/get-migration.mjs"
+          }
+        },
+        {
+          "subpath": "./lynx",
+          "target": {
+            "dev-source": "./src/client/lynx/index.ts",
+            "types": "./dist/client/lynx/index.d.mts",
+            "default": "./dist/client/lynx/index.mjs"
+          }
+        },
+        {
+          "subpath": "./minimal",
+          "target": {
+            "dev-source": "./src/auth/minimal.ts",
+            "types": "./dist/auth/minimal.d.mts",
+            "default": "./dist/auth/minimal.mjs"
+          }
+        },
+        {
+          "subpath": "./next-js",
+          "target": {
+            "dev-source": "./src/integrations/next-js.ts",
+            "types": "./dist/integrations/next-js.d.mts",
+            "default": "./dist/integrations/next-js.mjs"
+          }
+        },
+        {
+          "subpath": "./node",
+          "target": {
+            "dev-source": "./src/integrations/node.ts",
+            "types": "./dist/integrations/node.d.mts",
+            "default": "./dist/integrations/node.mjs"
+          }
+        },
+        {
+          "subpath": "./oauth2",
+          "target": {
+            "dev-source": "./src/oauth2/index.ts",
+            "types": "./dist/oauth2/index.d.mts",
+            "default": "./dist/oauth2/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins",
+          "target": {
+            "dev-source": "./src/plugins/index.ts",
+            "types": "./dist/plugins/index.d.mts",
+            "default": "./dist/plugins/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/access",
+          "target": {
+            "dev-source": "./src/plugins/access/index.ts",
+            "types": "./dist/plugins/access/index.d.mts",
+            "default": "./dist/plugins/access/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/admin",
+          "target": {
+            "dev-source": "./src/plugins/admin/index.ts",
+            "types": "./dist/plugins/admin/index.d.mts",
+            "default": "./dist/plugins/admin/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/admin/access",
+          "target": {
+            "dev-source": "./src/plugins/admin/access/index.ts",
+            "types": "./dist/plugins/admin/access/index.d.mts",
+            "default": "./dist/plugins/admin/access/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/anonymous",
+          "target": {
+            "dev-source": "./src/plugins/anonymous/index.ts",
+            "types": "./dist/plugins/anonymous/index.d.mts",
+            "default": "./dist/plugins/anonymous/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/bearer",
+          "target": {
+            "dev-source": "./src/plugins/bearer/index.ts",
+            "types": "./dist/plugins/bearer/index.d.mts",
+            "default": "./dist/plugins/bearer/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/custom-session",
+          "target": {
+            "dev-source": "./src/plugins/custom-session/index.ts",
+            "types": "./dist/plugins/custom-session/index.d.mts",
+            "default": "./dist/plugins/custom-session/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/device-authorization",
+          "target": {
+            "dev-source": "./src/plugins/device-authorization/index.ts",
+            "types": "./dist/plugins/device-authorization/index.d.mts",
+            "default": "./dist/plugins/device-authorization/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/email-otp",
+          "target": {
+            "dev-source": "./src/plugins/email-otp/index.ts",
+            "types": "./dist/plugins/email-otp/index.d.mts",
+            "default": "./dist/plugins/email-otp/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/generic-oauth",
+          "target": {
+            "dev-source": "./src/plugins/generic-oauth/index.ts",
+            "types": "./dist/plugins/generic-oauth/index.d.mts",
+            "default": "./dist/plugins/generic-oauth/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/haveibeenpwned",
+          "target": {
+            "dev-source": "./src/plugins/haveibeenpwned/index.ts",
+            "types": "./dist/plugins/haveibeenpwned/index.d.mts",
+            "default": "./dist/plugins/haveibeenpwned/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/jwt",
+          "target": {
+            "dev-source": "./src/plugins/jwt/index.ts",
+            "types": "./dist/plugins/jwt/index.d.mts",
+            "default": "./dist/plugins/jwt/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/magic-link",
+          "target": {
+            "dev-source": "./src/plugins/magic-link/index.ts",
+            "types": "./dist/plugins/magic-link/index.d.mts",
+            "default": "./dist/plugins/magic-link/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/mcp/client",
+          "target": {
+            "dev-source": "./src/plugins/mcp/client/index.ts",
+            "types": "./dist/plugins/mcp/client/index.d.mts",
+            "default": "./dist/plugins/mcp/client/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/mcp/client/adapters",
+          "target": {
+            "dev-source": "./src/plugins/mcp/client/adapters.ts",
+            "types": "./dist/plugins/mcp/client/adapters.d.mts",
+            "default": "./dist/plugins/mcp/client/adapters.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/multi-session",
+          "target": {
+            "dev-source": "./src/plugins/multi-session/index.ts",
+            "types": "./dist/plugins/multi-session/index.d.mts",
+            "default": "./dist/plugins/multi-session/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/oauth-proxy",
+          "target": {
+            "dev-source": "./src/plugins/oauth-proxy/index.ts",
+            "types": "./dist/plugins/oauth-proxy/index.d.mts",
+            "default": "./dist/plugins/oauth-proxy/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/oidc-provider",
+          "target": {
+            "dev-source": "./src/plugins/oidc-provider/index.ts",
+            "types": "./dist/plugins/oidc-provider/index.d.mts",
+            "default": "./dist/plugins/oidc-provider/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/one-time-token",
+          "target": {
+            "dev-source": "./src/plugins/one-time-token/index.ts",
+            "types": "./dist/plugins/one-time-token/index.d.mts",
+            "default": "./dist/plugins/one-time-token/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/organization",
+          "target": {
+            "dev-source": "./src/plugins/organization/index.ts",
+            "types": "./dist/plugins/organization/index.d.mts",
+            "default": "./dist/plugins/organization/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/organization/access",
+          "target": {
+            "dev-source": "./src/plugins/organization/access/index.ts",
+            "types": "./dist/plugins/organization/access/index.d.mts",
+            "default": "./dist/plugins/organization/access/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/phone-number",
+          "target": {
+            "dev-source": "./src/plugins/phone-number/index.ts",
+            "types": "./dist/plugins/phone-number/index.d.mts",
+            "default": "./dist/plugins/phone-number/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/siwe",
+          "target": {
+            "dev-source": "./src/plugins/siwe/index.ts",
+            "types": "./dist/plugins/siwe/index.d.mts",
+            "default": "./dist/plugins/siwe/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/two-factor",
+          "target": {
+            "dev-source": "./src/plugins/two-factor/index.ts",
+            "types": "./dist/plugins/two-factor/index.d.mts",
+            "default": "./dist/plugins/two-factor/index.mjs"
+          }
+        },
+        {
+          "subpath": "./plugins/username",
+          "target": {
+            "dev-source": "./src/plugins/username/index.ts",
+            "types": "./dist/plugins/username/index.d.mts",
+            "default": "./dist/plugins/username/index.mjs"
+          }
+        },
+        {
+          "subpath": "./react",
+          "target": {
+            "dev-source": "./src/client/react/index.ts",
+            "types": "./dist/client/react/index.d.mts",
+            "default": "./dist/client/react/index.mjs"
+          }
+        },
+        {
+          "subpath": "./social-providers",
+          "target": {
+            "dev-source": "./src/social-providers/index.ts",
+            "types": "./dist/social-providers/index.d.mts",
+            "default": "./dist/social-providers/index.mjs"
+          }
+        },
+        {
+          "subpath": "./solid",
+          "target": {
+            "dev-source": "./src/client/solid/index.ts",
+            "types": "./dist/client/solid/index.d.mts",
+            "default": "./dist/client/solid/index.mjs"
+          }
+        },
+        {
+          "subpath": "./solid-start",
+          "target": {
+            "dev-source": "./src/integrations/solid-start.ts",
+            "types": "./dist/integrations/solid-start.d.mts",
+            "default": "./dist/integrations/solid-start.mjs"
+          }
+        },
+        {
+          "subpath": "./svelte",
+          "target": {
+            "dev-source": "./src/client/svelte/index.ts",
+            "types": "./dist/client/svelte/index.d.mts",
+            "default": "./dist/client/svelte/index.mjs"
+          }
+        },
+        {
+          "subpath": "./svelte-kit",
+          "target": {
+            "dev-source": "./src/integrations/svelte-kit.ts",
+            "types": "./dist/integrations/svelte-kit.d.mts",
+            "default": "./dist/integrations/svelte-kit.mjs"
+          }
+        },
+        {
+          "subpath": "./tanstack-start",
+          "target": {
+            "dev-source": "./src/integrations/tanstack-start.ts",
+            "types": "./dist/integrations/tanstack-start.d.mts",
+            "default": "./dist/integrations/tanstack-start.mjs"
+          }
+        },
+        {
+          "subpath": "./tanstack-start/solid",
+          "target": {
+            "dev-source": "./src/integrations/tanstack-start-solid.ts",
+            "types": "./dist/integrations/tanstack-start-solid.d.mts",
+            "default": "./dist/integrations/tanstack-start-solid.mjs"
+          }
+        },
+        {
+          "subpath": "./test",
+          "target": {
+            "dev-source": "./src/test-utils/index.ts",
+            "types": "./dist/test-utils/index.d.mts",
+            "default": "./dist/test-utils/index.mjs"
+          }
+        },
+        {
+          "subpath": "./types",
+          "target": {
+            "dev-source": "./src/types/index.ts",
+            "types": "./dist/types/index.d.mts",
+            "default": "./dist/types/index.mjs"
+          }
+        },
+        {
+          "subpath": "./vue",
+          "target": {
+            "dev-source": "./src/client/vue/index.ts",
+            "types": "./dist/client/vue/index.d.mts",
+            "default": "./dist/client/vue/index.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "auth",
+      "version": "1.6.26",
+      "path": "packages/cli",
+      "private": false,
+      "exports": [
+        {
+          "subpath": "./api",
+          "target": {
+            "types": "./dist/api.d.mts",
+            "default": "./dist/api.mjs"
+          }
+        }
+      ],
+      "bins": [
+        {
+          "name": "auth",
+          "target": "./dist/index.mjs"
+        },
+        {
+          "name": "better-auth",
+          "target": "./dist/index.mjs"
+        }
+      ]
+    },
+    {
+      "name": "@better-auth/core",
+      "version": "1.6.26",
+      "path": "packages/core",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./api",
+          "target": {
+            "dev-source": "./src/api/index.ts",
+            "types": "./dist/api/index.d.mts",
+            "default": "./dist/api/index.mjs"
+          }
+        },
+        {
+          "subpath": "./async_hooks",
+          "target": {
+            "dev-source": "./src/async_hooks/index.ts",
+            "types": "./dist/async_hooks/index.d.mts",
+            "node": "./dist/async_hooks/index.mjs",
+            "deno": "./dist/async_hooks/index.mjs",
+            "bun": "./dist/async_hooks/index.mjs",
+            "edge": "./dist/async_hooks/pure.index.mjs",
+            "workerd": "./dist/async_hooks/index.mjs",
+            "browser": "./dist/async_hooks/pure.index.mjs",
+            "default": "./dist/async_hooks/index.mjs"
+          }
+        },
+        {
+          "subpath": "./context",
+          "target": {
+            "dev-source": "./src/context/index.ts",
+            "types": "./dist/context/index.d.mts",
+            "default": "./dist/context/index.mjs"
+          }
+        },
+        {
+          "subpath": "./db",
+          "target": {
+            "dev-source": "./src/db/index.ts",
+            "types": "./dist/db/index.d.mts",
+            "default": "./dist/db/index.mjs"
+          }
+        },
+        {
+          "subpath": "./db/adapter",
+          "target": {
+            "dev-source": "./src/db/adapter/index.ts",
+            "types": "./dist/db/adapter/index.d.mts",
+            "default": "./dist/db/adapter/index.mjs"
+          }
+        },
+        {
+          "subpath": "./env",
+          "target": {
+            "dev-source": "./src/env/index.ts",
+            "types": "./dist/env/index.d.mts",
+            "default": "./dist/env/index.mjs"
+          }
+        },
+        {
+          "subpath": "./error",
+          "target": {
+            "dev-source": "./src/error/index.ts",
+            "types": "./dist/error/index.d.mts",
+            "default": "./dist/error/index.mjs"
+          }
+        },
+        {
+          "subpath": "./instrumentation",
+          "target": {
+            "dev-source": "./src/instrumentation/index.ts",
+            "types": "./dist/instrumentation/index.d.mts",
+            "workerd": "./dist/instrumentation/pure.index.mjs",
+            "edge": "./dist/instrumentation/pure.index.mjs",
+            "browser": "./dist/instrumentation/pure.index.mjs",
+            "node": "./dist/instrumentation/index.mjs",
+            "deno": "./dist/instrumentation/index.mjs",
+            "bun": "./dist/instrumentation/index.mjs",
+            "import": "./dist/instrumentation/index.mjs",
+            "default": "./dist/instrumentation/index.mjs"
+          }
+        },
+        {
+          "subpath": "./oauth2",
+          "target": {
+            "dev-source": "./src/oauth2/index.ts",
+            "types": "./dist/oauth2/index.d.mts",
+            "default": "./dist/oauth2/index.mjs"
+          }
+        },
+        {
+          "subpath": "./social-providers",
+          "target": {
+            "dev-source": "./src/social-providers/index.ts",
+            "types": "./dist/social-providers/index.d.mts",
+            "default": "./dist/social-providers/index.mjs"
+          }
+        },
+        {
+          "subpath": "./utils/*",
+          "target": {
+            "dev-source": "./src/utils/*.ts",
+            "types": "./dist/utils/*.d.mts",
+            "default": "./dist/utils/*.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/drizzle-adapter",
+      "version": "1.6.26",
+      "path": "packages/drizzle-adapter",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/electron",
+      "version": "1.6.26",
+      "path": "packages/electron",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client.ts",
+            "types": "./dist/client.d.mts",
+            "default": "./dist/client.mjs"
+          }
+        },
+        {
+          "subpath": "./preload",
+          "target": {
+            "dev-source": "./src/preload.ts",
+            "types": "./dist/preload.d.mts",
+            "default": "./dist/preload.mjs"
+          }
+        },
+        {
+          "subpath": "./proxy",
+          "target": {
+            "dev-source": "./src/proxy.ts",
+            "types": "./dist/proxy.d.mts",
+            "default": "./dist/proxy.mjs"
+          }
+        },
+        {
+          "subpath": "./storage",
+          "target": {
+            "dev-source": "./src/storage.ts",
+            "types": "./dist/storage.d.mts",
+            "default": "./dist/storage.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/expo",
+      "version": "1.6.26",
+      "path": "packages/expo",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client.ts",
+            "types": "./dist/client.d.ts",
+            "default": "./dist/client.js"
+          }
+        },
+        {
+          "subpath": "./plugins",
+          "target": {
+            "dev-source": "./src/plugins/index.ts",
+            "types": "./dist/plugins/index.d.ts",
+            "default": "./dist/plugins/index.js"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/i18n",
+      "version": "1.6.26",
+      "path": "packages/i18n",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client.ts",
+            "types": "./dist/client.d.mts",
+            "default": "./dist/client.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/kysely-adapter",
+      "version": "1.6.26",
+      "path": "packages/kysely-adapter",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./node-sqlite-dialect",
+          "target": {
+            "dev-source": "./src/node-sqlite-dialect.ts",
+            "types": "./dist/node-sqlite-dialect.d.mts",
+            "default": "./dist/node-sqlite-dialect.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/memory-adapter",
+      "version": "1.6.26",
+      "path": "packages/memory-adapter",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/mongo-adapter",
+      "version": "1.6.26",
+      "path": "packages/mongo-adapter",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/oauth-provider",
+      "version": "1.6.26",
+      "path": "packages/oauth-provider",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client.ts",
+            "types": "./dist/client.d.mts",
+            "default": "./dist/client.mjs"
+          }
+        },
+        {
+          "subpath": "./resource-client",
+          "target": {
+            "dev-source": "./src/client-resource.ts",
+            "types": "./dist/client-resource.d.mts",
+            "default": "./dist/client-resource.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/passkey",
+      "version": "1.6.26",
+      "path": "packages/passkey",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client.ts",
+            "types": "./dist/client.d.mts",
+            "default": "./dist/client.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/prisma-adapter",
+      "version": "1.6.26",
+      "path": "packages/prisma-adapter",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/redis-storage",
+      "version": "1.6.26",
+      "path": "packages/redis-storage",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/scim",
+      "version": "1.6.26",
+      "path": "packages/scim",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client.ts",
+            "types": "./dist/client.d.mts",
+            "default": "./dist/client.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/sso",
+      "version": "1.6.26",
+      "path": "packages/sso",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client.ts",
+            "types": "./dist/client.d.mts",
+            "default": "./dist/client.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/stripe",
+      "version": "1.6.26",
+      "path": "packages/stripe",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
+          }
+        },
+        {
+          "subpath": "./client",
+          "target": {
+            "dev-source": "./src/client.ts",
+            "types": "./dist/client.d.mts",
+            "default": "./dist/client.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/telemetry",
+      "version": "1.6.26",
+      "path": "packages/telemetry",
+      "private": false,
+      "exports": [
+        {
+          "subpath": ".",
+          "target": {
+            "dev-source": "./src/index.ts",
+            "types": "./dist/index.d.mts",
+            "node": "./dist/node.mjs",
+            "default": "./dist/index.mjs"
+          }
+        }
+      ],
+      "bins": []
+    },
+    {
+      "name": "@better-auth/test-utils",
+      "version": "1.6.26",
+      "path": "packages/test-utils",
+      "private": false,
+      "exports": [
+        {
+          "subpath": "./adapter",
+          "target": {
+            "dev-source": "./src/adapter/index.ts",
+            "default": "./dist/adapter.mjs",
+            "types": "./dist/adapter.d.mts"
+          }
+        }
+      ],
+      "bins": []
+    }
+  ],
+  "providers": [
+    {
+      "id": "apple",
+      "factory": "apple",
+      "source": "packages/core/src/social-providers/apple.ts"
+    },
+    {
+      "id": "atlassian",
+      "factory": "atlassian",
+      "source": "packages/core/src/social-providers/atlassian.ts"
+    },
+    {
+      "id": "cognito",
+      "factory": "cognito",
+      "source": "packages/core/src/social-providers/cognito.ts"
+    },
+    {
+      "id": "discord",
+      "factory": "discord",
+      "source": "packages/core/src/social-providers/discord.ts"
+    },
+    {
+      "id": "dropbox",
+      "factory": "dropbox",
+      "source": "packages/core/src/social-providers/dropbox.ts"
+    },
+    {
+      "id": "facebook",
+      "factory": "facebook",
+      "source": "packages/core/src/social-providers/facebook.ts"
+    },
+    {
+      "id": "figma",
+      "factory": "figma",
+      "source": "packages/core/src/social-providers/figma.ts"
+    },
+    {
+      "id": "github",
+      "factory": "github",
+      "source": "packages/core/src/social-providers/github.ts"
+    },
+    {
+      "id": "gitlab",
+      "factory": "gitlab",
+      "source": "packages/core/src/social-providers/gitlab.ts"
+    },
+    {
+      "id": "google",
+      "factory": "google",
+      "source": "packages/core/src/social-providers/google.ts"
+    },
+    {
+      "id": "huggingface",
+      "factory": "huggingface",
+      "source": "packages/core/src/social-providers/huggingface.ts"
+    },
+    {
+      "id": "kakao",
+      "factory": "kakao",
+      "source": "packages/core/src/social-providers/kakao.ts"
+    },
+    {
+      "id": "kick",
+      "factory": "kick",
+      "source": "packages/core/src/social-providers/kick.ts"
+    },
+    {
+      "id": "line",
+      "factory": "line",
+      "source": "packages/core/src/social-providers/line.ts"
+    },
+    {
+      "id": "linear",
+      "factory": "linear",
+      "source": "packages/core/src/social-providers/linear.ts"
+    },
+    {
+      "id": "linkedin",
+      "factory": "linkedin",
+      "source": "packages/core/src/social-providers/linkedin.ts"
+    },
+    {
+      "id": "microsoft",
+      "factory": "microsoft",
+      "source": "packages/core/src/social-providers/microsoft-entra-id.ts"
+    },
+    {
+      "id": "naver",
+      "factory": "naver",
+      "source": "packages/core/src/social-providers/naver.ts"
+    },
+    {
+      "id": "notion",
+      "factory": "notion",
+      "source": "packages/core/src/social-providers/notion.ts"
+    },
+    {
+      "id": "paybin",
+      "factory": "paybin",
+      "source": "packages/core/src/social-providers/paybin.ts"
+    },
+    {
+      "id": "paypal",
+      "factory": "paypal",
+      "source": "packages/core/src/social-providers/paypal.ts"
+    },
+    {
+      "id": "polar",
+      "factory": "polar",
+      "source": "packages/core/src/social-providers/polar.ts"
+    },
+    {
+      "id": "railway",
+      "factory": "railway",
+      "source": "packages/core/src/social-providers/railway.ts"
+    },
+    {
+      "id": "reddit",
+      "factory": "reddit",
+      "source": "packages/core/src/social-providers/reddit.ts"
+    },
+    {
+      "id": "roblox",
+      "factory": "roblox",
+      "source": "packages/core/src/social-providers/roblox.ts"
+    },
+    {
+      "id": "salesforce",
+      "factory": "salesforce",
+      "source": "packages/core/src/social-providers/salesforce.ts"
+    },
+    {
+      "id": "slack",
+      "factory": "slack",
+      "source": "packages/core/src/social-providers/slack.ts"
+    },
+    {
+      "id": "spotify",
+      "factory": "spotify",
+      "source": "packages/core/src/social-providers/spotify.ts"
+    },
+    {
+      "id": "tiktok",
+      "factory": "tiktok",
+      "source": "packages/core/src/social-providers/tiktok.ts"
+    },
+    {
+      "id": "twitch",
+      "factory": "twitch",
+      "source": "packages/core/src/social-providers/twitch.ts"
+    },
+    {
+      "id": "twitter",
+      "factory": "twitter",
+      "source": "packages/core/src/social-providers/twitter.ts"
+    },
+    {
+      "id": "vercel",
+      "factory": "vercel",
+      "source": "packages/core/src/social-providers/vercel.ts"
+    },
+    {
+      "id": "vk",
+      "factory": "vk",
+      "source": "packages/core/src/social-providers/vk.ts"
+    },
+    {
+      "id": "wechat",
+      "factory": "wechat",
+      "source": "packages/core/src/social-providers/wechat.ts"
+    },
+    {
+      "id": "zoom",
+      "factory": "zoom",
+      "source": "packages/core/src/social-providers/zoom.ts"
+    }
+  ],
+  "plugins": [
+    {
+      "id": "access",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/access",
+      "public": true
+    },
+    {
+      "id": "additional-fields",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/additional-fields",
+      "public": true
+    },
+    {
+      "id": "admin",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/admin",
+      "public": true
+    },
+    {
+      "id": "anonymous",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/anonymous",
+      "public": true
+    },
+    {
+      "id": "bearer",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/bearer",
+      "public": true
+    },
+    {
+      "id": "captcha",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/captcha",
+      "public": true
+    },
+    {
+      "id": "custom-session",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/custom-session",
+      "public": true
+    },
+    {
+      "id": "device-authorization",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/device-authorization",
+      "public": true
+    },
+    {
+      "id": "email-otp",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/email-otp",
+      "public": true
+    },
+    {
+      "id": "generic-oauth",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/generic-oauth",
+      "public": true
+    },
+    {
+      "id": "haveibeenpwned",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/haveibeenpwned",
+      "public": true
+    },
+    {
+      "id": "jwt",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/jwt",
+      "public": true
+    },
+    {
+      "id": "last-login-method",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/last-login-method",
+      "public": true
+    },
+    {
+      "id": "magic-link",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/magic-link",
+      "public": true
+    },
+    {
+      "id": "mcp",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/mcp",
+      "public": true
+    },
+    {
+      "id": "multi-session",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/multi-session",
+      "public": true
+    },
+    {
+      "id": "oauth-popup",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/oauth-popup",
+      "public": true
+    },
+    {
+      "id": "oauth-proxy",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/oauth-proxy",
+      "public": true
+    },
+    {
+      "id": "oidc-provider",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/oidc-provider",
+      "public": true
+    },
+    {
+      "id": "one-tap",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/one-tap",
+      "public": true
+    },
+    {
+      "id": "one-time-token",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/one-time-token",
+      "public": true
+    },
+    {
+      "id": "open-api",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/open-api",
+      "public": true
+    },
+    {
+      "id": "organization",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/organization",
+      "public": true
+    },
+    {
+      "id": "phone-number",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/phone-number",
+      "public": true
+    },
+    {
+      "id": "siwe",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/siwe",
+      "public": true
+    },
+    {
+      "id": "test-utils",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/test-utils",
+      "public": false
+    },
+    {
+      "id": "two-factor",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/two-factor",
+      "public": true
+    },
+    {
+      "id": "username",
+      "kind": "built-in",
+      "source": "packages/better-auth/src/plugins/username",
+      "public": true
+    },
+    {
+      "id": "api-key",
+      "kind": "standalone-package",
+      "package": "@better-auth/api-key",
+      "source": "packages/api-key",
+      "public": true
+    },
+    {
+      "id": "oauth-provider",
+      "kind": "standalone-package",
+      "package": "@better-auth/oauth-provider",
+      "source": "packages/oauth-provider",
+      "public": true
+    },
+    {
+      "id": "passkey",
+      "kind": "standalone-package",
+      "package": "@better-auth/passkey",
+      "source": "packages/passkey",
+      "public": true
+    },
+    {
+      "id": "scim",
+      "kind": "standalone-package",
+      "package": "@better-auth/scim",
+      "source": "packages/scim",
+      "public": true
+    },
+    {
+      "id": "sso",
+      "kind": "standalone-package",
+      "package": "@better-auth/sso",
+      "source": "packages/sso",
+      "public": true
+    },
+    {
+      "id": "stripe",
+      "kind": "standalone-package",
+      "package": "@better-auth/stripe",
+      "source": "packages/stripe",
+      "public": true
+    }
+  ],
+  "cliCommands": [
+    {
+      "name": "ai",
+      "source": "packages/cli/src/commands/ai.ts"
+    },
+    {
+      "name": "better-auth",
+      "source": "packages/cli/src/index.ts"
+    },
+    {
+      "name": "generate",
+      "source": "packages/cli/src/commands/generate.ts"
+    },
+    {
+      "name": "info",
+      "source": "packages/cli/src/commands/info.ts"
+    },
+    {
+      "name": "init",
+      "source": "packages/cli/src/commands/init/index.ts"
+    },
+    {
+      "name": "login",
+      "source": "packages/cli/src/commands/login.ts"
+    },
+    {
+      "name": "logout",
+      "source": "packages/cli/src/commands/login.ts"
+    },
+    {
+      "name": "mcp",
+      "source": "packages/cli/src/commands/mcp.ts"
+    },
+    {
+      "name": "migrate",
+      "source": "packages/cli/src/commands/migrate.ts"
+    },
+    {
+      "name": "secret",
+      "source": "packages/cli/src/commands/secret.ts"
+    },
+    {
+      "name": "upgrade",
+      "source": "packages/cli/src/commands/upgrade.ts"
+    }
+  ],
+  "docsFeatures": [
+    {
+      "path": "docs/content/docs/adapters/community-adapters.mdx",
+      "slug": "adapters/community-adapters",
+      "title": "Community Adapters"
+    },
+    {
+      "path": "docs/content/docs/adapters/drizzle.mdx",
+      "slug": "adapters/drizzle",
+      "title": "Drizzle ORM Adapter"
+    },
+    {
+      "path": "docs/content/docs/adapters/mongo.mdx",
+      "slug": "adapters/mongo",
+      "title": "MongoDB Adapter"
+    },
+    {
+      "path": "docs/content/docs/adapters/mssql.mdx",
+      "slug": "adapters/mssql",
+      "title": "MS SQL"
+    },
+    {
+      "path": "docs/content/docs/adapters/mysql.mdx",
+      "slug": "adapters/mysql",
+      "title": "MySQL"
+    },
+    {
+      "path": "docs/content/docs/adapters/other-relational-databases.mdx",
+      "slug": "adapters/other-relational-databases",
+      "title": "Other Relational Databases"
+    },
+    {
+      "path": "docs/content/docs/adapters/postgresql.mdx",
+      "slug": "adapters/postgresql",
+      "title": "PostgreSQL"
+    },
+    {
+      "path": "docs/content/docs/adapters/prisma.mdx",
+      "slug": "adapters/prisma",
+      "title": "Prisma"
+    },
+    {
+      "path": "docs/content/docs/adapters/sqlite.mdx",
+      "slug": "adapters/sqlite",
+      "title": "SQLite"
+    },
+    {
+      "path": "docs/content/docs/ai-resources/index.mdx",
+      "slug": "ai-resources/index",
+      "title": "AI Resources"
+    },
+    {
+      "path": "docs/content/docs/ai-resources/mcp.mdx",
+      "slug": "ai-resources/mcp",
+      "title": "MCP"
+    },
+    {
+      "path": "docs/content/docs/ai-resources/skills.mdx",
+      "slug": "ai-resources/skills",
+      "title": "Skills"
+    },
+    {
+      "path": "docs/content/docs/authentication/apple.mdx",
+      "slug": "authentication/apple",
+      "title": "Apple"
+    },
+    {
+      "path": "docs/content/docs/authentication/atlassian.mdx",
+      "slug": "authentication/atlassian",
+      "title": "Atlassian"
+    },
+    {
+      "path": "docs/content/docs/authentication/cognito.mdx",
+      "slug": "authentication/cognito",
+      "title": "Cognito"
+    },
+    {
+      "path": "docs/content/docs/authentication/discord.mdx",
+      "slug": "authentication/discord",
+      "title": "Discord"
+    },
+    {
+      "path": "docs/content/docs/authentication/dropbox.mdx",
+      "slug": "authentication/dropbox",
+      "title": "Dropbox"
+    },
+    {
+      "path": "docs/content/docs/authentication/email-password.mdx",
+      "slug": "authentication/email-password",
+      "title": "Email & Password"
+    },
+    {
+      "path": "docs/content/docs/authentication/facebook.mdx",
+      "slug": "authentication/facebook",
+      "title": "Facebook"
+    },
+    {
+      "path": "docs/content/docs/authentication/figma.mdx",
+      "slug": "authentication/figma",
+      "title": "Figma"
+    },
+    {
+      "path": "docs/content/docs/authentication/github.mdx",
+      "slug": "authentication/github",
+      "title": "GitHub"
+    },
+    {
+      "path": "docs/content/docs/authentication/gitlab.mdx",
+      "slug": "authentication/gitlab",
+      "title": "GitLab"
+    },
+    {
+      "path": "docs/content/docs/authentication/google.mdx",
+      "slug": "authentication/google",
+      "title": "Google"
+    },
+    {
+      "path": "docs/content/docs/authentication/huggingface.mdx",
+      "slug": "authentication/huggingface",
+      "title": "Hugging Face"
+    },
+    {
+      "path": "docs/content/docs/authentication/kakao.mdx",
+      "slug": "authentication/kakao",
+      "title": "Kakao"
+    },
+    {
+      "path": "docs/content/docs/authentication/kick.mdx",
+      "slug": "authentication/kick",
+      "title": "Kick"
+    },
+    {
+      "path": "docs/content/docs/authentication/line.mdx",
+      "slug": "authentication/line",
+      "title": "LINE"
+    },
+    {
+      "path": "docs/content/docs/authentication/linear.mdx",
+      "slug": "authentication/linear",
+      "title": "Linear"
+    },
+    {
+      "path": "docs/content/docs/authentication/linkedin.mdx",
+      "slug": "authentication/linkedin",
+      "title": "LinkedIn"
+    },
+    {
+      "path": "docs/content/docs/authentication/microsoft.mdx",
+      "slug": "authentication/microsoft",
+      "title": "Microsoft"
+    },
+    {
+      "path": "docs/content/docs/authentication/naver.mdx",
+      "slug": "authentication/naver",
+      "title": "Naver"
+    },
+    {
+      "path": "docs/content/docs/authentication/notion.mdx",
+      "slug": "authentication/notion",
+      "title": "Notion"
+    },
+    {
+      "path": "docs/content/docs/authentication/other-social-providers.mdx",
+      "slug": "authentication/other-social-providers",
+      "title": "Other Social Providers"
+    },
+    {
+      "path": "docs/content/docs/authentication/paybin.mdx",
+      "slug": "authentication/paybin",
+      "title": "Paybin"
+    },
+    {
+      "path": "docs/content/docs/authentication/paypal.mdx",
+      "slug": "authentication/paypal",
+      "title": "PayPal"
+    },
+    {
+      "path": "docs/content/docs/authentication/polar.mdx",
+      "slug": "authentication/polar",
+      "title": "Polar"
+    },
+    {
+      "path": "docs/content/docs/authentication/railway.mdx",
+      "slug": "authentication/railway",
+      "title": "Railway"
+    },
+    {
+      "path": "docs/content/docs/authentication/reddit.mdx",
+      "slug": "authentication/reddit",
+      "title": "Reddit"
+    },
+    {
+      "path": "docs/content/docs/authentication/roblox.mdx",
+      "slug": "authentication/roblox",
+      "title": "Roblox"
+    },
+    {
+      "path": "docs/content/docs/authentication/salesforce.mdx",
+      "slug": "authentication/salesforce",
+      "title": "Salesforce"
+    },
+    {
+      "path": "docs/content/docs/authentication/slack.mdx",
+      "slug": "authentication/slack",
+      "title": "Slack"
+    },
+    {
+      "path": "docs/content/docs/authentication/spotify.mdx",
+      "slug": "authentication/spotify",
+      "title": "Spotify"
+    },
+    {
+      "path": "docs/content/docs/authentication/tiktok.mdx",
+      "slug": "authentication/tiktok",
+      "title": "TikTok"
+    },
+    {
+      "path": "docs/content/docs/authentication/twitch.mdx",
+      "slug": "authentication/twitch",
+      "title": "Twitch"
+    },
+    {
+      "path": "docs/content/docs/authentication/twitter.mdx",
+      "slug": "authentication/twitter",
+      "title": "Twitter (X)"
+    },
+    {
+      "path": "docs/content/docs/authentication/vercel.mdx",
+      "slug": "authentication/vercel",
+      "title": "Vercel"
+    },
+    {
+      "path": "docs/content/docs/authentication/vk.mdx",
+      "slug": "authentication/vk",
+      "title": "VK"
+    },
+    {
+      "path": "docs/content/docs/authentication/wechat.mdx",
+      "slug": "authentication/wechat",
+      "title": "WeChat"
+    },
+    {
+      "path": "docs/content/docs/authentication/zoom.mdx",
+      "slug": "authentication/zoom",
+      "title": "Zoom"
+    },
+    {
+      "path": "docs/content/docs/basic-usage.mdx",
+      "slug": "basic-usage",
+      "title": "Basic Usage"
+    },
+    {
+      "path": "docs/content/docs/comparison.mdx",
+      "slug": "comparison",
+      "title": "Comparison"
+    },
+    {
+      "path": "docs/content/docs/concepts/api.mdx",
+      "slug": "concepts/api",
+      "title": "API"
+    },
+    {
+      "path": "docs/content/docs/concepts/cli.mdx",
+      "slug": "concepts/cli",
+      "title": "CLI"
+    },
+    {
+      "path": "docs/content/docs/concepts/client.mdx",
+      "slug": "concepts/client",
+      "title": "Client"
+    },
+    {
+      "path": "docs/content/docs/concepts/cookies.mdx",
+      "slug": "concepts/cookies",
+      "title": "Cookies"
+    },
+    {
+      "path": "docs/content/docs/concepts/database.mdx",
+      "slug": "concepts/database",
+      "title": "Database"
+    },
+    {
+      "path": "docs/content/docs/concepts/email.mdx",
+      "slug": "concepts/email",
+      "title": "Email"
+    },
+    {
+      "path": "docs/content/docs/concepts/hooks.mdx",
+      "slug": "concepts/hooks",
+      "title": "Hooks"
+    },
+    {
+      "path": "docs/content/docs/concepts/oauth.mdx",
+      "slug": "concepts/oauth",
+      "title": "OAuth"
+    },
+    {
+      "path": "docs/content/docs/concepts/plugins.mdx",
+      "slug": "concepts/plugins",
+      "title": "Plugins"
+    },
+    {
+      "path": "docs/content/docs/concepts/rate-limit.mdx",
+      "slug": "concepts/rate-limit",
+      "title": "Rate Limit"
+    },
+    {
+      "path": "docs/content/docs/concepts/session-management.mdx",
+      "slug": "concepts/session-management",
+      "title": "Session Management"
+    },
+    {
+      "path": "docs/content/docs/concepts/typescript.mdx",
+      "slug": "concepts/typescript",
+      "title": "TypeScript"
+    },
+    {
+      "path": "docs/content/docs/concepts/users-accounts.mdx",
+      "slug": "concepts/users-accounts",
+      "title": "User & Accounts"
+    },
+    {
+      "path": "docs/content/docs/examples/astro.mdx",
+      "slug": "examples/astro",
+      "title": "Astro Example"
+    },
+    {
+      "path": "docs/content/docs/examples/next-js.mdx",
+      "slug": "examples/next-js",
+      "title": "Next.js Example"
+    },
+    {
+      "path": "docs/content/docs/examples/nuxt.mdx",
+      "slug": "examples/nuxt",
+      "title": "Nuxt Example"
+    },
+    {
+      "path": "docs/content/docs/examples/react-router.mdx",
+      "slug": "examples/react-router",
+      "title": "React Router v7 Example"
+    },
+    {
+      "path": "docs/content/docs/examples/svelte-kit.mdx",
+      "slug": "examples/svelte-kit",
+      "title": "SvelteKit Example"
+    },
+    {
+      "path": "docs/content/docs/guides/1-7-upgrade-guide.mdx",
+      "slug": "guides/1-7-upgrade-guide",
+      "title": "Upgrading to Better Auth 1.7"
+    },
+    {
+      "path": "docs/content/docs/guides/auth0-migration-guide.mdx",
+      "slug": "guides/auth0-migration-guide",
+      "title": "Migrating from Auth0 to Better Auth"
+    },
+    {
+      "path": "docs/content/docs/guides/browser-extension-guide.mdx",
+      "slug": "guides/browser-extension-guide",
+      "title": "Browser Extension Guide"
+    },
+    {
+      "path": "docs/content/docs/guides/clerk-migration-guide.mdx",
+      "slug": "guides/clerk-migration-guide",
+      "title": "Migrating from Clerk to Better Auth"
+    },
+    {
+      "path": "docs/content/docs/guides/create-a-db-adapter.mdx",
+      "slug": "guides/create-a-db-adapter",
+      "title": "Create a Database Adapter"
+    },
+    {
+      "path": "docs/content/docs/guides/dynamic-base-url.mdx",
+      "slug": "guides/dynamic-base-url",
+      "title": "Dynamic Base URL"
+    },
+    {
+      "path": "docs/content/docs/guides/next-auth-migration-guide.mdx",
+      "slug": "guides/next-auth-migration-guide",
+      "title": "Migrating from Auth.js to Better Auth"
+    },
+    {
+      "path": "docs/content/docs/guides/optimizing-for-performance.mdx",
+      "slug": "guides/optimizing-for-performance",
+      "title": "Optimizing for Performance"
+    },
+    {
+      "path": "docs/content/docs/guides/saml-sso-with-okta.mdx",
+      "slug": "guides/saml-sso-with-okta",
+      "title": "SAML SSO with Okta"
+    },
+    {
+      "path": "docs/content/docs/guides/supabase-migration-guide.mdx",
+      "slug": "guides/supabase-migration-guide",
+      "title": "Migrating from Supabase Auth to Better Auth"
+    },
+    {
+      "path": "docs/content/docs/guides/workos-migration-guide.mdx",
+      "slug": "guides/workos-migration-guide",
+      "title": "Migrating from WorkOS to Better Auth"
+    },
+    {
+      "path": "docs/content/docs/guides/your-first-plugin.mdx",
+      "slug": "guides/your-first-plugin",
+      "title": "Create your first plugin"
+    },
+    {
+      "path": "docs/content/docs/infrastructure/getting-started.mdx",
+      "slug": "infrastructure/getting-started",
+      "title": "Getting Started"
+    },
+    {
+      "path": "docs/content/docs/infrastructure/introduction.mdx",
+      "slug": "infrastructure/introduction",
+      "title": "Better Auth Infrastructure"
+    },
+    {
+      "path": "docs/content/docs/infrastructure/plugins/audit-logs.mdx",
+      "slug": "infrastructure/plugins/audit-logs",
+      "title": "Audit Logs"
+    },
+    {
+      "path": "docs/content/docs/infrastructure/plugins/dash.mdx",
+      "slug": "infrastructure/plugins/dash",
+      "title": "Dashboard Plugin (dash)"
+    },
+    {
+      "path": "docs/content/docs/infrastructure/plugins/dashboard.mdx",
+      "slug": "infrastructure/plugins/dashboard",
+      "title": "Dashboard"
+    },
+    {
+      "path": "docs/content/docs/infrastructure/plugins/sentinel.mdx",
+      "slug": "infrastructure/plugins/sentinel",
+      "title": "Security Plugin (sentinel)"
+    },
+    {
+      "path": "docs/content/docs/infrastructure/services/email.mdx",
+      "slug": "infrastructure/services/email",
+      "title": "Email Service"
+    },
+    {
+      "path": "docs/content/docs/infrastructure/services/sms.mdx",
+      "slug": "infrastructure/services/sms",
+      "title": "SMS Service"
+    },
+    {
+      "path": "docs/content/docs/installation.mdx",
+      "slug": "installation",
+      "title": "Installation"
+    },
+    {
+      "path": "docs/content/docs/integrations/astro.mdx",
+      "slug": "integrations/astro",
+      "title": "Astro Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/convex.mdx",
+      "slug": "integrations/convex",
+      "title": "Convex Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/electron.mdx",
+      "slug": "integrations/electron",
+      "title": "Electron Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/elysia.mdx",
+      "slug": "integrations/elysia",
+      "title": "Elysia Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/encore.mdx",
+      "slug": "integrations/encore",
+      "title": "Encore Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/expo.mdx",
+      "slug": "integrations/expo",
+      "title": "Expo Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/express.mdx",
+      "slug": "integrations/express",
+      "title": "Express Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/fastify.mdx",
+      "slug": "integrations/fastify",
+      "title": "Better Auth Fastify Integration Guide"
+    },
+    {
+      "path": "docs/content/docs/integrations/hono.mdx",
+      "slug": "integrations/hono",
+      "title": "Hono Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/lynx.mdx",
+      "slug": "integrations/lynx",
+      "title": "Lynx Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/nestjs.mdx",
+      "slug": "integrations/nestjs",
+      "title": "NestJS Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/next.mdx",
+      "slug": "integrations/next",
+      "title": "Next.js integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/nitro.mdx",
+      "slug": "integrations/nitro",
+      "title": "Nitro Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/nuxt.mdx",
+      "slug": "integrations/nuxt",
+      "title": "Nuxt Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/react-router.mdx",
+      "slug": "integrations/react-router",
+      "title": "React Router v7 Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/solid-start.mdx",
+      "slug": "integrations/solid-start",
+      "title": "SolidStart Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/svelte-kit.mdx",
+      "slug": "integrations/svelte-kit",
+      "title": "SvelteKit Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/tanstack.mdx",
+      "slug": "integrations/tanstack",
+      "title": "TanStack Start Integration"
+    },
+    {
+      "path": "docs/content/docs/integrations/waku.mdx",
+      "slug": "integrations/waku",
+      "title": "Waku Integration"
+    },
+    {
+      "path": "docs/content/docs/introduction.mdx",
+      "slug": "introduction",
+      "title": "Introduction"
+    },
+    {
+      "path": "docs/content/docs/plugins/2fa.mdx",
+      "slug": "plugins/2fa",
+      "title": "Two-Factor Authentication (2FA)"
+    },
+    {
+      "path": "docs/content/docs/plugins/admin.mdx",
+      "slug": "plugins/admin",
+      "title": "Admin"
+    },
+    {
+      "path": "docs/content/docs/plugins/agent-auth.mdx",
+      "slug": "plugins/agent-auth",
+      "title": "Agent Auth"
+    },
+    {
+      "path": "docs/content/docs/plugins/anonymous.mdx",
+      "slug": "plugins/anonymous",
+      "title": "Anonymous"
+    },
+    {
+      "path": "docs/content/docs/plugins/api-key/advanced.mdx",
+      "slug": "plugins/api-key/advanced",
+      "title": "Advanced Features"
+    },
+    {
+      "path": "docs/content/docs/plugins/api-key/index.mdx",
+      "slug": "plugins/api-key/index",
+      "title": "API Key"
+    },
+    {
+      "path": "docs/content/docs/plugins/api-key/reference.mdx",
+      "slug": "plugins/api-key/reference",
+      "title": "Reference"
+    },
+    {
+      "path": "docs/content/docs/plugins/autumn.mdx",
+      "slug": "plugins/autumn",
+      "title": "Autumn Billing"
+    },
+    {
+      "path": "docs/content/docs/plugins/bearer.mdx",
+      "slug": "plugins/bearer",
+      "title": "Bearer Token Authentication"
+    },
+    {
+      "path": "docs/content/docs/plugins/captcha.mdx",
+      "slug": "plugins/captcha",
+      "title": "Captcha"
+    },
+    {
+      "path": "docs/content/docs/plugins/chargebee.mdx",
+      "slug": "plugins/chargebee",
+      "title": "Chargebee"
+    },
+    {
+      "path": "docs/content/docs/plugins/commet.mdx",
+      "slug": "plugins/commet",
+      "title": "Commet"
+    },
+    {
+      "path": "docs/content/docs/plugins/community-plugins.mdx",
+      "slug": "plugins/community-plugins",
+      "title": "Community Plugins"
+    },
+    {
+      "path": "docs/content/docs/plugins/creem.mdx",
+      "slug": "plugins/creem",
+      "title": "Creem"
+    },
+    {
+      "path": "docs/content/docs/plugins/device-authorization.mdx",
+      "slug": "plugins/device-authorization",
+      "title": "Device Authorization"
+    },
+    {
+      "path": "docs/content/docs/plugins/dodopayments.mdx",
+      "slug": "plugins/dodopayments",
+      "title": "Dodo Payments"
+    },
+    {
+      "path": "docs/content/docs/plugins/dub.mdx",
+      "slug": "plugins/dub",
+      "title": "Dub"
+    },
+    {
+      "path": "docs/content/docs/plugins/email-otp.mdx",
+      "slug": "plugins/email-otp",
+      "title": "Email OTP"
+    },
+    {
+      "path": "docs/content/docs/plugins/generic-oauth.mdx",
+      "slug": "plugins/generic-oauth",
+      "title": "Generic OAuth"
+    },
+    {
+      "path": "docs/content/docs/plugins/have-i-been-pwned.mdx",
+      "slug": "plugins/have-i-been-pwned",
+      "title": "Have I Been Pwned"
+    },
+    {
+      "path": "docs/content/docs/plugins/i18n.mdx",
+      "slug": "plugins/i18n",
+      "title": "i18n"
+    },
+    {
+      "path": "docs/content/docs/plugins/index.mdx",
+      "slug": "plugins/index",
+      "title": "Plugins"
+    },
+    {
+      "path": "docs/content/docs/plugins/jwt.mdx",
+      "slug": "plugins/jwt",
+      "title": "JWT"
+    },
+    {
+      "path": "docs/content/docs/plugins/last-login-method.mdx",
+      "slug": "plugins/last-login-method",
+      "title": "Last Login Method"
+    },
+    {
+      "path": "docs/content/docs/plugins/magic-link.mdx",
+      "slug": "plugins/magic-link",
+      "title": "Magic link"
+    },
+    {
+      "path": "docs/content/docs/plugins/mcp.mdx",
+      "slug": "plugins/mcp",
+      "title": "MCP"
+    },
+    {
+      "path": "docs/content/docs/plugins/multi-session.mdx",
+      "slug": "plugins/multi-session",
+      "title": "Multi Session"
+    },
+    {
+      "path": "docs/content/docs/plugins/oauth-provider.mdx",
+      "slug": "plugins/oauth-provider",
+      "title": "OAuth 2.1 Provider"
+    },
+    {
+      "path": "docs/content/docs/plugins/oauth-proxy.mdx",
+      "slug": "plugins/oauth-proxy",
+      "title": "OAuth Proxy"
+    },
+    {
+      "path": "docs/content/docs/plugins/oidc-provider.mdx",
+      "slug": "plugins/oidc-provider",
+      "title": "OIDC Provider"
+    },
+    {
+      "path": "docs/content/docs/plugins/one-tap.mdx",
+      "slug": "plugins/one-tap",
+      "title": "One Tap"
+    },
+    {
+      "path": "docs/content/docs/plugins/one-time-token.mdx",
+      "slug": "plugins/one-time-token",
+      "title": "One-Time Token Plugin"
+    },
+    {
+      "path": "docs/content/docs/plugins/open-api.mdx",
+      "slug": "plugins/open-api",
+      "title": "Open API"
+    },
+    {
+      "path": "docs/content/docs/plugins/organization.mdx",
+      "slug": "plugins/organization",
+      "title": "Organization"
+    },
+    {
+      "path": "docs/content/docs/plugins/passkey.mdx",
+      "slug": "plugins/passkey",
+      "title": "Passkey"
+    },
+    {
+      "path": "docs/content/docs/plugins/phone-number.mdx",
+      "slug": "plugins/phone-number",
+      "title": "Phone Number"
+    },
+    {
+      "path": "docs/content/docs/plugins/polar.mdx",
+      "slug": "plugins/polar",
+      "title": "Polar"
+    },
+    {
+      "path": "docs/content/docs/plugins/scim.mdx",
+      "slug": "plugins/scim",
+      "title": "System for Cross-domain Identity Management (SCIM)"
+    },
+    {
+      "path": "docs/content/docs/plugins/siwe.mdx",
+      "slug": "plugins/siwe",
+      "title": "Sign In With Ethereum (SIWE)"
+    },
+    {
+      "path": "docs/content/docs/plugins/sso.mdx",
+      "slug": "plugins/sso",
+      "title": "Single Sign-On (SSO)"
+    },
+    {
+      "path": "docs/content/docs/plugins/stripe.mdx",
+      "slug": "plugins/stripe",
+      "title": "Stripe"
+    },
+    {
+      "path": "docs/content/docs/plugins/test-utils.mdx",
+      "slug": "plugins/test-utils",
+      "title": "Test Utils"
+    },
+    {
+      "path": "docs/content/docs/plugins/username.mdx",
+      "slug": "plugins/username",
+      "title": "Username"
+    },
+    {
+      "path": "docs/content/docs/reference/contributing.mdx",
+      "slug": "reference/contributing",
+      "title": "Contributing to BetterAuth"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/account_already_linked_to_different_user.mdx",
+      "slug": "reference/errors/account_already_linked_to_different_user",
+      "title": "account_already_linked_to_different_user"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/account_not_linked.mdx",
+      "slug": "reference/errors/account_not_linked",
+      "title": "account_not_linked"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/email_doesn't_match.mdx",
+      "slug": "reference/errors/email_doesn't_match",
+      "title": "email_doesn't_match"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/email_not_found.mdx",
+      "slug": "reference/errors/email_not_found",
+      "title": "email_not_found"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/index.mdx",
+      "slug": "reference/errors/index",
+      "title": "Errors"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/internal_server_error.mdx",
+      "slug": "reference/errors/internal_server_error",
+      "title": "internal_server_error"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/invalid_callback_request.mdx",
+      "slug": "reference/errors/invalid_callback_request",
+      "title": "invalid_callback_request"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/invalid_code.mdx",
+      "slug": "reference/errors/invalid_code",
+      "title": "invalid_code"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/no_callback_url.mdx",
+      "slug": "reference/errors/no_callback_url",
+      "title": "no_callback_url"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/no_code.mdx",
+      "slug": "reference/errors/no_code",
+      "title": "no_code"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/oauth_provider_not_found.mdx",
+      "slug": "reference/errors/oauth_provider_not_found",
+      "title": "oauth_provider_not_found"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/signup_disabled.mdx",
+      "slug": "reference/errors/signup_disabled",
+      "title": "signup_disabled"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/state_invalid.mdx",
+      "slug": "reference/errors/state_invalid",
+      "title": "state_invalid"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/state_mismatch.mdx",
+      "slug": "reference/errors/state_mismatch",
+      "title": "state_mismatch"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/state_not_found.mdx",
+      "slug": "reference/errors/state_not_found",
+      "title": "state_not_found"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/unable_to_create_session.mdx",
+      "slug": "reference/errors/unable_to_create_session",
+      "title": "unable_to_create_session"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/unable_to_create_user.mdx",
+      "slug": "reference/errors/unable_to_create_user",
+      "title": "unable_to_create_user"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/unable_to_get_user_info.mdx",
+      "slug": "reference/errors/unable_to_get_user_info",
+      "title": "unable_to_get_user_info"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/unable_to_link_account.mdx",
+      "slug": "reference/errors/unable_to_link_account",
+      "title": "unable_to_link_account"
+    },
+    {
+      "path": "docs/content/docs/reference/errors/unknown.mdx",
+      "slug": "reference/errors/unknown",
+      "title": "Unknown error"
+    },
+    {
+      "path": "docs/content/docs/reference/faq.mdx",
+      "slug": "reference/faq",
+      "title": "FAQ"
+    },
+    {
+      "path": "docs/content/docs/reference/instrumentation.mdx",
+      "slug": "reference/instrumentation",
+      "title": "Instrumentation (Experimental)"
+    },
+    {
+      "path": "docs/content/docs/reference/options.mdx",
+      "slug": "reference/options",
+      "title": "Options"
+    },
+    {
+      "path": "docs/content/docs/reference/resources.mdx",
+      "slug": "reference/resources",
+      "title": "Resources"
+    },
+    {
+      "path": "docs/content/docs/reference/security.mdx",
+      "slug": "reference/security",
+      "title": "Security"
+    },
+    {
+      "path": "docs/content/docs/reference/telemetry.mdx",
+      "slug": "reference/telemetry",
+      "title": "Telemetry"
+    }
+  ],
+  "testFiles": [
+    {
+      "id": "e2e/adapter/test/adapter-factory/adapter-factory.test.ts::@file",
+      "path": "e2e/adapter/test/adapter-factory/adapter-factory.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "274cdea5aed9a3cf2c6bd952d52dd0f3ffdaa0d229f76389b7df3cd886558bdf"
+    },
+    {
+      "id": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.mixed-where.test.ts::@file",
+      "path": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.mixed-where.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "8d4df76ac8a09be33e49dd44e0722b06f8e5b4ff3ad1416a21e05c64a7110a38"
+    },
+    {
+      "id": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.mysql.test.ts::@file",
+      "path": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.mysql.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "5cbfd59934ba02ba565ba8fd895a08b8c41fea22bcc0464265de491a15b8575f"
+    },
+    {
+      "id": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.pg.test.ts::@file",
+      "path": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.pg.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "bc1ed11b8296762164a60e4ff557a3376b7aac6e389c0f5f2826a42a5d3ba4fd"
+    },
+    {
+      "id": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.plural-joins.test.ts::@file",
+      "path": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.plural-joins.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "2277cbef2cce7085134d40a0eaf681b6b53243bdb176a61b158ed40bc7a1e6c7"
+    },
+    {
+      "id": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.sqlite.test.ts::@file",
+      "path": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.sqlite.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "e181988b8855cba0615570ed27cc74863e00d57ee1cc2fda3c6be3e41036d948"
+    },
+    {
+      "id": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.use-plural-joins-relationname.test.ts::@file",
+      "path": "e2e/adapter/test/drizzle-adapter/adapter.drizzle.use-plural-joins-relationname.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "34a94c33d1722a7e18c30bbde78228d43e3936086d0b7cc76dedec963d8ed1a3"
+    },
+    {
+      "id": "e2e/adapter/test/kysely-adapter/adapter.kysely.custom-schema-pg.test.ts::@file",
+      "path": "e2e/adapter/test/kysely-adapter/adapter.kysely.custom-schema-pg.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "75bf12b72d4d084fd4518bca42315b76bcffe30fccbdb8000b3c0f992a6e14dd"
+    },
+    {
+      "id": "e2e/adapter/test/kysely-adapter/adapter.kysely.mssql.test.ts::@file",
+      "path": "e2e/adapter/test/kysely-adapter/adapter.kysely.mssql.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "7941c17ec1be26b983df973f6ca1c3f40ab1781928d9a8ff5ff73690e692b497"
+    },
+    {
+      "id": "e2e/adapter/test/kysely-adapter/adapter.kysely.mysql.test.ts::@file",
+      "path": "e2e/adapter/test/kysely-adapter/adapter.kysely.mysql.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "7c23d32100a969eb448497841d42d13cb39387239514f7c86cd57f932300285d"
+    },
+    {
+      "id": "e2e/adapter/test/kysely-adapter/adapter.kysely.pg.test.ts::@file",
+      "path": "e2e/adapter/test/kysely-adapter/adapter.kysely.pg.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "cff6080031ec1f23c453df918ad02a67d770b86bca49679aa825b638d468ad33"
+    },
+    {
+      "id": "e2e/adapter/test/kysely-adapter/adapter.kysely.sqlite.test.ts::@file",
+      "path": "e2e/adapter/test/kysely-adapter/adapter.kysely.sqlite.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "369791acaf2c03c7dce7b67a3eea4e6404518948359b16c4d45af05c2f7a207c"
+    },
+    {
+      "id": "e2e/adapter/test/kysely-adapter/node-sqlite-dialect.test.ts::@file",
+      "path": "e2e/adapter/test/kysely-adapter/node-sqlite-dialect.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "3f22e24ba81587cdb98c1652b157c41c5aae0f62550f80f8d6982cf881c6959c"
+    },
+    {
+      "id": "e2e/adapter/test/memory-adapter/adapter.memory.test.ts::@file",
+      "path": "e2e/adapter/test/memory-adapter/adapter.memory.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "39b375fcac014962bb9ee46bb57247dc1daf6bf2393243d0f51ebbb99673a5c5"
+    },
+    {
+      "id": "e2e/adapter/test/mongo-adapter/adapter.mongo-db.test.ts::@file",
+      "path": "e2e/adapter/test/mongo-adapter/adapter.mongo-db.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "83810aa0c1ed0016fb36972d0807f9ccc9cc203fbfcf15e7b8a7d6d06271c39e"
+    },
+    {
+      "id": "e2e/adapter/test/prisma-adapter/prisma.mysql.test.ts::@file",
+      "path": "e2e/adapter/test/prisma-adapter/prisma.mysql.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "899aadcd6cb89d195000d4734ef390454ef73700f228d402cf135dc7e16f13c1"
+    },
+    {
+      "id": "e2e/adapter/test/prisma-adapter/prisma.pg.test.ts::@file",
+      "path": "e2e/adapter/test/prisma-adapter/prisma.pg.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "fef118ec599f06fce5c3cc38f9b2b4d67f24ae94bd173755f2bd7cb017129913"
+    },
+    {
+      "id": "e2e/adapter/test/prisma-adapter/prisma.sqlite.test.ts::@file",
+      "path": "e2e/adapter/test/prisma-adapter/prisma.sqlite.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "a8006a95a2acdf42918604df55614e0d806ad4b2db372dba244c6c05caee7b6d"
+    },
+    {
+      "id": "e2e/integration/solid-vinxi/e2e/test.spec.ts::@file",
+      "path": "e2e/integration/solid-vinxi/e2e/test.spec.ts",
+      "category": "browser",
+      "ownerPhase": 10,
+      "runner": "playwright",
+      "sourceSha256": "68218bbe41f43627438001cd36f6737d72a6e9f890633822c85a35f93e5dd0b7"
+    },
+    {
+      "id": "e2e/integration/vanilla-node/e2e/cookie-cache-signout.spec.ts::@file",
+      "path": "e2e/integration/vanilla-node/e2e/cookie-cache-signout.spec.ts",
+      "category": "browser",
+      "ownerPhase": 10,
+      "runner": "playwright",
+      "sourceSha256": "b3a748486ff990b0370e5b537d30351780882fa32700cf3d94ebb94d4c50a22f"
+    },
+    {
+      "id": "e2e/integration/vanilla-node/e2e/domain.spec.ts::@file",
+      "path": "e2e/integration/vanilla-node/e2e/domain.spec.ts",
+      "category": "browser",
+      "ownerPhase": 10,
+      "runner": "playwright",
+      "sourceSha256": "8a015973d2ab97cb510569fb5dae39c7e7babd9210575399399159bebd6fedaf"
+    },
+    {
+      "id": "e2e/integration/vanilla-node/e2e/dynamic-base-url.spec.ts::@file",
+      "path": "e2e/integration/vanilla-node/e2e/dynamic-base-url.spec.ts",
+      "category": "browser",
+      "ownerPhase": 10,
+      "runner": "playwright",
+      "sourceSha256": "d33c7049f416efb406830dbad878196bc2882b1f3ae4eae2c9133f759f974231"
+    },
+    {
+      "id": "e2e/integration/vanilla-node/e2e/postgres-js.spec.ts::@file",
+      "path": "e2e/integration/vanilla-node/e2e/postgres-js.spec.ts",
+      "category": "browser",
+      "ownerPhase": 10,
+      "runner": "playwright",
+      "sourceSha256": "add1f76e7bdb488fbf4b1a751fe683ee2fcd78aee5db6c50607adf9bb669a878"
+    },
+    {
+      "id": "e2e/integration/vanilla-node/e2e/test.spec.ts::@file",
+      "path": "e2e/integration/vanilla-node/e2e/test.spec.ts",
+      "category": "browser",
+      "ownerPhase": 10,
+      "runner": "playwright",
+      "sourceSha256": "e9b144a78e7b9d96f152ef8fe0883c87f2f7e7dcb6375fee0ea04898e5729d36"
+    },
+    {
+      "id": "e2e/smoke/test/bun.spec.ts::@file",
+      "path": "e2e/smoke/test/bun.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "f986c66ba6bcc80d5042800e12288e5cfffc1a8e583fd87ed3898ec27a476539"
+    },
+    {
+      "id": "e2e/smoke/test/cloudflare.spec.ts::@file",
+      "path": "e2e/smoke/test/cloudflare.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "45c1f7177a9e3055c4d10fed34377524a4d41007e3a15e554332b2dc5430901e"
+    },
+    {
+      "id": "e2e/smoke/test/deno.spec.ts::@file",
+      "path": "e2e/smoke/test/deno.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "f50f7352fd301f88a13e61bf7ec424d1b1e49d98f3c7c4fe104782fc1e9aeb88"
+    },
+    {
+      "id": "e2e/smoke/test/esbuild.spec.ts::@file",
+      "path": "e2e/smoke/test/esbuild.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "a225422eaadd054985525e6ef5040f1fe3a5a62b6481bbfe46760bcd7f6f1fce"
+    },
+    {
+      "id": "e2e/smoke/test/fixtures/cloudflare/test/index.test.ts::@file",
+      "path": "e2e/smoke/test/fixtures/cloudflare/test/index.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "aec013993585499622b84b2d530e4d02e77527856f3b7ae49ee88c145b86e970"
+    },
+    {
+      "id": "e2e/smoke/test/ipv6.spec.ts::@file",
+      "path": "e2e/smoke/test/ipv6.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "a4e962ec511363d294aeb9a876c756fce1971d84ca4b152187f5a659053e0e97"
+    },
+    {
+      "id": "e2e/smoke/test/passkey-preauth.spec.ts::@file",
+      "path": "e2e/smoke/test/passkey-preauth.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "0bb985c2cde004feab6aaf59fbd6099686024a6152f2af847e1516f3f15f0907"
+    },
+    {
+      "id": "e2e/smoke/test/redis.spec.ts::@file",
+      "path": "e2e/smoke/test/redis.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "6195ce1c12d05b6a98a149864fc66371ec6ffd20651829432482bca79e69235e"
+    },
+    {
+      "id": "e2e/smoke/test/saml.spec.ts::@file",
+      "path": "e2e/smoke/test/saml.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "2c14471dd06d843b6dcdaf1ed6f2d363ea6d43ad9752aeef874496dc00049527"
+    },
+    {
+      "id": "e2e/smoke/test/session-token-refresh.spec.ts::@file",
+      "path": "e2e/smoke/test/session-token-refresh.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "6d843862443d6757eb0092754329c84265206936346274cf74b5dd00475d0cf1"
+    },
+    {
+      "id": "e2e/smoke/test/typecheck.spec.ts::@file",
+      "path": "e2e/smoke/test/typecheck.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "6b8e8aa78e9d313f07b8568f19772878c533f3a4fed0bc4b4646104272cb625d"
+    },
+    {
+      "id": "e2e/smoke/test/vite.spec.ts::@file",
+      "path": "e2e/smoke/test/vite.spec.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "node-test",
+      "sourceSha256": "3d792707f13af457957fbf65efcbd6df57addb173cb9dec83bb5f7ea1a07e951"
+    },
+    {
+      "id": "packages/api-key/src/api-key.test.ts::@file",
+      "path": "packages/api-key/src/api-key.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "b671ca74806c2a1f13f3aa1b784fc0dcec8fdd17e6229a783fb707e3543e2c26"
+    },
+    {
+      "id": "packages/api-key/src/org-api-key.test.ts::@file",
+      "path": "packages/api-key/src/org-api-key.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "e807bd03cfbc3cd31d631f72cb1c7500c515982310c5c378a66e3f337e647f53"
+    },
+    {
+      "id": "packages/better-auth/src/api/check-endpoint-conflicts.test.ts::@file",
+      "path": "packages/better-auth/src/api/check-endpoint-conflicts.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "0f05507b6cb840c45ef8823878797026f8fed9f52c80cd4ac74cf83c7ce8b30a"
+    },
+    {
+      "id": "packages/better-auth/src/api/index.test.ts::@file",
+      "path": "packages/better-auth/src/api/index.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "e4195f5b9d1daa310eb23e8fd1e8e3a0e820d1d856b95ccac2d5180672590753"
+    },
+    {
+      "id": "packages/better-auth/src/api/middlewares/authorization.test.ts::@file",
+      "path": "packages/better-auth/src/api/middlewares/authorization.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "ae9666b7412e39888577cfbfae192ee04365f7cbddb1abeb24888b4e7b4f19c4"
+    },
+    {
+      "id": "packages/better-auth/src/api/middlewares/origin-check.test.ts::@file",
+      "path": "packages/better-auth/src/api/middlewares/origin-check.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "fdaa7a06461b3588f1a6189622ae258ecdbda0160406444916e3fea15d5417bc"
+    },
+    {
+      "id": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::@file",
+      "path": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "534c9c963bfb8944f95f28425d8d659298a74e5a8113a1b91646b42522196fb2"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/account.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/account.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "2c93adb30609cba9e8955acff8eacec2334a8c9ff46bce132182ef8f4dff76c7"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/cookie-cache-fallback.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "9e1e1a07fdd051db275ff2ddcae21fb50cbb791b39f4d01300ddc7b77bdd2d1b"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/email-verification.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/email-verification.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "ef8234f0ee8854bd10a03871be3ab2e4dd48d4568513f1dbd81571a1ad1f21f6"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/error.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/error.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "ee5c02cf86a152c40bdf57824ed96ecfd6ccd91f31bd59bcf64386b4543bef02"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/password.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/password.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "30dfc02e5a38dd8a5cdd2cfb438f594b19a93da2b2387a84a9faddf492759da7"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/session-api.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/session-api.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "5fb77377096227ddc4e6b3c7fa263eef2771782d1d2585d489fe8fbb0dc3b9c6"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/sign-in.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/sign-in.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "4f916c51a9c8e16ee4cadcf2228e392d92f8f1c9bd5dfe18e837d99cc48476b1"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/sign-out.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/sign-out.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "9ca1a7bd931b0147e6184ab1bbeb6b543303c2c5135ce437c6bed524f18f8604"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/sign-up.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/sign-up.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "9bb2fc4fd8e556557ba305a524b486648386f577d46eb5fb01d215ccf8601c2b"
+    },
+    {
+      "id": "packages/better-auth/src/api/routes/update-user.test.ts::@file",
+      "path": "packages/better-auth/src/api/routes/update-user.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "bf33aff4080a0a16e4db81ecf2050297ff7fb7e7a43a3fd9fcf93ab60f0482b7"
+    },
+    {
+      "id": "packages/better-auth/src/api/server-only-endpoints.test.ts::@file",
+      "path": "packages/better-auth/src/api/server-only-endpoints.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "f2ea7fc336c80defbf6ab6f4c7fe1af1673b3e3036e1eb645720e92a465c621e"
+    },
+    {
+      "id": "packages/better-auth/src/api/to-auth-endpoints.test.ts::@file",
+      "path": "packages/better-auth/src/api/to-auth-endpoints.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "8a62afc6d8e463ff219838113c51cdecf6a31655b7c87eb40a40eff7b59c55fd"
+    },
+    {
+      "id": "packages/better-auth/src/auth/full.test.ts::@file",
+      "path": "packages/better-auth/src/auth/full.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "e8856f7bd98bb76970d759014690c9cd2a983bc0b1e0d24a73769034d69d89f3"
+    },
+    {
+      "id": "packages/better-auth/src/auth/minimal.test.ts::@file",
+      "path": "packages/better-auth/src/auth/minimal.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "9193142f680865528640accc12887f2a5d8b6be10d3d5be1e213f69fae21bbf8"
+    },
+    {
+      "id": "packages/better-auth/src/auth/trusted-origins.test.ts::@file",
+      "path": "packages/better-auth/src/auth/trusted-origins.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "47cb8825e61805384ef5359b26e571aeec553cbea596f1d875e3c0881304e798"
+    },
+    {
+      "id": "packages/better-auth/src/call.test.ts::@file",
+      "path": "packages/better-auth/src/call.test.ts",
+      "category": "direct-api",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "d37624cf215f967127f6709177a0e82847de9cef521b9c42c8bc2b0ce27d9e57"
+    },
+    {
+      "id": "packages/better-auth/src/client/client-declaration.test.ts::@file",
+      "path": "packages/better-auth/src/client/client-declaration.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "294cf99420711510321d6c1f0965ce3089e9e15f6039f8e6e46da88f5e657d69"
+    },
+    {
+      "id": "packages/better-auth/src/client/client-ssr.test.ts::@file",
+      "path": "packages/better-auth/src/client/client-ssr.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "a418db05a2958d2fd48d6cee5a80e9e78132bfce26057544db056acbd387e217"
+    },
+    {
+      "id": "packages/better-auth/src/client/client.test.ts::@file",
+      "path": "packages/better-auth/src/client/client.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "98d54f2946dc366f1b6ae5a7a1e685e9c00f4f5e38ebece356106653a431cbb8"
+    },
+    {
+      "id": "packages/better-auth/src/client/equality.test.ts::@file",
+      "path": "packages/better-auth/src/client/equality.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "e9669637ea5c551665ec86ae7b36decb09d44a215059f5b5c67dc5935b09efc7"
+    },
+    {
+      "id": "packages/better-auth/src/client/parser.test.ts::@file",
+      "path": "packages/better-auth/src/client/parser.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "c37e8e7011791e3520ffe8853427974a68458f2fc13318fec912c8ab9da705f4"
+    },
+    {
+      "id": "packages/better-auth/src/client/proxy.test.ts::@file",
+      "path": "packages/better-auth/src/client/proxy.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "514523022454d605306e99ef10a8086cfc99f89f52928c8f0b90d1491971a8b4"
+    },
+    {
+      "id": "packages/better-auth/src/client/query.test.ts::@file",
+      "path": "packages/better-auth/src/client/query.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "396a2411d0c5d8485c840b6815dbdcac3ddf2f5f18907acf126e311c209e65e0"
+    },
+    {
+      "id": "packages/better-auth/src/client/session-refresh.test.ts::@file",
+      "path": "packages/better-auth/src/client/session-refresh.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "fabdd9c1bf60272c10d96bcdb6c3b2c856e79179c80fdc402b5a28e431456a08"
+    },
+    {
+      "id": "packages/better-auth/src/client/url.test.ts::@file",
+      "path": "packages/better-auth/src/client/url.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "d0fb80b17d9462ebe73ae14d37adb6262145dc5ef1c930e83f45a256fae0b6ab"
+    },
+    {
+      "id": "packages/better-auth/src/context/create-context.test.ts::@file",
+      "path": "packages/better-auth/src/context/create-context.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "1279f5101870977db2d70451cad1ba2704166d1a68ff520e83b093fb3cb3f4cb"
+    },
+    {
+      "id": "packages/better-auth/src/context/init-minimal.test.ts::@file",
+      "path": "packages/better-auth/src/context/init-minimal.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "0955579deeec6d4a9db9fd02681354b831f0f197834c9aeba350a1721ecd2920"
+    },
+    {
+      "id": "packages/better-auth/src/context/init.test.ts::@file",
+      "path": "packages/better-auth/src/context/init.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "0f66ab28c93046cf85f43cc1c764e3f09536ce5acb47d87dd5dbc86d23e46d50"
+    },
+    {
+      "id": "packages/better-auth/src/cookies/cookies.test.ts::@file",
+      "path": "packages/better-auth/src/cookies/cookies.test.ts",
+      "category": "unit",
+      "ownerPhase": 1,
+      "runner": "vitest",
+      "sourceSha256": "80bd8e6e115570c664315398716573d2b63bc8669a5bb298c529f37c93d4821a"
+    },
+    {
+      "id": "packages/better-auth/src/crypto/password.test.ts::@file",
+      "path": "packages/better-auth/src/crypto/password.test.ts",
+      "category": "unit",
+      "ownerPhase": 1,
+      "runner": "vitest",
+      "sourceSha256": "d4e0e35b10d9e90e1ce2c1b37eb8d87d7b93bcd6fab9945ba8116d5a78d40779"
+    },
+    {
+      "id": "packages/better-auth/src/crypto/secret-rotation.test.ts::@file",
+      "path": "packages/better-auth/src/crypto/secret-rotation.test.ts",
+      "category": "unit",
+      "ownerPhase": 1,
+      "runner": "vitest",
+      "sourceSha256": "d58495ceb83594195ba213971cd617277968de33be2f805b3941109517e71a68"
+    },
+    {
+      "id": "packages/better-auth/src/db/db.test.ts::@file",
+      "path": "packages/better-auth/src/db/db.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "2e0ec7731898714253e49abef76368bb6b99a415f22675c5388b52f2ed09dbaf"
+    },
+    {
+      "id": "packages/better-auth/src/db/get-migration-schema.test.ts::@file",
+      "path": "packages/better-auth/src/db/get-migration-schema.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "05dd401e70b838aeb8ad7bac424ac58add22b699a2ca559bbe916ec18f02f255"
+    },
+    {
+      "id": "packages/better-auth/src/db/internal-adapter.test.ts::@file",
+      "path": "packages/better-auth/src/db/internal-adapter.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "88c7a3b26b638a5e213f7e1efb0a882aae19a1c595038c8193f21f21b6d1786f"
+    },
+    {
+      "id": "packages/better-auth/src/db/secondary-storage.test.ts::@file",
+      "path": "packages/better-auth/src/db/secondary-storage.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "9be09c298540923ffd0087a9951c0f804f8f364c138f258a958e0b08d7bd9b5a"
+    },
+    {
+      "id": "packages/better-auth/src/db/to-zod.test.ts::@file",
+      "path": "packages/better-auth/src/db/to-zod.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "7a9b94923756ccdc2d8812b29948aeeda6f3d9c4ce9e5224f68c0648f637ba57"
+    },
+    {
+      "id": "packages/better-auth/src/instrumentation.db.test.ts::@file",
+      "path": "packages/better-auth/src/instrumentation.db.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "54ec10a5df8c9aa3eb32cc804de0035b9d5b32277451ed0c57433a011b8041d2"
+    },
+    {
+      "id": "packages/better-auth/src/instrumentation.endpoint.test.ts::@file",
+      "path": "packages/better-auth/src/instrumentation.endpoint.test.ts",
+      "category": "http",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "2391c45bb716f5b4b432f3435f6aba6c04d6e7b63137912081b9cbfca59c9738"
+    },
+    {
+      "id": "packages/better-auth/src/integrations/next-js.test.ts::@file",
+      "path": "packages/better-auth/src/integrations/next-js.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "63004306267809b3587874d35c981baca63848a57bc1784793c3bb59ac686ba9"
+    },
+    {
+      "id": "packages/better-auth/src/oauth2/link-account.test.ts::@file",
+      "path": "packages/better-auth/src/oauth2/link-account.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "b4afd4f61d5f5e781d71aed6e82be7d37b711ab59883d791c6a3c68245dfce9b"
+    },
+    {
+      "id": "packages/better-auth/src/oauth2/state.test.ts::@file",
+      "path": "packages/better-auth/src/oauth2/state.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "31a89283b8775bc889838c8bb13b15164cb64f87cedde641d51d3d53896bea3c"
+    },
+    {
+      "id": "packages/better-auth/src/oauth2/utils.test.ts::@file",
+      "path": "packages/better-auth/src/oauth2/utils.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "7db6836af664300fe53e5a1920889ed3d19c553c0ae6364f2d7f8e4c7412a855"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/access/access.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/access/access.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "ea581b3a2e2a14a0c10853aa3aa0c0104753c2ad0af8d55421ea26e12f0894c3"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/additional-fields/additional-fields.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/additional-fields/additional-fields.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "c86a7dc376e7d83f825929445b57345381990aa4e82003459b20c81495ccab66"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/admin/admin-username.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/admin/admin-username.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "ca811c9aa98f49ddc93658ee7cfccb0a88d792cc0fec33b14a74d8d75551d611"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/admin/admin.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/admin/admin.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "bd6865d1a144cd07e8c0e57a1321ecdf2ead1e2c4875533af40452fd79fd5cb1"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/anonymous/anon.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/anonymous/anon.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "a5891d71192d25b2d34df3ed7c4c1526cf92fd9f78f723f24b1267179043f956"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/bearer/bearer.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/bearer/bearer.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "41f2dd741feab0d07ef2ec2bc8fe789f50093237da725c901cd60f7b3df4732e"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/captcha/captcha.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/captcha/captcha.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "d695b21e2cf30c8f58cb8a63d08aa6ca80509e70a8486ea51eaf26fd6e279cfb"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/custom-session/custom-session.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/custom-session/custom-session.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "8d345ede8f05f59f93bead0117498ebe456f52566edc3086c6799831eedf6d67"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/device-authorization/device-authorization.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/device-authorization/device-authorization.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "faef3d93445a4d0d9067c2e98b6c8afc8b84932f397eb450047624103173d333"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/email-otp/email-otp.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/email-otp/email-otp.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "b342e791a971cb0d1bd6cbdc6767990fb061214b74dfc99aed813c0836050bb2"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/generic-oauth/generic-oauth.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/generic-oauth/generic-oauth.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "e9e613d9ea578034b3d881ca96169d703d490abc78d11be1035f51e04e549267"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/haveibeenpwned/haveibeenpwned.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/haveibeenpwned/haveibeenpwned.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "9bc9570113cd02ddc23741da31944db202a66863085cdb3d7bcdbba17ba75923"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/jwt/jwt.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/jwt/jwt.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "345f9cd756868eb3ac8ed7840628bd458dc5661763ded94f7e50d746803c724a"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/jwt/rotation.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/jwt/rotation.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "d2a563edc10da0958d3809976a1d2a1c07906a31f3f00ccb4a546ee2955fde10"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/last-login-method/custom-prefix.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/last-login-method/custom-prefix.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "c4705764d7ad9100e05fa8b0f6807c5769e35dba1cc032ba880b513f8dd2b8fe"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/last-login-method/last-login-method.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/last-login-method/last-login-method.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "e58885f19cba26631ddbb47ce0a2f525b151f04716fc1df67d43b706ae784b32"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/magic-link/magic-link.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/magic-link/magic-link.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "a2ac3f4cfc8bc756a585764fa466c6d3b22c0cd266242a8b470ee2269a163afe"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/mcp/client/mcp-client.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/mcp/client/mcp-client.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "1dfd25b19e22fc6e2d61508c287087a6f7ca8dc5f63086df2901a92f0cdc8b89"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/mcp/mcp.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/mcp/mcp.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "4f0d5922ebd5c39510b956d07e3589480a78cc5b5c20076aa3cd5d1cf8b75374"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/multi-session/multi-session.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/multi-session/multi-session.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "3719342fc020bd62dc8091512ec230ca5f8552ff726d2db8a7f478059c4ace35"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/oauth-popup/oauth-popup.client.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/oauth-popup/oauth-popup.client.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "e7d4ec1a093b0f60ca958801634d338913878d3a1300263467d806a851c4b8cb"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/oauth-popup/oauth-popup.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/oauth-popup/oauth-popup.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "4423a6162b419d792732baf53a934a486e5623401e94239c8b3515a1bfb295bb"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/oauth-proxy/oauth-proxy.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/oauth-proxy/oauth-proxy.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "36bd2e8b81102ad1b9b54440655d5e63ad5d4038edc1af1be853f3150342f168"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/oidc-provider/oidc.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/oidc-provider/oidc.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "03b0df6c47ae8b24c0c09babcfadb797d726798a578ecf98e2f4d9153c640731"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/oidc-provider/redirect-uri.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/oidc-provider/redirect-uri.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "1373224662192889d684e9bea2624bac63744ac2f6c8f25f5e0ea935df906be5"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/oidc-provider/utils/prompt.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/oidc-provider/utils/prompt.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "cdcb7f1b515eb82794fa31442a991e82b79d19d912882acf07dea90a23b3111c"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/one-tap/one-tap.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/one-tap/one-tap.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "90f4a43cac88e579b2af61dfb91bbd57d7a5e57ec54abd321f6bb9f21d59c0ec"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/one-time-token/one-time-token.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/one-time-token/one-time-token.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "d733a31cdaf794335b94e69691862acc62e37754e15fc54615ca9b19c9d41c6e"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/open-api/open-api.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/open-api/open-api.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "ef3383c10c4a810f8bdb02becdd9fdc2fc78fe853d75ed636c95c0a4bb0a46ee"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/organization/client.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/organization/client.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "3740a1b825ad3730408e4dfe99e48e7ca19ad1fa95125867d34aaa34d1f39609"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/organization/organization-client-declaration.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/organization/organization-client-declaration.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "bdc4a735f0e995420469071eabbaea9b81a0d553d307296eaabedf8783d9fdb4"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/organization/organization-hook.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/organization/organization-hook.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "49b1ef1b534c56eb0d36db8a4b41222fc2cf1d19e56c0b237a7a1b17592111af"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/organization/organization.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/organization/organization.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "66f602b1ad5d716dda5b84b0d55a8f2902b6990ef30c72071589d04c6487468d"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/organization/routes/crud-access-control.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/organization/routes/crud-access-control.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "127ec809605c249795130f90df164d0d6ce4a909d3c4598efbdcb84877b78c89"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/organization/routes/crud-invites.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/organization/routes/crud-invites.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "c20c7b64aac086dcd221a567df9de4532fb87897aebe07c961205aeea9098890"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/organization/routes/crud-members.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/organization/routes/crud-members.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "bde9b7d2bb443eb8cbaaece44e4827ed8dba56076d4f9a61d5323e760772a9c1"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/organization/routes/crud-org.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/organization/routes/crud-org.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "a8852445542c5e9b5dfedf55b2c54e2e7e4a7fd6203c9debeefabcf93db90a55"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/organization/team.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/organization/team.test.ts",
+      "category": "http",
+      "ownerPhase": 7,
+      "runner": "vitest",
+      "sourceSha256": "42bc4cc6792d223fb8ab4e1ed910797ce7573192183f89dd7894a4c1c02c6f9e"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/phone-number/phone-number.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/phone-number/phone-number.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "39c94da77e8fbd2b49a24bb72f5c22595a2ec742decf8b2a7631fa019284461e"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/siwe/siwe.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/siwe/siwe.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "aa47c3fa14a81ded62addc781be0f9f3df35d0a31310941025eb23524df27b9a"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/test-utils/test-utils.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/test-utils/test-utils.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "28c99725b131e64b331d1df7cf42703796ce6035491a683749a2325b920aec34"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/two-factor/two-factor.account-lockout.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/two-factor/two-factor.account-lockout.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "b770a99da186fbcd57e9d73ad4e661a285459951c1d423b2c019a76b04198dee"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/two-factor/two-factor.attempt-cap.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/two-factor/two-factor.attempt-cap.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "1d256fa0e0b121dffc0105fb48d79371ef37498793792124406a04953eb1c8dd"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/two-factor/two-factor.security.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/two-factor/two-factor.security.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "dc12d6ff4107e813d81765676a0583100d34d5760abf9ab7e36d5897b9f18089"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/two-factor/two-factor.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/two-factor/two-factor.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "a9b3ee4a3b859388799cb0acd307d6bc584b8810c409d91152494e0394f01786"
+    },
+    {
+      "id": "packages/better-auth/src/plugins/username/username.test.ts::@file",
+      "path": "packages/better-auth/src/plugins/username/username.test.ts",
+      "category": "http",
+      "ownerPhase": 6,
+      "runner": "vitest",
+      "sourceSha256": "ea33b85fd6359d4a9356704c87faa00a571f93103fe2445225b98649ff9fc5fc"
+    },
+    {
+      "id": "packages/better-auth/src/social.test.ts::@file",
+      "path": "packages/better-auth/src/social.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "221066590a1632db751d6c4e9b31461d8a846b68c12106edfc7364ae6c11895c"
+    },
+    {
+      "id": "packages/better-auth/src/types/types.test.ts::@file",
+      "path": "packages/better-auth/src/types/types.test.ts",
+      "category": "compile-time",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "f5f55cdc9d9fd62209d426bab8cc3606bde496ea790b36b632cf8092ced6678c"
+    },
+    {
+      "id": "packages/better-auth/src/utils/request.test.ts::@file",
+      "path": "packages/better-auth/src/utils/request.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "4064481c36ddaa550a9a395fe7b5d60d803906f03b7b7c085749ab3f87fdc1b0"
+    },
+    {
+      "id": "packages/better-auth/src/utils/url.test.ts::@file",
+      "path": "packages/better-auth/src/utils/url.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "bc265caa3431027f94428e21f038601d2c1aa8cd20f2a6477284e5f52f4e50d9"
+    },
+    {
+      "id": "packages/cli/src/commands/init/utility/auth-config.test.ts::@file",
+      "path": "packages/cli/src/commands/init/utility/auth-config.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "e1c6a2ba2763e204f4d1329d72de124138beeeaa23d46efd3866e71e73a26bfe"
+    },
+    {
+      "id": "packages/cli/src/commands/init/utility/database.test.ts::@file",
+      "path": "packages/cli/src/commands/init/utility/database.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "38765bb8b579051275db8ac4680436383b14976140a073b17a5bea11ef50a2f3"
+    },
+    {
+      "id": "packages/cli/src/commands/init/utility/env.test.ts::@file",
+      "path": "packages/cli/src/commands/init/utility/env.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "05f913b499d9d92d8f8518982b5560b2115b7bed23ed833100f3f6a769816851"
+    },
+    {
+      "id": "packages/cli/src/commands/init/utility/framework.test.ts::@file",
+      "path": "packages/cli/src/commands/init/utility/framework.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "50482fe8fb639428e4a4471a7b892c269be6bfe6896ee769a23206bf89cefce2"
+    },
+    {
+      "id": "packages/cli/src/commands/init/utility/imports.test.ts::@file",
+      "path": "packages/cli/src/commands/init/utility/imports.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "7245627ad953957c5e4b25464e4345605859b6259295adfda5eaead0e912599a"
+    },
+    {
+      "id": "packages/cli/src/commands/init/utility/plugin.test.ts::@file",
+      "path": "packages/cli/src/commands/init/utility/plugin.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "4b65f202ed71e4838da76d2a11f22ae659dfc971dad2267c2d68ec8c82d821e8"
+    },
+    {
+      "id": "packages/cli/test/check-package-managers.test.ts::@file",
+      "path": "packages/cli/test/check-package-managers.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "5b13771a52a16fa3fb9b1eef361e94c40aae24abd58a6e964c4adfd9dfdfc4b0"
+    },
+    {
+      "id": "packages/cli/test/generate-all-db.test.ts::@file",
+      "path": "packages/cli/test/generate-all-db.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "9a082bff944490ba04fab860621064e06a34358273aac102fc0fd1267f8984d7"
+    },
+    {
+      "id": "packages/cli/test/generate.test.ts::@file",
+      "path": "packages/cli/test/generate.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "53bb8e97d09a145bd75d30d4d87c14316bb638da789ba8539ef38b08d6b534fe"
+    },
+    {
+      "id": "packages/cli/test/get-config.test.ts::@file",
+      "path": "packages/cli/test/get-config.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "b1cc42a9a220e62ab84cfa68296734003584f10d650236950708d0bc252d60d3"
+    },
+    {
+      "id": "packages/cli/test/info.test.ts::@file",
+      "path": "packages/cli/test/info.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "624c21966fa098d1852bb00927544e1ab0afe1ee642f37f5362ed19a49a4d9e1"
+    },
+    {
+      "id": "packages/cli/test/init.test.ts::@file",
+      "path": "packages/cli/test/init.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "da105b6877823af6d9c59142af954ac73e0b352a5c85003cde9b5911231c9a43"
+    },
+    {
+      "id": "packages/cli/test/install-dependencies.test.ts::@file",
+      "path": "packages/cli/test/install-dependencies.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "274a5ab5fae440409a227770d35e150017e51013c082107e4ac6156165f73210"
+    },
+    {
+      "id": "packages/cli/test/migrate.test.ts::@file",
+      "path": "packages/cli/test/migrate.test.ts",
+      "category": "runtime-package-smoke",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "29e34d1372471d0e90b3fd00dc140e49507513515812da1537002fc3b908ef1a"
+    },
+    {
+      "id": "packages/core/src/context/request-state.test.ts::@file",
+      "path": "packages/core/src/context/request-state.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "ddbe26df4bb189851b4a413f4b89e12579d03b01947099a9c1d08e3bb08611c8"
+    },
+    {
+      "id": "packages/core/src/context/transaction.test.ts::@file",
+      "path": "packages/core/src/context/transaction.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "48600f1e8e79ffd6d0709315c18fc7542a83982ec23cb9035bf91a4b1edbca01"
+    },
+    {
+      "id": "packages/core/src/db/adapter/factory.test.ts::@file",
+      "path": "packages/core/src/db/adapter/factory.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "099ad8e28f76db11e2f61e2ead1ed5b6cbd4bb31c052f40b0c8b025454730a33"
+    },
+    {
+      "id": "packages/core/src/db/adapter/get-id-field.test.ts::@file",
+      "path": "packages/core/src/db/adapter/get-id-field.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "d8c94f798c038594bb694b47341d6e64a17609e4ec2cc0b1126879756bbbd477"
+    },
+    {
+      "id": "packages/core/src/db/adapter/increment-one.test.ts::@file",
+      "path": "packages/core/src/db/adapter/increment-one.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "24b8fc03a5184d11383884f34a30c780cc8cc8fa41726254d7c69a3041e052a1"
+    },
+    {
+      "id": "packages/core/src/db/test/get-default-model-name.test.ts::@file",
+      "path": "packages/core/src/db/test/get-default-model-name.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "143c9bd6464f624e71becce57e459e9aecf057d923760fd237850525cdd7f588"
+    },
+    {
+      "id": "packages/core/src/db/test/get-tables.test.ts::@file",
+      "path": "packages/core/src/db/test/get-tables.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "6399084274c6ae06ff28db6b104521ff5771e472c109dec38578aafe63cf5dec"
+    },
+    {
+      "id": "packages/core/src/env/env-impl.test.ts::@file",
+      "path": "packages/core/src/env/env-impl.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "2538bd9b3fc339f6a5b9e48cf75756be4fc3a1ae7bf6648a439a82e239db271e"
+    },
+    {
+      "id": "packages/core/src/env/logger.test.ts::@file",
+      "path": "packages/core/src/env/logger.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "187a0d446a77340e42f96ae7dbb65f779b0b7e5100625d0cb0a30de5b947169e"
+    },
+    {
+      "id": "packages/core/src/instrumentation/instrumentation.test.ts::@file",
+      "path": "packages/core/src/instrumentation/instrumentation.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "eff34f3c8855f9aab7aac0101ac2020f9d277708f521381288acc5c07fecab14"
+    },
+    {
+      "id": "packages/core/src/instrumentation/noop.test.ts::@file",
+      "path": "packages/core/src/instrumentation/noop.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "b0157c61ee601afe5af0307cd25663ebdb3dd1bee34ec4dc6dd479d5feb44415"
+    },
+    {
+      "id": "packages/core/src/instrumentation/pure.test.ts::@file",
+      "path": "packages/core/src/instrumentation/pure.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "165241693fb7cbb621dcc8ed839d014cdc3d28e75c1ddb33a7f37407cd03ff14"
+    },
+    {
+      "id": "packages/core/src/oauth2/refresh-access-token.test.ts::@file",
+      "path": "packages/core/src/oauth2/refresh-access-token.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "c3c6b1a3b50410d4bcfd95ffcb043bfd6db4a8c0b97712e6b8f24f335f5a2482"
+    },
+    {
+      "id": "packages/core/src/oauth2/reject-redirects.runtime.test.ts::@file",
+      "path": "packages/core/src/oauth2/reject-redirects.runtime.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "3f3675e3d4fc5a43ba4feca8aac3838252259cf6b898be33e3f28864747794ed"
+    },
+    {
+      "id": "packages/core/src/oauth2/reject-redirects.server.test.ts::@file",
+      "path": "packages/core/src/oauth2/reject-redirects.server.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "eac9a542ce79315c9b4ccc56f91edda3197af83b9a5caefd1ad72b79261901df"
+    },
+    {
+      "id": "packages/core/src/oauth2/reject-redirects.test.ts::@file",
+      "path": "packages/core/src/oauth2/reject-redirects.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "195545c14e50aaedd57bb89b6e5961c72cb44c212e01f13e8b8da10b8b6f6e0c"
+    },
+    {
+      "id": "packages/core/src/oauth2/validate-token.test.ts::@file",
+      "path": "packages/core/src/oauth2/validate-token.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "3b775d84611dbe73b9b7cfc21817d3c9a269f1312180504c0088fce0ae32b77c"
+    },
+    {
+      "id": "packages/core/src/oauth2/verify.test.ts::@file",
+      "path": "packages/core/src/oauth2/verify.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "a68dc6411b255b83c4bc9aecf1d27de378d26dce0b582e2063f60e3bede35b3a"
+    },
+    {
+      "id": "packages/core/src/social-providers/apple.test.ts::@file",
+      "path": "packages/core/src/social-providers/apple.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "b0aa22e5c746baccc8f2ab1616dca9a0415b708b7e6ead65e345ee2805bc5946"
+    },
+    {
+      "id": "packages/core/src/social-providers/facebook.test.ts::@file",
+      "path": "packages/core/src/social-providers/facebook.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "462af32090bb868e11434fb381fa4d7aab432778a52f97096687fa4b39f1ca93"
+    },
+    {
+      "id": "packages/core/src/social-providers/google.test.ts::@file",
+      "path": "packages/core/src/social-providers/google.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "823c2a9f4b1d11a7ca1b0bb741b0c0075ae70dcb1a730a912d4afe990bebd901"
+    },
+    {
+      "id": "packages/core/src/social-providers/microsoft-entra-id.test.ts::@file",
+      "path": "packages/core/src/social-providers/microsoft-entra-id.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "08687a78821e891f3b502abf541b19a333ad493eb9fa3504e6a4c0a327a77ed2"
+    },
+    {
+      "id": "packages/core/src/social-providers/paypal.test.ts::@file",
+      "path": "packages/core/src/social-providers/paypal.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "6028cbc463b299a0ff01d2d58f238a390b086f234ce0d9bb2d1d0c081a35cebd"
+    },
+    {
+      "id": "packages/core/src/social-providers/reddit.test.ts::@file",
+      "path": "packages/core/src/social-providers/reddit.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "764ba1daa1457e56a523a567e2085c898be7ec3472906f9eb1ed552c8658f7a5"
+    },
+    {
+      "id": "packages/core/src/social-providers/wechat.test.ts::@file",
+      "path": "packages/core/src/social-providers/wechat.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "e7875a86a105d5a5d6542c6a93e68398fc445ca83302fe87a8b59431c4aea939"
+    },
+    {
+      "id": "packages/core/src/utils/async.test.ts::@file",
+      "path": "packages/core/src/utils/async.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "9580ef69e122782a93f39f3a856e3fd78a4d0424d1615dec65e1b8487fa1e94b"
+    },
+    {
+      "id": "packages/core/src/utils/deprecate.test.ts::@file",
+      "path": "packages/core/src/utils/deprecate.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "1fa3df4904cd41e16d97bab4ef827e405775604b5204270154c9c887687da151"
+    },
+    {
+      "id": "packages/core/src/utils/email.test.ts::@file",
+      "path": "packages/core/src/utils/email.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "85f5bbb76fc77fa6f18232f05fce3a9efd9e43f0b7f50d0ca93f621a61202ada"
+    },
+    {
+      "id": "packages/core/src/utils/fetch-metadata.test.ts::@file",
+      "path": "packages/core/src/utils/fetch-metadata.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "c565ac62e564df3b9f21ca8ec05df22dc7dc6b012c5ac03cd708a54c9834d3bf"
+    },
+    {
+      "id": "packages/core/src/utils/host.test.ts::@file",
+      "path": "packages/core/src/utils/host.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "8e660c5ade19571c7a3434e502ccdb2d241bf98281946608be1e166380ffe9f5"
+    },
+    {
+      "id": "packages/core/src/utils/ip.test.ts::@file",
+      "path": "packages/core/src/utils/ip.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "25c8ea234b74cefea407419d877481edadc79cbb5e037c6047d539ab95315f55"
+    },
+    {
+      "id": "packages/core/src/utils/string.test.ts::@file",
+      "path": "packages/core/src/utils/string.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "f23847aabff976b2dfc6b8c33d6faadca2636705abbd3f23069830415305e4d1"
+    },
+    {
+      "id": "packages/core/src/utils/url.test.ts::@file",
+      "path": "packages/core/src/utils/url.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "1c3e4501a1fdab5eb5418841cca16a6cab4bf73d948484d12a01907f60226246"
+    },
+    {
+      "id": "packages/drizzle-adapter/src/drizzle-adapter.test.ts::@file",
+      "path": "packages/drizzle-adapter/src/drizzle-adapter.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "a175948af1757a5c011449044bc3e8f780cd99a3a10c3a54ae4311e4097cc3ba"
+    },
+    {
+      "id": "packages/electron/test/electron.test.ts::@file",
+      "path": "packages/electron/test/electron.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "de4d25e14381d20f4dff28c8c58f86824113fe4d63e0d7003f2c5617a2d6f188"
+    },
+    {
+      "id": "packages/expo/test/expo.test.ts::@file",
+      "path": "packages/expo/test/expo.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "dd7d5fa567971a8894f1a4ccb16e10ed1eb078cbad6117c48c2baf47bbe44660"
+    },
+    {
+      "id": "packages/expo/test/last-login-method.test.ts::@file",
+      "path": "packages/expo/test/last-login-method.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "ff1786a6fec7f6adcd092cc00296300e38421cda228a9881106a88761be0d4e8"
+    },
+    {
+      "id": "packages/i18n/src/i18n.test.ts::@file",
+      "path": "packages/i18n/src/i18n.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "59cbf4027fb4f63c222ade1843e34099a7a83fb3ba448ab875b7db0e2aa2b76e"
+    },
+    {
+      "id": "packages/kysely-adapter/src/increment-one.test.ts::@file",
+      "path": "packages/kysely-adapter/src/increment-one.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "99f645c7035779a538d6470308e79087d677454397ae107222230327b05473ce"
+    },
+    {
+      "id": "packages/kysely-adapter/src/kysely-adapter.test.ts::@file",
+      "path": "packages/kysely-adapter/src/kysely-adapter.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "74ac6eec114a348203620d69012c3fd57b61c5fdae0bcfcb081096e5a025d25b"
+    },
+    {
+      "id": "packages/kysely-adapter/src/sqlite-dialect-mutations.test.ts::@file",
+      "path": "packages/kysely-adapter/src/sqlite-dialect-mutations.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "c81b51f1dc1283e65a9b47d6b26d423f020d317adbf8dd693ae5fb4cfc7b8562"
+    },
+    {
+      "id": "packages/kysely-adapter/src/sqlite-introspector.test.ts::@file",
+      "path": "packages/kysely-adapter/src/sqlite-introspector.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "7e008388d92b15e6859d1332ddb17d42bd92b7ddcaf06a1b37a623000a4824da"
+    },
+    {
+      "id": "packages/kysely-adapter/src/with-returning-mysql.test.ts::@file",
+      "path": "packages/kysely-adapter/src/with-returning-mysql.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "6a4120f2ffe54f65535b83531c69c5950ed09dd96bd0d3253307c1aa6ae8f633"
+    },
+    {
+      "id": "packages/memory-adapter/src/memory-adapter.test.ts::@file",
+      "path": "packages/memory-adapter/src/memory-adapter.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "9220983a8a3405e01ce59af1d968a65182bfcf69707ff62485ce0f6e70a55139"
+    },
+    {
+      "id": "packages/mongo-adapter/src/mongodb-adapter.test.ts::@file",
+      "path": "packages/mongo-adapter/src/mongodb-adapter.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "a7076f87e7f0f6e5308ffcb42ad677c851600c68982126ed54a5892c45e72347"
+    },
+    {
+      "id": "packages/oauth-provider/src/authorize.test.ts::@file",
+      "path": "packages/oauth-provider/src/authorize.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "5e1bc9cef31cf3014b598f7c0b17ff336e7c42b5071e088e0e8bc48edb5f6b01"
+    },
+    {
+      "id": "packages/oauth-provider/src/introspect.test.ts::@file",
+      "path": "packages/oauth-provider/src/introspect.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "3a3c63014f28a543d819d26be1605c5e6407074e0fc6a8336eeafd204428ea2a"
+    },
+    {
+      "id": "packages/oauth-provider/src/logout.test.ts::@file",
+      "path": "packages/oauth-provider/src/logout.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "8b97c7ef6e45094c1327b889ad8e6683d21cd7590a616329d15261c67c74ce22"
+    },
+    {
+      "id": "packages/oauth-provider/src/mcp.test.ts::@file",
+      "path": "packages/oauth-provider/src/mcp.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "69309c72b0ed11cff079d183c0022dc32ed94d562c82eb09a9497efb69ad0f18"
+    },
+    {
+      "id": "packages/oauth-provider/src/metadata.test.ts::@file",
+      "path": "packages/oauth-provider/src/metadata.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "5c81b435104ce6df751068ca6497b5fa2e389a2fbf36faa69277927b31badda1"
+    },
+    {
+      "id": "packages/oauth-provider/src/oauth.test.ts::@file",
+      "path": "packages/oauth-provider/src/oauth.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "5e9f12e764cff696531101a00084a5c44bc6b1a040d8c26466fec7ec0f19ad03"
+    },
+    {
+      "id": "packages/oauth-provider/src/oauthClient/endpoints-privileges.test.ts::@file",
+      "path": "packages/oauth-provider/src/oauthClient/endpoints-privileges.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "7441dbe8c89bce755cc46d8115fa81b17cd85abb52f81d2559e9f72d54ce4a50"
+    },
+    {
+      "id": "packages/oauth-provider/src/oauthClient/endpoints.test.ts::@file",
+      "path": "packages/oauth-provider/src/oauthClient/endpoints.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "9807d0dbe6b8a563663dc6cf2c6a773dd84d007b22cde69692c1a30e75dce8ae"
+    },
+    {
+      "id": "packages/oauth-provider/src/oauthConsent/endpoints.test.ts::@file",
+      "path": "packages/oauth-provider/src/oauthConsent/endpoints.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "6e3a2a1fec46734bdca58d2c097d9cd7768badd405da23f468e02edf5eff09f4"
+    },
+    {
+      "id": "packages/oauth-provider/src/pairwise.test.ts::@file",
+      "path": "packages/oauth-provider/src/pairwise.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "c433ee21431c1e7d61a633f6abc29b641361ec46231b8ef5185b7aadd9ba5913"
+    },
+    {
+      "id": "packages/oauth-provider/src/pkce-optional.test.ts::@file",
+      "path": "packages/oauth-provider/src/pkce-optional.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "3e5a7fee6191023a7465092dcbaf05cbdc2502d1cdf1ecf41982d3a74cc0717d"
+    },
+    {
+      "id": "packages/oauth-provider/src/public-types.test.ts::@file",
+      "path": "packages/oauth-provider/src/public-types.test.ts",
+      "category": "compile-time",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "ffb3ecce10df713f046c491eac74d7ce78ad132a097ecae26e4f5ccc3eddf176"
+    },
+    {
+      "id": "packages/oauth-provider/src/register.test.ts::@file",
+      "path": "packages/oauth-provider/src/register.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "40481268a9517466906825463e48716b3f026ca0fd632ff2e93cb78ece549618"
+    },
+    {
+      "id": "packages/oauth-provider/src/revoke.test.ts::@file",
+      "path": "packages/oauth-provider/src/revoke.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "d208bf373f13e6887e8a81c0df91f392f6dd577057b4ed948e1dab007ff2c6d9"
+    },
+    {
+      "id": "packages/oauth-provider/src/schema.test.ts::@file",
+      "path": "packages/oauth-provider/src/schema.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "ed1e25c18180163bed2d9a1f6dc300bcd144993f1dd4a5bd3a05d7181ba6623b"
+    },
+    {
+      "id": "packages/oauth-provider/src/signed-query.test.ts::@file",
+      "path": "packages/oauth-provider/src/signed-query.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "aa0462beeb810d5ae2af2fc50feccb7bb33d64ff7dd11d697a41ff94a092de68"
+    },
+    {
+      "id": "packages/oauth-provider/src/token.test.ts::@file",
+      "path": "packages/oauth-provider/src/token.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "179e16fa5398d80a5b42f1a0f3595bedbcad351103bf17ee265052644c896b4a"
+    },
+    {
+      "id": "packages/oauth-provider/src/types/zod.test.ts::@file",
+      "path": "packages/oauth-provider/src/types/zod.test.ts",
+      "category": "compile-time",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "a17833c3687a7a11364067465e1c33eefe79acaea6385ebc93c53bc652260f68"
+    },
+    {
+      "id": "packages/oauth-provider/src/userinfo.test.ts::@file",
+      "path": "packages/oauth-provider/src/userinfo.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "22e784a4a8f5953db285b4cc227b9f7df22a055ace172801be468b156c2efabc"
+    },
+    {
+      "id": "packages/oauth-provider/src/utils/basic-auth.test.ts::@file",
+      "path": "packages/oauth-provider/src/utils/basic-auth.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "846c62fc62d677d78097180c463c7f85f1be77671bcc6cf465ea1c4fd34e46ec"
+    },
+    {
+      "id": "packages/oauth-provider/src/utils/query-serialization.test.ts::@file",
+      "path": "packages/oauth-provider/src/utils/query-serialization.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "e1e4b70f95df56539d06562cd26a97401c042b26f86d64ea52ec7728306c169d"
+    },
+    {
+      "id": "packages/oauth-provider/src/utils/timestamps.test.ts::@file",
+      "path": "packages/oauth-provider/src/utils/timestamps.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "7af4247555e5c3fae78a74c8741729db82d50798bbdcb43b23e06f195104a7db"
+    },
+    {
+      "id": "packages/passkey/src/authenticator-metadata.test.ts::@file",
+      "path": "packages/passkey/src/authenticator-metadata.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "23b96a191fa42c366267498fbf55f70db0972c0ea13fd6fe7fb2355a4de91aeb"
+    },
+    {
+      "id": "packages/passkey/src/client.test.ts::@file",
+      "path": "packages/passkey/src/client.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "44942e8dfcdebd412f1bee10d3a870f84f1cb3902bb23babeed421bed3a74c82"
+    },
+    {
+      "id": "packages/passkey/src/open-api.test.ts::@file",
+      "path": "packages/passkey/src/open-api.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "be9e6fdd61968574620420078a3654e9b1ac6d43ff9d51d837dd53304b094df5"
+    },
+    {
+      "id": "packages/passkey/src/passkey.test.ts::@file",
+      "path": "packages/passkey/src/passkey.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "d1eb1b55dba2d3b21391057fe4ed1a70e73f0583972726406c64c91e1bd54caf"
+    },
+    {
+      "id": "packages/prisma-adapter/src/prisma-adapter.test.ts::@file",
+      "path": "packages/prisma-adapter/src/prisma-adapter.test.ts",
+      "category": "storage",
+      "ownerPhase": 3,
+      "runner": "vitest",
+      "sourceSha256": "ab8ddd80467edc66092ab833517bb72eb2d14648034d2b82f79e24d325361e4d"
+    },
+    {
+      "id": "packages/redis-storage/test/redis-storage.test.ts::@file",
+      "path": "packages/redis-storage/test/redis-storage.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "9a7181c46eec424a7b74526b59a4040af69f901d2deef8f1b1414346c655a2d5"
+    },
+    {
+      "id": "packages/scim/src/scim-patch.test.ts::@file",
+      "path": "packages/scim/src/scim-patch.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "5a9df220311fdd176d30a7478bf39855e1f17428bc67e4d3f221fe6eeacaa7dc"
+    },
+    {
+      "id": "packages/scim/src/scim-users.test.ts::@file",
+      "path": "packages/scim/src/scim-users.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "8cbfc90a30e756993a86e36ef2ead2ef13239692ee435d170a59b657940ccaf4"
+    },
+    {
+      "id": "packages/scim/src/scim.management.test.ts::@file",
+      "path": "packages/scim/src/scim.management.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "aa2c7595b6d93b2227c845a003c0a0baebdcb39c85383fcff818f0c5bbafe6e2"
+    },
+    {
+      "id": "packages/scim/src/scim.test.ts::@file",
+      "path": "packages/scim/src/scim.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "694033e8fce58c2ff561b4f18232d38a079fb6c507e9ba2d35f7647fa98d0ccc"
+    },
+    {
+      "id": "packages/sso/src/domain-verification.test.ts::@file",
+      "path": "packages/sso/src/domain-verification.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "3dfaf1305079c04ce26eb5bdc5a88d79192783066c52dd2d43f12fba13221c4b"
+    },
+    {
+      "id": "packages/sso/src/linking/org-assignment.test.ts::@file",
+      "path": "packages/sso/src/linking/org-assignment.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "b3495e4133b9983251afbd211b27b7619336168451458024720d7dd87a2b865e"
+    },
+    {
+      "id": "packages/sso/src/oidc.test.ts::@file",
+      "path": "packages/sso/src/oidc.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "5dc72ff52fb7c8209a600268c9080bf2e3f0fc1e170231f98f930f6d7dab2c1d"
+    },
+    {
+      "id": "packages/sso/src/oidc/discovery.test.ts::@file",
+      "path": "packages/sso/src/oidc/discovery.test.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "92c09d60e0236155109d975bf2aecb13e4e4996bb54453c3ff88b4543925b861"
+    },
+    {
+      "id": "packages/sso/src/providers.test.ts::@file",
+      "path": "packages/sso/src/providers.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "d6777458025fd85814e95902e2ee89cc0635751154740e90842f8acb83d757c0"
+    },
+    {
+      "id": "packages/sso/src/routes/helpers.test.ts::@file",
+      "path": "packages/sso/src/routes/helpers.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "976eebed0ebb15da52d78db382be7e36ea0ac8cbe9f5b9a14b2730c1ece979a1"
+    },
+    {
+      "id": "packages/sso/src/saml.test.ts::@file",
+      "path": "packages/sso/src/saml.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "53c8ae36d5b1e0bf053239d7bfff9e438a0cd2ba4615400c92814e7d9a65e193"
+    },
+    {
+      "id": "packages/sso/src/saml/algorithms.test.ts::@file",
+      "path": "packages/sso/src/saml/algorithms.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "34c80f10ead1b365c31625462d1dc5c4cd919fe97db3f56bac83df88439a9169"
+    },
+    {
+      "id": "packages/sso/src/saml/assertions.test.ts::@file",
+      "path": "packages/sso/src/saml/assertions.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "669743ab831e1f1b99d8a2dd3b450edd834d11da06f753ef9f1a8d0f32630a5f"
+    },
+    {
+      "id": "packages/sso/src/saml/response-binding.test.ts::@file",
+      "path": "packages/sso/src/saml/response-binding.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "2c633023a04301df701d8ee518c3b5e159ce60842b41dc9abff95b88e07ce268"
+    },
+    {
+      "id": "packages/sso/src/utils.test.ts::@file",
+      "path": "packages/sso/src/utils.test.ts",
+      "category": "http",
+      "ownerPhase": 8,
+      "runner": "vitest",
+      "sourceSha256": "f409be6a1fc7b50ba6057529a96c72513c0b2d5356e35842b86f4c6a7d443371"
+    },
+    {
+      "id": "packages/stripe/test/checkout.test.ts::@file",
+      "path": "packages/stripe/test/checkout.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "727f02bf4fa1eb82305f62a4dd74bc3c2d81708fb47b0193b6e2710832281915"
+    },
+    {
+      "id": "packages/stripe/test/customer.test.ts::@file",
+      "path": "packages/stripe/test/customer.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "4621cfcc35ccb15d1371a1b825963551e94a1a7594649412d2cf249621a4ba0f"
+    },
+    {
+      "id": "packages/stripe/test/metadata.test.ts::@file",
+      "path": "packages/stripe/test/metadata.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "df0598f5c414c32b4d2145092cf65fffa67023e4945d5b97e9948eb32d3753d2"
+    },
+    {
+      "id": "packages/stripe/test/middleware.test.ts::@file",
+      "path": "packages/stripe/test/middleware.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "01ed0abe5f6fba90314251ffbc2396fb2c72306263a93bfd407e0618b670a6ad"
+    },
+    {
+      "id": "packages/stripe/test/plugin.test.ts::@file",
+      "path": "packages/stripe/test/plugin.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "9695424230874358e519cdf59356bcdad09853dd2feaa6bd80f6e45620722331"
+    },
+    {
+      "id": "packages/stripe/test/seat-based-billing.test.ts::@file",
+      "path": "packages/stripe/test/seat-based-billing.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "a26c152b827a74b1c310ea4740d348726d141d939124617ca3f37690a847d173"
+    },
+    {
+      "id": "packages/stripe/test/stripe-organization.test.ts::@file",
+      "path": "packages/stripe/test/stripe-organization.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "a73fa35be443ce4b7c2b1683998b2980da7eb18ecf024396e0bc0711a8099f3c"
+    },
+    {
+      "id": "packages/stripe/test/subscription.test.ts::@file",
+      "path": "packages/stripe/test/subscription.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "c6f987bc2f2f1d113a61fe0b25f30324764d049e3d9491fb1193edaa8bf3eb78"
+    },
+    {
+      "id": "packages/stripe/test/utils.test.ts::@file",
+      "path": "packages/stripe/test/utils.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "2646ee89a241f3bc75bfee9ddceb073f335e4b2173cddd09ba7a3938ead7a129"
+    },
+    {
+      "id": "packages/stripe/test/webhook.test.ts::@file",
+      "path": "packages/stripe/test/webhook.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "023e3d310cb13fd065e287fb18da9b1883cf38632b614e5cc4b99a844af47847"
+    },
+    {
+      "id": "packages/telemetry/src/telemetry.test.ts::@file",
+      "path": "packages/telemetry/src/telemetry.test.ts",
+      "category": "unit",
+      "ownerPhase": 9,
+      "runner": "vitest",
+      "sourceSha256": "5afb422855442269742c1a757741d47270f8fac758a55aa2732cb7311bc6fd8e"
+    },
+    {
+      "id": "test/unit/magic-link-secondary-storage.test.ts::@file",
+      "path": "test/unit/magic-link-secondary-storage.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "ee6cfa47192d3c60196841ee5c6f08d5aae983f577b092f92f313e2c34ce6954"
+    },
+    {
+      "id": "test/unit/no-multi-clause-adapter-update.test.ts::@file",
+      "path": "test/unit/no-multi-clause-adapter-update.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "5384c98492c59713394d143e1835d71492b55f20a4157e3247003f4d3de7cb58"
+    },
+    {
+      "id": "test/unit/oauth-stateless-account-data.test.ts::@file",
+      "path": "test/unit/oauth-stateless-account-data.test.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "4b68e48a3b4cd81b097892eee595442b10d2ea84d1dab957bbbcd1d3610b9db5"
+    },
+    {
+      "id": "test/unit/oidc/index.spec.ts::@file",
+      "path": "test/unit/oidc/index.spec.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "5d3157ca42aed1c483b7534ba3b6fe73ade021c7e2fdfe223d3d84cf0caea669"
+    },
+    {
+      "id": "test/unit/oidc/scope-consent.spec.ts::@file",
+      "path": "test/unit/oidc/scope-consent.spec.ts",
+      "category": "http",
+      "ownerPhase": 5,
+      "runner": "vitest",
+      "sourceSha256": "314403b5a6d2a1bf75679c207e65166b66be12673b804260a0287fabc9618dc5"
+    },
+    {
+      "id": "test/unit/proxy-agent/index.spec.ts::@file",
+      "path": "test/unit/proxy-agent/index.spec.ts",
+      "category": "unit",
+      "ownerPhase": 4,
+      "runner": "vitest",
+      "sourceSha256": "2875e11be4bae00e4c41a1495f25513e82ee49bdcb1d03bd38081f9914489f40"
+    },
+    {
+      "id": "test/unit/types/db.test.ts::@file",
+      "path": "test/unit/types/db.test.ts",
+      "category": "compile-time",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "33fa5bff1a77182757a276fa0c7827fee0ef5fb9d49094ab1177f9712b078304"
+    },
+    {
+      "id": "test/unit/types/endpoint-method.test.ts::@file",
+      "path": "test/unit/types/endpoint-method.test.ts",
+      "category": "compile-time",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "8923b9d39ce43ace1da27f7e5785b60909d9322b17a94abb9e2bf3e0cbefd567"
+    },
+    {
+      "id": "test/unit/types/index.test.ts::@file",
+      "path": "test/unit/types/index.test.ts",
+      "category": "compile-time",
+      "ownerPhase": 10,
+      "runner": "vitest",
+      "sourceSha256": "4d759b6d82f4cd7587c574b3ac86b00bae0e5be6ea0c6f3f1d962f01a6d8502e"
+    }
+  ],
+  "testCollection": {
+    "vitestConfigs": [
+      "e2e/adapter/test/adapter-factory/vitest.config.ts",
+      "e2e/adapter/test/drizzle-adapter/vitest.config.ts",
+      "e2e/adapter/test/kysely-adapter/vitest.config.ts",
+      "e2e/adapter/test/memory-adapter/vitest.config.ts",
+      "e2e/adapter/test/mongo-adapter/vitest.config.ts",
+      "e2e/adapter/test/prisma-adapter/vitest.config.ts",
+      "e2e/smoke/test/fixtures/cloudflare/vitest.config.ts",
+      "packages/api-key/vitest.config.ts",
+      "packages/better-auth/vitest.config.adapters.ts",
+      "packages/better-auth/vitest.config.ts",
+      "packages/cli/vitest.config.ts",
+      "packages/core/vitest.config.ts",
+      "packages/drizzle-adapter/vitest.config.ts",
+      "packages/electron/vitest.config.ts",
+      "packages/expo/vitest.config.ts",
+      "packages/i18n/vitest.config.ts",
+      "packages/kysely-adapter/vitest.config.ts",
+      "packages/memory-adapter/vitest.config.ts",
+      "packages/mongo-adapter/vitest.config.ts",
+      "packages/oauth-provider/vitest.config.ts",
+      "packages/passkey/vitest.config.ts",
+      "packages/prisma-adapter/vitest.config.ts",
+      "packages/scim/vitest.config.ts",
+      "packages/sso/vitest.config.ts",
+      "packages/stripe/vitest.config.ts",
+      "test/vitest.config.ts",
+      "vitest.config.ts"
+    ],
+    "playwrightConfigs": [
+      "e2e/integration/playwright.config.ts"
+    ]
+  },
+  "counts": {
+    "packages": 20,
+    "exportSubpaths": 102,
+    "providers": 35,
+    "builtInPlugins": 28,
+    "standalonePlugins": 6,
+    "cliCommands": 11,
+    "docsFeatures": 180,
+    "testFiles": 257,
+    "testCategories": {
+      "browser": 6,
+      "compile-time": 6,
+      "direct-api": 1,
+      "http": 121,
+      "runtime-package-smoke": 36,
+      "storage": 28,
+      "unit": 59
+    },
+    "ownerPhases": {
+      "1": 3,
+      "3": 28,
+      "4": 63,
+      "5": 19,
+      "6": 20,
+      "7": 14,
+      "8": 50,
+      "9": 12,
+      "10": 48
+    }
+  }
+}

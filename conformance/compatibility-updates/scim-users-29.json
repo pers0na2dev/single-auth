@@ -1,0 +1,907 @@
+{
+  "expectedCount": 29,
+  "upstreamFiles": [
+    "packages/scim/src/scim-users.test.ts"
+  ],
+  "updates": [
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > DELETE /scim/v2/Users/:userId::removes team memberships when an org-scoped SCIM delete removes the member",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > DELETE /scim/v2/Users/:userId::removes team memberships when an org-scoped SCIM delete removes the member"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > DELETE /scim/v2/Users/:userId::should clear secondary storage sessions when deleting a user via SCIM",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > DELETE /scim/v2/Users/:userId::should clear secondary storage sessions when deleting a user via SCIM"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > DELETE /scim/v2/Users/:userId::should delete an existing user",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > DELETE /scim/v2/Users/:userId::should delete an existing user"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > DELETE /scim/v2/Users/:userId::should deprovision (not delete the global user) for an org-scoped DELETE",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > DELETE /scim/v2/Users/:userId::should deprovision (not delete the global user) for an org-scoped DELETE"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > DELETE /scim/v2/Users/:userId::should not allow anonymous access",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > DELETE /scim/v2/Users/:userId::should not allow anonymous access"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > DELETE /scim/v2/Users/:userId::should not delete a missing user",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > DELETE /scim/v2/Users/:userId::should not delete a missing user"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > Default SCIM provider::should reject invalid SCIM tokens",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > Default SCIM provider::should reject invalid SCIM tokens"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > Default SCIM provider::should work with a default SCIM provider",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > Default SCIM provider::should work with a default SCIM provider"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users/:userId::should not allow anonymous access",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users/:userId::should not allow anonymous access"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users/:userId::should only allow access to users that belong to the same provider",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users/:userId::should only allow access to users that belong to the same provider"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users/:userId::should only allow access to users that belong to the same provider and organization",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users/:userId::should only allow access to users that belong to the same provider and organization"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users/:userId::should return a single user resource",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users/:userId::should return a single user resource"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users/:userId::should return not found for missing users",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users/:userId::should return not found for missing users"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users::should filter the list of users",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users::should filter the list of users"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users::should not allow anonymous access",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users::should not allow anonymous access"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users::should only allow access to users that belong to the same provider",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users::should only allow access to users that belong to the same provider"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users::should only allow access to users that belong to the same provider and organization",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users::should only allow access to users that belong to the same provider and organization"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users::should return an empty list when no users have been provisioned or belong to the organization",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users::should return an empty list when no users have been provisioned or belong to the organization"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM > GET /scim/v2/Users::should return the list of users",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM > GET /scim/v2/Users::should return the list of users"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::deletes the global user when this provider's account is their sole identity",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::deletes the global user when this provider's account is their sole identity"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::honors active:false by banning the user and reporting the real state (admin plugin)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::honors active:false by banning the user and reporting the real state (admin plugin)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::normalizes email casing when checking uniqueness on update",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::normalizes email casing when checking uniqueness on update"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::provisions a deactivated user when created with active:false (admin plugin)",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::provisions a deactivated user when created with active:false (admin plugin)"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::rejects active:false rather than silently dropping it when the admin plugin is absent",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::rejects active:false rather than silently dropping it when the admin plugin is absent"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::rejects create with active:false before persisting when the admin plugin is absent",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::rejects create with active:false before persisting when the admin plugin is absent"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::rejects reassigning an email another user already holds with a 409 uniqueness conflict",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::rejects reassigning an email another user already holds with a 409 uniqueness conflict"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::resets emailVerified when a SCIM email change is applied",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::resets emailVerified when a SCIM email change is applied"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::revokes sessions when create links and deactivates a pre-existing user",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::revokes sessions when create links and deactivates a pre-existing user"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/scim/src/scim-users.test.ts::SCIM write-path access and validation::unlinks the provider account instead of globally deleting a user with other identities",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "plugins/scim/scim_users_http_compatibility_test.go::TestBetterAuthSCIMUsersExactHTTPCompatibility/SCIM write-path access and validation::unlinks the provider account instead of globally deleting a user with other identities"
+      },
+      "fixtures": [
+        "plugins/scim/testdata/better-auth-1.6.26-scim-users-oracle.json",
+        "plugins/scim/testdata/generate-scim-users-oracle.ts",
+        "plugins/scim/testdata/generate-scim-management-oracle.ts",
+        "plugins/scim/testdata/scim-patch-runtime/package.json",
+        "plugins/scim/testdata/scim-patch-runtime/bun.lock",
+        "plugins/scim/testdata/scim-patch-runtime/tsconfig.json",
+        "plugins/scim/testdata/scim-patch-runtime/users.vitest.config.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "generated-identifiers-timestamps-and-resource-locations-to-in-run-semantic-equality",
+        "better-auth-organization-team-and-session-fixtures-to-equivalent-go-memory-records",
+        "typescript-link-existing-users-union-to-go-typed-enabled-policy"
+      ],
+      "divergenceRef": null
+    }
+  ]
+}

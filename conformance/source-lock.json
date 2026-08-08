@@ -1,0 +1,34 @@
+{
+  "$schema": "./schemas/source-lock.schema.json",
+  "schemaVersion": 1,
+  "upstream": {
+    "name": "Better Auth",
+    "packageVersion": "1.6.26",
+    "repository": "https://github.com/better-auth/better-auth.git",
+    "commit": null,
+    "snapshotPath": "better-auth-main",
+    "snapshotKind": "source-archive-without-git-metadata"
+  },
+  "tree": {
+    "algorithm": "sha256-of-sorted-shasum-lines-v1",
+    "hash": "01f179b28c2de406e22388ec175234c6ae437bf437a8e8c34a8b3bfb51330521",
+    "fileCount": 1907,
+    "excluded": [
+      "**/.git/**",
+      "**/.DS_Store"
+    ],
+    "locale": "C"
+  },
+  "license": {
+    "spdx": "MIT",
+    "file": "LICENSE.md",
+    "sha256": "7a07f7d9085cb3157e4377d944988c9712933141b0f7201955ceccfac92abde4",
+    "copyright": "Copyright (c) 2024 - present, Bereket Engida"
+  },
+  "port": {
+    "distributionName": "single-auth",
+    "goModulePath": "github.com/pers0na2dev/single-auth",
+    "goPackageName": "singleauth",
+    "compatibilityPolicy": "behavioral-and-wire-compatibility-with-frozen-snapshot"
+  }
+}

@@ -1,0 +1,1043 @@
+{
+	"accepted": true,
+	"expectedCount": 28,
+	"upstreamFiles": ["packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts"],
+	"updates": [
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::atomic concurrent enforcement > database storage::lets exactly one of two simultaneous requests through",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/atomic concurrent enforcement > database storage::lets exactly one of two simultaneous requests through"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "database"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::atomic concurrent enforcement > database storage::resets the count once the window elapses",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/atomic concurrent enforcement > database storage::resets the count once the window elapses"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "database"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::atomic concurrent enforcement > memory storage::lets exactly one of two simultaneous requests through",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/atomic concurrent enforcement > memory storage::lets exactly one of two simultaneous requests through"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::atomic concurrent enforcement > memory storage::resets the count once the window elapses",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/atomic concurrent enforcement > memory storage::resets the count once the window elapses"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::custom rate limiting storage::should use custom storage",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/custom rate limiting storage::should use custom storage"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::database cleanup::awaits expired row cleanup when no background handler is configured",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/database cleanup::awaits expired row cleanup when no background handler is configured"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "database"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::forwarded IP chains::should key the real client when trusted proxies are configured",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/forwarded IP chains::should key the real client when trusted proxies are configured"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::forwarded IP chains::should not key limits by untrusted forwarded chain entries",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/forwarded IP chains::should not key limits by untrusted forwarded chain entries"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::IPv6 address normalization and rate limiting::IPv6 subnet should not affect IPv4 addresses",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/IPv6 address normalization and rate limiting::IPv6 subnet should not affect IPv4 addresses"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::IPv6 address normalization and rate limiting::should convert IPv4-mapped IPv6 to IPv4",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/IPv6 address normalization and rate limiting::should convert IPv4-mapped IPv6 to IPv4"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::IPv6 address normalization and rate limiting::should handle link-local IPv6 addresses",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/IPv6 address normalization and rate limiting::should handle link-local IPv6 addresses"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::IPv6 address normalization and rate limiting::should handle localhost IPv6 addresses",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/IPv6 address normalization and rate limiting::should handle localhost IPv6 addresses"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::IPv6 address normalization and rate limiting::should normalize IPv6 addresses to canonical form",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/IPv6 address normalization and rate limiting::should normalize IPv6 addresses to canonical form"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::IPv6 address normalization and rate limiting::should rate limit different IPv6 subnets separately",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/IPv6 address normalization and rate limiting::should rate limit different IPv6 subnets separately"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::IPv6 address normalization and rate limiting::should support IPv6 subnet rate limiting",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/IPv6 address normalization and rate limiting::should support IPv6 subnet rate limiting"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::missing client IP warning::should fail closed and still enforce the limit when no client IP is available",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/missing client IP warning::should fail closed and still enforce the limit when no client IP is available"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::missing client IP warning::should point users to ipAddressHeaders and trustedProxies when no client IP is available outside dev/test",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/missing client IP warning::should point users to ipAddressHeaders and trustedProxies when no client IP is available outside dev/test"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::rate-limiter::non-special-rules limits",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/rate-limiter::non-special-rules limits"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::rate-limiter::query params should be ignored",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/rate-limiter::query params should be ignored"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::rate-limiter::should rate limit based on the path",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/rate-limiter::should rate limit based on the path"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::rate-limiter::should reset the limit after the window period",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/rate-limiter::should reset the limit after the window period"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::rate-limiter::should respond the correct retry-after header",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/rate-limiter::should respond the correct retry-after header"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::rate-limiter::should return 429 after 3 request for sign-in",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/rate-limiter::should return 429 after 3 request for sign-in"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "memory"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::should work in development/test environment::should work in development environment",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/should work in development/test environment::should work in development environment"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::should work in development/test environment::should work in test environment",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/should work in development/test environment::should work in test environment"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "secondary-storage"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::should work with custom rules::should not rate limit if custom rule is false",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/should work with custom rules::should not rate limit if custom rule is false"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "database"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::should work with custom rules::should use custom rules",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/should work with custom rules::should use custom rules"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "database"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    },
+    {
+      "upstreamTestId": "packages/better-auth/src/api/rate-limiter/rate-limiter.test.ts::should work with custom rules::should use default rules if custom rules are not defined",
+      "implementation": {
+        "kind": "go-test",
+        "ref": "rate_limiter_http_compatibility_test.go::TestBetterAuthRateLimiterExactHTTPCompatibility/should work with custom rules::should use default rules if custom rules are not defined"
+      },
+      "fixtures": [
+        "testdata/better-auth-1.6.26-rate-limiter-oracle.json",
+        "testdata/generate-rate-limiter-oracle.ts",
+        "testdata/rate-limiter-runtime/.gitignore",
+        "testdata/rate-limiter-runtime/package.json",
+        "testdata/rate-limiter-runtime/bun.lock",
+        "testdata/rate-limiter-runtime/vitest.config.ts",
+        "testdata/rate-limiter-runtime/node-sqlite.ts"
+      ],
+      "transports": [
+        "net/http",
+        "fasthttp",
+        "fiber"
+      ],
+      "storageBackends": [
+        "database"
+      ],
+      "status": "passing",
+      "normalizationRules": [
+        "upstream-node-sqlite-test-instance-to-go-memory-adapter-test-instance",
+        "upstream-relative-test-instance-import-to-pinned-published-better-auth-1.6.26-test-utils",
+        "upstream-node-sqlite-runtime-to-bun-sqlite-compatibility-shim",
+        "fetch-request-runtime-to-go-nethttp-fasthttp-fiber-adapters",
+        "upstream-shared-suite-state-to-isolated-go-case-preconditioning",
+        "better-auth-test-instance-bootstrap-to-go-direct-fixture-with-identical-three-entry-secondary-store-cardinality",
+        "vitest-fake-timers-to-injected-go-clock",
+        "upstream-secondary-string-store-to-go-secondary-string-store",
+        "direct-normalize-ip-assertions-to-public-dispatcher-bucket-key-observations"
+      ],
+      "divergenceRef": null
+    }
+  ]
+}

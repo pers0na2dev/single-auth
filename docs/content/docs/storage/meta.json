@@ -1,0 +1,19 @@
+{
+  "title": "Storage",
+  "pagesIndex": "index",
+  "pages": [
+    "memory",
+    "sqlite",
+    "postgresql",
+    "mysql",
+    "sql-server",
+    "mongodb",
+    "redis-secondary-storage",
+    "schemas",
+    "queries-and-mutations",
+    "migrations",
+    "transactions",
+    "custom-adapters",
+    "testing"
+  ]
+}

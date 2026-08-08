@@ -1,0 +1,14 @@
+{
+  "title": "Guides",
+  "icon": "BookOpen",
+  "pagesIndex": "index",
+  "pages": [
+    "write-a-server-plugin",
+    "deploy-behind-a-proxy",
+    "multi-replica-sessions",
+    "social-oauth-end-to-end",
+    "rotate-secrets",
+    "tenant-auth",
+    "troubleshooting"
+  ]
+}

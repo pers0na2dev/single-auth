@@ -1,0 +1,11 @@
+{
+  "title": "Reference",
+  "icon": "BookOpenCheck",
+  "pagesIndex": "index",
+  "pages": [
+    "capabilities",
+    "http-routes",
+    "error-codes",
+    "packages"
+  ]
+}

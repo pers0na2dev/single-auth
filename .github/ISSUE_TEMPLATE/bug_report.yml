@@ -1,0 +1,114 @@
+name: Bug report
+description: Report reproducible incorrect behavior in the Go server or supported JavaScript clients.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Do not include credentials, session material, personal data, or vulnerability details. Report security issues privately according to `SECURITY.md`.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and the capability map for this behavior.
+          required: true
+        - label: This is about implemented Go behavior or a shipped browser/React/Next.js/Vue/Solid client, not an excluded integration.
+          required: true
+        - label: This report does not contain sensitive security information.
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Tag, pseudo-version, or commit SHA where the issue occurs.
+      placeholder: v0.x.y or abc1234
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Root API or core auth flow
+        - net/http transport
+        - fasthttp transport
+        - Fiber transport
+        - Storage adapter or migration
+        - Server plugin
+        - OAuth, OIDC, SAML, or WebAuthn
+        - Social provider
+        - Browser or framework client
+        - Conformance tooling
+        - Documentation
+        - Other Go-native behavior
+    validations:
+      required: true
+
+  - type: input
+    id: package
+    attributes:
+      label: Package, plugin, or adapter
+      description: Include the Go import path and backend/provider when applicable.
+      placeholder: github.com/pers0na2dev/single-auth/storage/postgres
+
+  - type: dropdown
+    id: transport
+    attributes:
+      label: Transport
+      description: Choose the transport where the issue was observed.
+      options:
+        - Not transport-specific
+        - net/http
+        - direct fasthttp
+        - Fiber
+        - Direct server API
+        - Multiple transports
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide the smallest Go or JavaScript example or test that demonstrates the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe the observable result you expected.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include sanitized errors or logs and whether the problem is deterministic.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Go version, OS/architecture, database and version, and relevant configuration with secrets removed.
+      placeholder: |
+        Go: go1.25.x
+        OS/arch: linux/amd64
+        Storage: PostgreSQL 17.x
+        Docker/Testcontainers: if relevant
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add related capability IDs, failing test names, or a small repository link.
